@@ -1,0 +1,47 @@
+.container-fluid.boximgages {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 15%;
+    padding-top: 10%;
+}
+.botm {
+    border-left: 0px;
+    border-right: 0px;
+    border-top: 0px;
+    border-radius: 0px;
+}
+button.btn.btsk{
+    background-color: #F180AB;
+    color: #fff;
+    font-weight: 500;
+    box-shadow: 2px 10px 11px #ffabc4ab;
+    padding-left: 25px;
+    padding-right: 25px;
+    border-radius: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: none;
+
+
+}
+.overflowscl{
+    
+     margin-left: 6%;
+    
+    padding-bottom: 7% !important;
+    padding-top: 5% !important;
+    padding-left: 7% !important;
+    padding-right: 7% important;
+    padding-right: 7% !important;
+
+
+}
+.mt20 {
+    margin-top: 10%;
+}
+
+.ct-text {
+    font-size: 36px;
+    font-weight: 600;
+}

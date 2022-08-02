@@ -1,0 +1,10 @@
+import { Subject } from 'rxjs';
+
+const subject = new Subject();
+
+const helperServices = {
+    // updateLike: list => subject.next({ list }),
+    // getLike: subject.asObservable()
+};
+
+export default {};

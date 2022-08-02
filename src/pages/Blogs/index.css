@@ -1,0 +1,61 @@
+.card-img-overlays {
+    position: absolute;
+    bottom: 26%;
+    text-align: center;
+    color: #fff;
+    left: 30px;
+    font-weight: bolder;
+     }
+
+    
+  .card-img-overlay{
+    position: absolute;
+    bottom: 50%;
+    
+    color: #fff;
+    left: 15px;
+    font-weight: bolder;
+    top: 15px;
+
+  }
+.share-container {
+  border: 1px solid gray;
+  width: 80px;
+  font-size: 12px;
+  border-radius: 3px;
+  padding: 5px;
+  display: flex;
+  position: absolute;
+    z-index: 10000000000;
+    background-color: white;
+    right: 14% !important;
+}
+.react-share__ShareButton svg {
+ width: 30px;
+ height: 30px;
+    margin-right: 5px;
+}
+.container-fluid.boximgages {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 15%;
+    padding-top: 10%;
+}
+button.btn.btsk{
+    background-color: #F180AB;
+    color: #fff;
+    font-weight: 500;
+    box-shadow: 2px 10px 11px #ffabc4ab;
+    padding-left: 25px;
+    padding-right: 25px;
+    border-radius: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+}
+
+.banner-img {
+    font-size: 36px;
+    font-weight: 600;}
+

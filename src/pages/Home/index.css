@@ -1,0 +1,235 @@
+.card-img {
+    width: 250px;
+    height: 250px;
+}
+.card-img-overlays {
+    position: absolute;
+    bottom: 26%;
+    text-align: center;
+    color: #fff;
+    left: 30px;
+    font-weight: bolder;
+     }
+
+    
+  .card-img-overlay{
+    position: absolute;
+    bottom: 50%;
+    color: #fff;
+    left: 15px;
+    font-weight: bolder;
+    top: 15px;
+
+  }
+.fas.fa-star-half-alt{
+  background-color: #14C71C;
+    border-radius: 5px;
+    color: #fff;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.testt {
+  margin-top: 20%;
+
+}
+a {
+    color:#f180ab;
+    text-decoration: none;
+}
+.fa-bell:before{
+  background-color: red;
+    border-radius: 50px;
+    padding-bottom: 9px;
+    padding-top: 8px;
+    padding-left: 11px;
+    padding-right: 10px;
+    color: #fff;
+}
+.fa-clipboard:before {
+    content: "\f328";
+    background-color: red;
+    border-radius: 50px;
+    padding-bottom: 9px;
+    padding-top: 8px;
+    padding-left: 11px;
+    padding-right: 10px;
+    color: #fff;
+}
+
+.mrimg {
+    margin-left: 24px;
+}
+.container-fluid.box-imgages1 {
+    background-position: center;
+    background-repeat: no-repeat;
+    /* min-height: 60vh !important; */
+    background-size: cover;
+    /* padding: 20vh !important; */
+}
+button.btn.btsk{
+    background-color: #F180AB;
+    color: #fff;
+    font-weight: 500;
+    box-shadow: 2px 10px 11px #ffabc4ab;
+    padding-left: 25px;
+    padding-right: 25px;
+    border-radius: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+}
+span.mtext {
+    margin-top: -22px;
+    padding-left: 20px;
+}
+.card-body {
+    flex: 1 1 auto;
+    padding: 1rem 1rem;
+    background-color: #F180AB;
+    border-radius: 20px;
+}
+.blurimg {
+    
+    margin-top: 22px;
+}
+.blurtext {
+    margin-top: 15px;
+}
+
+.round {
+    border-radius: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.text-danger {
+    margin-top: -10px;
+}
+.myf {
+    margin-left: 92%;
+    margin-bottom: -30px;
+    margin-top: 30px;
+}
+
+button.btn.btsk1 {
+   background-color: #ff477e;
+    color: #fff;
+    font-weight: 500;
+    box-shadow:none;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 20px;
+}
+.headertext1 {
+    font-size: 60px;
+    letter-spacing: 2px;
+    font-weight: 500;
+}
+.container-fluid.box-imgages {
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 60vh !important;
+    background-size: cover;
+    padding: 25vh !important;
+}
+.solder {
+    /* margin-right: -70px; */
+    padding-left: 100px;
+}
+button.btn.btsk {
+    background-color: #F180AB;
+    color: #fff;
+    font-weight: 500;
+    box-shadow: 2px 10px 11px #ffabc4ab;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.border-bottom {
+    border-bottom: 1px solid gray!important;
+    width: 19%;
+}
+.cat-img {
+    width: 270px;
+    height: 350px;
+}
+.like-section {
+    margin-top: 33%;
+}
+.pic-num span{
+    margin-right: 15px;
+    font-weight: 500;
+    font-size: 28px;
+}
+.add-text {
+    position: relative;
+    top: -4px;
+    left: 2px;
+}
+.add-pop {
+position: relative;
+top: -18px;
+left: 18px;
+}
+
+.blog-title {
+    font-family: 'Sulphur Point';
+font-style: normal;
+font-weight: 400;
+font-size: 24px;
+line-height: 120%;
+/* or 29px */
+
+text-transform: capitalize;
+}
+
+/* .category-img {
+    height: 270px;
+}
+.inhouse-img {
+    width: 595px;
+    height: 395px;
+}
+.vendor-img {
+    max-width: 364px;
+    height: 332px;
+} */
+/* .vendor-card {
+    margin-right: 60px;
+} */
+/* .blog-img {
+    max-width: 360px;
+    height: 250px;
+    width: 360px;
+}
+.exc-img {
+    max-width: 350px;
+    height: 220px;
+    width: 350px;
+} */
+
+
+
+.FvmcX .buttons .next {
+    top: -30px;
+position: relative;
+}
+
+.FvmcX .buttons .prev {
+    top: -30px;
+position: relative;
+}
+.share-container {
+    border: 1px solid gray;
+    width: 80px;
+    font-size: 12px;
+    border-radius: 3px;
+    padding: 5px;
+    display: flex;
+    position: absolute;
+      z-index: 10000000000;
+      background-color: white;
+      right: 14% !important;
+  }
