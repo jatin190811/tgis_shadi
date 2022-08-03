@@ -330,8 +330,8 @@ sent to the vendor</p>
 					<span className="close-modal" onClick={() => {setShowModal(false);
 						setCount(0)}}>x</span>
 				 {details.images && details.images.length && <div className="col-md-12 car-img">
-							<span style={{marginRight: '10%'}} onClick={() => {
-								count !=0 ? setCount(count-1) : ''}}>{`<`} Prev</span><img src={baseUrl + details.images[count]} dataAtr={count} className="img-rounded mgtz" alt="" width="60%" height="500px" /><span style={{marginLeft: '10%'}} onClick={() => {
+							<span style={{marginRight: '10%'}} onClick={() => 
+								count !=0 ? setCount(count-1) : ''}>{`<`} Prev</span><img src={baseUrl + details.images[count]} dataAtr={count} className="img-rounded mgtz" alt="" width="60%" height="500px" /><span style={{marginLeft: '10%'}} onClick={() => {
 									if(count != details.images.length+1) {setCount(count+1)}}}>Next {`>`}</span>
 						</div>}
                     
