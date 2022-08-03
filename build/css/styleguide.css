@@ -1,0 +1,22 @@
+:root { 
+  --black: #000000;
+  --mine-shaft: #333333;
+  --tickle-me-pink: #f180ab;
+  --white-22: #ffffff;
+ 
+  --font-size-m2: 18px;
+  --font-size-s: 14px;
+  --font-size-s2: 16px;
+  --font-size-xl: 34px;
+  --font-size-xxl: 55px;
+ 
+  --font-family-poppins: "Poppins", Helvetica;
+  --font-family-sulphur_point: "Sulphur Point", Helvetica;
+}
+.poppins-normal-mine-shaft-16px {
+  color: var(--mine-shaft);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-s2);
+  font-style: normal;
+  font-weight: 400;
+}
