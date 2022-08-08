@@ -142,7 +142,7 @@ function Login() {
                 position="top-right"
                 autoClose={5000}
             />
-            <div className="container main py-5">
+            <div className="container main ">
                 <div className="row mainrow">
                     <div className="col-md-6 hero">
                         <div className="text-center text-white">

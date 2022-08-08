@@ -184,9 +184,9 @@ function List() {
       <div className="container-fluid  box-imgages" style={{ backgroundImage: 'url("/pic/ct/banner.png")' }} >
         <div className="row">
           <div className="clo-lg-12 col-md-12 col-sm-12">
-
+{/* 
             <h1 className="list-text text-white text-center">Venues</h1>
-            <h4 className="text-white text-center">Home.Venues</h4>
+            <h4 className="text-white text-center">Home.Venues</h4> */}
 
           </div>
 

@@ -76,7 +76,7 @@ function Login() {
                 position="top-right"
                 autoClose={5000}
                 />
-            <div className="container main py-5">
+            <div className="container main">
                 <div className="row mainrow">
                     <div className="col-md-6 hero">
                         <div className="text-center text-white">
@@ -122,7 +122,7 @@ function Login() {
                         <div className="row mt-5 pt-5">
                             <div className="col-md-6 py-2"><p>Are you a vendor?</p></div>
                             <div className="col-md-6">
-                                <Link to="/quote"  ><button className="onboardbtn">Register Now</button></Link>
+                                <Link to="/vendor"><button className="onboardbtn">Register Now</button></Link>
                             </div>
                         </div>
                     </div>
