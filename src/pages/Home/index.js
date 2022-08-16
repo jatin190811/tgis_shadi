@@ -444,7 +444,7 @@ function Home() {
                             <Link to={"/venue/" + item._id}>
                                 <div className="card-img">
 
-                                    <img src={baseUrl + item.images[0]} className="exc-img img-fluid" />
+                                    {item?.images?.length && <img src={baseUrl + item.images[0]} className="exc-img img-fluid" />}
                                 </div>
 
                             </Link>
