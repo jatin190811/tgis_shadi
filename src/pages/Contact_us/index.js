@@ -60,26 +60,26 @@ function ContactUs() {
   <div className="row justfy-content-center">
     <div className="col-md-3">
         <img src="pic/contact/h.png" alt="" className="img-fluid pb-4"/>
-        <h3>Company</h3>
-        <p>Wedding store “TGIS”<br/>
+        <h3 style={{fontSize:'24px', fontWeight:'500'}}>Company</h3>
+        <p style={{color:'#555555'}}>Wedding store “TGIS”<br/>
         <span style={{color:'#EC9DAB'}}>info@sitename.com</span></p>
     </div>
     <div className="col-md-3">
        <img src="pic/contact/location.png" alt="" className="img-fluid pb-4"/>
-        <h3>Location</h3>
-        <p>27 Division St, New York,
+        <h3 style={{fontSize:'24px', fontWeight:'500'}}>Location</h3>
+        <p style={{color:'#555555'}}>27 Division St, New York,
          NY 10002, USA</p>
     </div>
     <div className="col-md-3">
         <img src="pic/contact/phone.png" alt="" className="img-fluid pb-4"/>
-        <h3>Phone</h3>
-        <p>+1 800 452 78 87<br/>
+        <h3 style={{fontSize:'24px', fontWeight:'500'}}>Phone</h3>
+        <p style={{color:'#555555'}}>+1 800 452 78 87<br/>
          +1 800 453 83 12</p>
     </div>
     <div className="col-md-3">
         <img src="pic/contact/watch.png" alt="" className="img-fluid pb-4"/>
-        <h3>Hours of Work</h3>
-        <p>Mon - Fri: 9 am - 6 pm<br/>
+        <h3 style={{fontSize:'24px', fontWeight:'500'}}>Hours of Work</h3>
+        <p style={{color:'#555555'}}>Mon - Fri: 9 am - 6 pm<br/>
          Sat - Sun: Holiday</p>
     </div>
   </div>
@@ -90,7 +90,7 @@ function ContactUs() {
     <div className="col-md-7">
         <p style={{color: '#ffabc4'}}><img src="pic/icon/icon.png" alt="logo"/> BE IN TOUCH</p>
         <h2>Send Us A Message</h2>
-        <p>We’re always ready to help and make your wedding better.</p>
+        <p style={{color:'#555555', fontWeight: '600'}}>We’re always ready to help and make your wedding better.</p>
         <form className="py-3" onSubmit={(event) => event.preventDefault()}>
         <div className="row">
          <div className="col">

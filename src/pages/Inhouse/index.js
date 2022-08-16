@@ -146,8 +146,8 @@ else {
         <div className="row">
           <div className="clo-lg-12 col-md-12 col-sm-12">
 
-            <h1 className="list-text text-white text-center">Venues</h1>
-            <h4 className="text-white text-center">Home.Venues</h4>
+            {/* <h1 className="list-text text-white text-center">Venues</h1>
+            <h4 className="text-white text-center">Home.Venues</h4> */}
 
           </div>
 

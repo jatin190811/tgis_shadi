@@ -355,13 +355,13 @@ function Home() {
                             Nostrud magna anim officia ad labore.</p>
                     </div>
                 </div>
-                {/* <div className="row g-4 p-3">
+                <div className="row g-4 p-3">
                     {vendors && vendors.length && <Carousel>
                         {vendors && vendors.length && vendors.filter(item => item.isFeatured).map(item => <div className="col-md-3 vendor-card">
                             <div className="card p-3 ">
                                 <div className="" >
-                                    {item.images[0] ?
-                                        <img src={baseUrl + item.images[0]} style={{ width: '364px', height: '332px', objectFit: 'cover', borderRadius: '12px' }} className="img-fluid vendor-img" /> : ""}
+                                    {item?.images?.length && item.images[0] ?
+                                        <img src={baseUrl + item.images[0]} style={{ width: '364px', height: '332px' }} className="img-fluid vendor-img" /> : ""}
                                 </div>
                                 {<div className="card-img-overlay ">
                                     <i className="fas fa-star-half-alt" style={{ float: 'right', marginRight: '20px' }}>{item?.avgRating ? item?.avgRating : 0}</i>
@@ -378,7 +378,7 @@ function Home() {
                             </div>
                         </div>)}
                     </Carousel>}
-                </div > */}
+                </div >
             </div >
 
             <div className="container-fluid mybg py-5 " style={{ backgroundImage: 'url("pic/mybg.png")' }}>
@@ -459,7 +459,7 @@ function Home() {
                             <Link to={"/venue/" + item._id}>
                                 <div style={{ width: '300px', height: '325px' }} className="card-img">
 
-                                    <img src={baseUrl + item.images[0]} className="exc-img img-fluid" />
+                                    {item?.images?.length && <img src={baseUrl + item.images[0]} className="exc-img img-fluid" />}
                                 </div>
 
                             </Link>
@@ -478,7 +478,7 @@ function Home() {
                         </div>
                     </div>)}
 
-                    {/* <div className="col-md-4 col-sm-12 px-3">
+                    <div className="col-md-4 col-sm-12 px-3">
 
             <div className="card mycd">
               <a href="http://">
@@ -515,7 +515,7 @@ function Home() {
                 lineHeight: '2px'
               }}> Agra</span >
             </div >
-          </div > */}
+          </div >
                 </div >
             </div >
 

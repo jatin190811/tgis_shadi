@@ -50,7 +50,7 @@ function Wishlist() {
 
   }
   return (
-    <>
+    <div className='wishlist-page'>
       <div className="container-fluid  box-imgages" style={{ backgroundImage: 'url("pic/wishlist.png")' }} >
         <div className="row">
           <div className="clo-lg-12 col-md-12 col-sm-12">
@@ -62,11 +62,11 @@ function Wishlist() {
         </div>
       </div>
 
-      <div className="container mt-5">
+      <div className="container mt-5" style={{marginLeft:'4%'}}>
         <div className="row">
           <div className="col py-3">
             <img src="pic/icon/h.png" alt="" srcset="" className="like-img img-fluid" />
-            <b>My Wishlist</b>  &nbsp; {list.length} items
+            <span style={{fontWeight: '700'}}>My Wishlist</span>  &nbsp; {list?.length} items
           </div>
         </div>
       </div>
@@ -78,7 +78,7 @@ function Wishlist() {
             <div className="card justify-items-center ">
               <div className="card-img">
               <Link to={`/entity/${(item.likeType == 'venue') ? 'venues' :item.likeType }/${item._id}`}>
-                <img src={baseUrl + item.images[0]} className="card-img-top img-fluid" />
+                <img src={baseUrl + item.images[0]} className="card-img-top wish-img img-fluid" />
                 </Link>
               </div>
               <i className="fas fa-times" style={{cursor: 'pointer'}} onClick={() => setUnFav(item)}></i>
@@ -86,20 +86,20 @@ function Wishlist() {
                 {item && item.tag && item.tag.length && <button type="button" className="btn btn-primary round">{item?.tag[0]}</button> }
 
               </div>
-              <div style={{marginTop: '35%'}}>
+              <div style={{marginTop: '5%'}}>
               {Array.from({length: item.avgRating}, (_, i) => i + 1).map(item => <img src="/pic/ct/str1.png" alt="star" srcSet="" width="25" className="img-fluid pt-3 star-img" />)}
                 {Array.from({length: 5 - (item.avgRating ? item.avgRating : 0)}, (_, i) => i + 1).map(item => <img src="/pic/ct/str2.png" alt="star" srcSet="" width="25" className="img-fluid pt-3 star-img" />)}
-              <h4 className="pt-2">{item.name}</h4>
+              <h4 className=" item-name">{item.name}</h4>
               <img src="pic/Vector.png" alt="loccationn" srcset="" className="img-fluid locat" width="15px" />
               <span className="" style={{paddingLeft: '7px'}}>{item.address}</span>
-              <p>{item.price}</p>
+              <p style={{marginTop:'2%'}}>{item.price}</p>
               </div>
 
             </div>
           </div>)}
         </div>
       </div>
-    </>
+    </div>
   )
 }
 

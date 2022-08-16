@@ -1,6 +1,7 @@
 import './App.css';
-import React from 'react';
+import React,{useEffect} from 'react';
 import Header from './components/header';
+import Layout from './components/Layout';
 import Footer from './components/footer';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -25,15 +26,16 @@ import List from './pages/List';
 import Profile from './pages/Profile';
 import Wishlist from './pages/Wishlist';
 import SearchPage from './pages/SearchPage';
+import VendorPage from './pages/VendorPage';
 import Inhouse from './pages/Inhouse';
-
 
 
 function App() {
     return (
         <BrowserRouter>
-        <Header/>
+{<Layout hideHeaderPaths={["/login","/onboarding","/register","/vendor"]} isHeader="true" />}
             <Routes>
+            
                 <Route path="/" element={<Home/>} />
                 <Route path="/list/:type" element={<List/>} />
                 <Route path="/list/:type/inhouse/" element={<Inhouse/>} />
@@ -51,8 +53,10 @@ function App() {
                 <Route path="/profile" element={<Profile />} />
                 <Route path="/wishlist" element={<Wishlist />} />
                 <Route path="/search" element={<SearchPage />} />
+                <Route path="/vendor" element={<VendorPage />} />
             </Routes>
-            <Footer/>
+            {<Layout hideHeaderPaths={["/login","/onboarding","/register","/vendor"]} isFooter="true" />}
+            {/* <Footer/> */}
         </BrowserRouter>
     );
 }

@@ -1,4 +1,4 @@
-@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+/* @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
 
 @import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600|Sulphur+Point:400,700|Montserrat:600");
 
@@ -269,7 +269,7 @@ body,p,h4{
     padding:5vh !important;
 }
 
-  }
+  } */
 
   .dot {
     height: 16px;
@@ -673,6 +673,9 @@ a {
   font-size: 12px;
 }
 
+.justify-content-center {
+  justify-content: normal !important;
+}
 
 
 /* New CSS */

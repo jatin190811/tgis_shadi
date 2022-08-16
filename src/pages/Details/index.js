@@ -387,7 +387,7 @@ sent to the vendor</p>
 				<div className="container rptb">
 					<div className="col-lg-12">
 						<p className='desc-title'><b>About {details.name}</b></p>
-						<p className='desc-desc'>{details.description}</p>
+						<p className='desc-desc' dangerouslySetInnerHTML={{__html: `${details.description}`}}></p>
 					</div>
 				</div>
 				<div className="container rptb">
@@ -396,9 +396,9 @@ sent to the vendor</p>
 					{ratingList && ratingList.length && ratingList.map(item => <div className="reviewpb">
 						<p className="rate">
 							<img src={baseUrl + item.pic} className="img-rounded" alt="" width="30" height="auto"  /> 
-						{item.name} - Jul 19, 2020 - 
+						{item.name}
 						{Array.from({length: item.rating}, (_, i) => i + 1).map(item => <img src="/pic/ct/str1.png" alt="star" srcSet="" width="25" className="img-fluid pt-3 star-img" />)}
-                {Array.from({length: 5 - (item.rating ? item.avgRating : 0)}, (_, i) => i + 1).map(item => <img src="/pic/ct/str2.png" alt="star" srcSet="" width="25" className="img-fluid pt-3 star-img" />)}
+                {Array.from({length: 5 - (item.avgRating ? item.avgRating : 0)}, (_, i) => i + 1).map(item => <img src="/pic/ct/str2.png" alt="star" srcSet="" width="25" className="img-fluid pt-3 star-img" />)}
 							</p>
 						<p>{item.review}</p>
 					</div>)}
@@ -447,7 +447,7 @@ sent to the vendor</p>
             <div className="card justify-items-center ">
               <div className="card-img">
                 <Link to={`/entity/${type}/${item._id}`}>
-                  <img src={baseUrl + item.images[0]} className="card-img-top img-fluid cat-img" />
+                  {item?.images?.length && <img src={baseUrl + item.images[0]} className="card-img-top img-fluid cat-img" />}
                 </Link>
               </div>
               <div className="card-img-overlays " style={{bottom: '27%'}}>

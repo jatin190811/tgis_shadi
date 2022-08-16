@@ -127,10 +127,10 @@ function SearchPage() {
         </div>
       </div> */}
 
-      <div className="container mt-5">
+      <div className="mt-5">
 
 
-        <div className="row">
+        <div className="row" style={{marginLeft: '4%'}}>
 
          {message && <div className="col-md-3 col-sm-12 py-3">
             <p><b>{message}</b> </p>
@@ -141,11 +141,11 @@ function SearchPage() {
           <span style={{cursor:'pointer'}} onClick={() => setShowFilter(!showFilter)}><img src="/pic/icon/vector.png" alt="" srcSet="" className="img-fluid" />
             Filters</span>
           </div> */}
-
-          <div className="col-md-6 col-sm-12 px-3">
+          <div className="col-md-1"></div>
+          <div className="col-md-4 col-sm-12 px-3">
             <form className="example" style={{height: '60px'}} onSubmit={(event) => event.preventDefault()} >
               <input type="text" placeholder="Search name or location.." style={{height: '45px'}} name="search" onChange={(event)=> setSearchValue(event.target.value)}/>
-              <button ><i className="fa fa-search" onClick={getFilteredResults}></i></button>
+              <button style={{top:'0'}}><i className="fa fa-search" onClick={getFilteredResults}></i></button>
             </form>
           </div>
 

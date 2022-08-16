@@ -42,6 +42,21 @@ button.btn.btsk{
 }
 
 .ct-text {
-    font-size: 36px;
-    font-weight: 600;
+    font-size: 65px;
+    font-weight: 500;
+}
+.contact-h2 {
+    font-family: 'Poppins';
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+line-height: 170%;
+color: #555555;
+}
+.upload-img {
+cursor: pointer;
+position: absolute;
+    right: 0%;
+    bottom: 28%;
+    margin-top: 5%;
 }
