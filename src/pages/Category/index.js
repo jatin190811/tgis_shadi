@@ -5,7 +5,6 @@ import { Link, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import Carosel from 'carousel-react-rcdev';
 
-
 function Category() {
 
   const inputRef = useRef();
@@ -89,7 +88,8 @@ function Category() {
           <div class="col-md-3 col-sm-12 px-3">
             <form action="#">
 
-              <select class="form-select" id="sel1" name="sellist1" onChange={event => handleChange(event)}>
+              <select class="form-select" id="sel1" name="sellist1" onChange={event => handleChange(event)} style={{fontFamily: 'Poppins',
+fontStyle: 'normal'}}>
                 <option> Select Category</option>
                 <option onChange={event => handleChange(event)}>Venue</option>
                 <option onChange={event => handleChange(event)}>Makeup</option>
@@ -128,14 +128,15 @@ function Category() {
           if (!searchValue) return true;
           return String(i.subcategory).toLowerCase().match(String(searchValue))
         }).length != 0 && <div className="cat-listing">
-            <h4><span style={{fontSize: '30px', fontWeight: '500', color:'#49516F'}}>Venue</span><span style={{ color: '#f180ab',fontSize: '16px', paddingTop: '15px', float: 'right', paddingRight: '48px', cursor: 'pointer' }} onClick={() => viewAllChange('Venue')}>View All</span></h4>
+            <h4><span style={{fontSize: '30px', fontWeight: '500', color:'#49516F',fontFamily: 'Poppins',
+fontStyle: 'normal'}}>Venue</span><span style={{ color: '#f180ab',fontSize: '16px', paddingTop: '15px', float: 'right', paddingRight: '48px', cursor: 'pointer' }} onClick={() => viewAllChange('Venue')}>View All</span></h4>
             <hr style={{ color: '#f180ab', border: '1px solid', marginTop: '0px' }} className="mx-5 g-0" />
             <div className="row justify-content-center g-4 p-5">
               {categories?.venues && categories?.venues?.filter(i => {
                 if (!searchValue) return true;
 
                 return String(i.subcategory).toLowerCase().match(String(searchValue))
-              }).map(item => <div className="col-md-3 p-3">
+              }).map(item => <div className="col-md-3 p-3" style={{marginTop:'5px'}}>
                 <div className="card justify-items-center ">
                   <div className="">
                     <Link to={`/list${item.url}`}>
@@ -146,7 +147,7 @@ function Category() {
                     {/* <button type="button" className="btn btn-primary round">{item.tag ? item.tag : 'Primary'}</button> */}
                   </div>
                   {/* <img src="pic/ct/st1.png" alt="star" srcSet="" width="150" className="img-fluid pt-3 star-img" /> */}
-                  <h4 className="pt-2" style={{marginTop: '17px' ,paddingLeft: '0px',color: '#49516F'}}>{String(item.subcategory).split('_').map(i => i.charAt(0).toUpperCase() + i.slice(1)).join(' ')}</h4>
+                  <h4 className="pt-2" style={{marginTop: '17px' ,paddingLeft: '1px',color: '#49516F'}}>{String(item.subcategory).split('_').map(i => i.charAt(0).toUpperCase() + i.slice(1)).join(' ')}</h4>
                    {/* <img src="pic/Vector.png" alt="loccationn" srcSet="" className="img-fluid locat" width="15px" /> */}
                   {/* <span className="mtext">{item.address}</span> */}
 
@@ -167,7 +168,7 @@ function Category() {
                 if (!searchValue) return true;
 
                 return String(i.subcategory).toLowerCase().match(String(searchValue))
-              }).map(item => <div className="col-md-3 p-3">
+              }).map(item => <div className="col-md-3 p-3" style={{marginTop:'5px'}}>
                 <div className="card justify-items-center ">
                   <div className="">
                     <Link to={`/list${item.url}`}>
@@ -178,7 +179,7 @@ function Category() {
                     {/* <button type="button" className="btn btn-primary round">{item.tag ? item.tag : 'Primary'}</button> */}
                   </div>
                   {/* <img src="pic/ct/st1.png" alt="star" srcSet="" width="150" className="img-fluid pt-3 star-img" /> */}
-                  <h4 className="pt-2" style={{marginTop: '17px' ,paddingLeft: '0px',color: '#49516F'}}>{String(item.subcategory).split('_').map(i => i.charAt(0).toUpperCase() + i.slice(1)).join(' ')}</h4>
+                  <h4 className="pt-2" style={{marginTop: '17px' ,paddingLeft: '1px',color: '#49516F'}}>{String(item.subcategory).split('_').map(i => i.charAt(0).toUpperCase() + i.slice(1)).join(' ')}</h4>
                    {/* <img src="pic/Vector.png" alt="loccationn" srcSet="" className="img-fluid locat" width="15px" /> */}
                   {/* <span className="mtext">{item.address}</span> */}
 
@@ -198,7 +199,7 @@ function Category() {
                 if (!searchValue) return true;
 
                 return String(i.subcategory).toLowerCase().match(String(searchValue))
-              }).map(item => <div className="col-md-3 p-3">
+              }).map(item => <div className="col-md-3 p-3" style={{marginTop:'5px'}}>
                 <div className="card justify-items-center ">
                   <div className="">
                     <Link to={`/list${item.url}`}>
@@ -209,7 +210,7 @@ function Category() {
                     {/* <button type="button" className="btn btn-primary round">{item.tag ? item.tag : 'Primary'}</button> */}
                   </div>
                   {/* <img src="pic/ct/st1.png" alt="star" srcSet="" width="150" className="img-fluid pt-3 star-img" /> */}
-                  <h4 className="pt-2" style={{marginTop: '17px' ,paddingLeft: '0px',color: '#49516F'}}>{String(item.subcategory).split('_').map(i => i.charAt(0).toUpperCase() + i.slice(1)).join(' ')}</h4>
+                  <h4 className="pt-2" style={{marginTop: '17px' ,paddingLeft: '1px',color: '#49516F'}}>{String(item.subcategory).split('_').map(i => i.charAt(0).toUpperCase() + i.slice(1)).join(' ')}</h4>
                    {/* <img src="pic/Vector.png" alt="loccationn" srcSet="" className="img-fluid locat" width="15px" /> */}
                   {/* <span className="mtext">{item.address}</span> */}
 
@@ -230,7 +231,7 @@ function Category() {
                 if (!searchValue) return true;
 
                 return String(i.subcategory).toLowerCase().match(String(searchValue))
-              }).map(item => <div className="col-md-3 p-3">
+              }).map(item => <div className="col-md-3 p-3" style={{marginTop:'5px'}}>
                 <div className="card justify-items-center ">
                   <div className="">
                     <Link to={`/list${item.url}`}>
@@ -241,7 +242,7 @@ function Category() {
                     {/* <button type="button" className="btn btn-primary round">{item.tag ? item.tag : 'Primary'}</button> */}
                   </div>
                   {/* <img src="pic/ct/st1.png" alt="star" srcSet="" width="150" className="img-fluid pt-3 star-img" /> */}
-                  <h4 className="pt-2" style={{marginTop: '17px' ,paddingLeft: '0px',color: '#49516F'}}>{String(item.subcategory).split('_').map(i => i.charAt(0).toUpperCase() + i.slice(1)).join(' ')}</h4>
+                  <h4 className="pt-2" style={{marginTop: '17px' ,paddingLeft: '1px',color: '#49516F'}}>{String(item.subcategory).split('_').map(i => i.charAt(0).toUpperCase() + i.slice(1)).join(' ')}</h4>
                    {/* <img src="pic/Vector.png" alt="loccationn" srcSet="" className="img-fluid locat" width="15px" /> */}
                   {/* <span className="mtext">{item.address}</span> */}
 
@@ -262,7 +263,7 @@ function Category() {
                 if (!searchValue) return true;
 
                 return String(i.subcategory).toLowerCase().match(String(searchValue))
-              }).map(item => <div className="col-md-3 p-3">
+              }).map(item => <div className="col-md-3 p-3" style={{marginTop:'5px'}}>
                 <div className="card justify-items-center ">
                   <div className="">
                     <Link to={`/list${item.url}`}>
@@ -273,7 +274,7 @@ function Category() {
                     {/* <button type="button" className="btn btn-primary round">{item.tag ? item.tag : 'Primary'}</button> */}
                   </div>
                   {/* <img src="pic/ct/st1.png" alt="star" srcSet="" width="150" className="img-fluid pt-3 star-img" /> */}
-                  <h4 className="pt-2" style={{marginTop: '17px' ,paddingLeft: '0px',color: '#49516F'}}>{String(item.subcategory).split('_').map(i => i.charAt(0).toUpperCase() + i.slice(1)).join(' ')}</h4>
+                  <h4 className="pt-2" style={{marginTop: '17px' ,paddingLeft: '1px',color: '#49516F'}}>{String(item.subcategory).split('_').map(i => i.charAt(0).toUpperCase() + i.slice(1)).join(' ')}</h4>
                    {/* <img src="pic/Vector.png" alt="loccationn" srcSet="" className="img-fluid locat" width="15px" /> */}
                   {/* <span className="mtext">{item.address}</span> */}
 
@@ -294,7 +295,7 @@ function Category() {
                 if (!searchValue) return true;
 
                 return String(i.subcategory).toLowerCase().match(String(searchValue))
-              }).map(item => <div className="col-md-3 p-3">
+              }).map(item => <div className="col-md-3 p-3" style={{marginTop:'5px'}}>
                 <div className="card justify-items-center ">
                   <div className="">
                     <Link to={`/list${item.url}`}>
@@ -305,7 +306,7 @@ function Category() {
                     {/* <button type="button" className="btn btn-primary round">{item.tag ? item.tag : 'Primary'}</button> */}
                   </div>
                    {/* <img src="pic/ct/st1.png" alt="star" srcSet="" width="150" className="img-fluid pt-3 star-img" /> */} 
-                  <h4 className="pt-2" style={{marginTop: '17px' ,paddingLeft: '0px',color: '#49516F'}}>{String(item.subcategory).split('_').map(i => i.charAt(0).toUpperCase() + i.slice(1)).join(' ')}</h4>
+                  <h4 className="pt-2" style={{marginTop: '17px' ,paddingLeft: '1px',color: '#49516F'}}>{String(item.subcategory).split('_').map(i => i.charAt(0).toUpperCase() + i.slice(1)).join(' ')}</h4>
                    {/* <img src="pic/Vector.png" alt="loccationn" srcSet="" className="img-fluid locat" width="15px" /> */} 
                    {/* <span className="mtext">{item.address}</span> */} 
 
@@ -326,7 +327,7 @@ function Category() {
                 if (!searchValue) return true;
 
                 return String(i.subcategory).toLowerCase().match(String(searchValue))
-              }).map(item => <div className="col-md-3 p-3">
+              }).map(item => <div className="col-md-3 p-3" style={{marginTop:'5px'}}>
                 <div className="card justify-items-center ">
                   <div className="">
                     <Link to={`/list${item.url}`}>
@@ -337,7 +338,7 @@ function Category() {
                     {/* <button type="button" className="btn btn-primary round">{item.tag ? item.tag : 'Primary'}</button> */}
                   </div>
                   {/* <img src="pic/ct/st1.png" alt="star" srcSet="" width="150" className="img-fluid pt-3 star-img" /> */}
-                  <h4 className="pt-2" style={{marginTop: '17px' ,paddingLeft: '0px',color: '#49516F'}}>{String(item.subcategory).split('_').map(i => i.charAt(0).toUpperCase() + i.slice(1)).join(' ')}</h4>
+                  <h4 className="pt-2" style={{marginTop: '17px' ,paddingLeft: '1px',color: '#49516F'}}>{String(item.subcategory).split('_').map(i => i.charAt(0).toUpperCase() + i.slice(1)).join(' ')}</h4>
                    {/* <img src="pic/Vector.png" alt="loccationn" srcSet="" className="img-fluid locat" width="15px" /> */}
                   {/* <span className="mtext">{item.address}</span> */}
 

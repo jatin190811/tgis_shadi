@@ -282,7 +282,7 @@ function List() {
             <div className="card justify-items-center ">
               <div className="card-img">
                 <Link to={`/entity/${type}/${item._id}`}>
-                  <img src={baseUrl + item.images[0]} className="card-img-top img-fluid cat-img" />
+                  {item?.images?.length && <img src={baseUrl + item.images[0]} className="card-img-top img-fluid cat-img" />}
                 </Link>
               </div>
               <div className="card-img-overlays " style={{bottom: '27%'}}>

@@ -354,7 +354,7 @@ function Home() {
                         {vendors && vendors.length && vendors.filter(item => item.isFeatured).map(item => <div className="col-md-3 vendor-card">
                             <div className="card p-3 ">
                                 <div className="" >
-                                    {item.images[0] ?
+                                    {item?.images?.length && item.images[0] ?
                                         <img src={baseUrl + item.images[0]} style={{ width: '364px', height: '332px' }} className="img-fluid vendor-img" /> : ""}
                                 </div>
                                 {<div className="card-img-overlay ">
