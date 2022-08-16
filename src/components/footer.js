@@ -3,7 +3,7 @@ import './footer.css';
 
 function Footer() {
 return(
-<div className="footer-container container-mt-5 p-4 bg-dark text-white text-center">
+<div className="footer-container container-mt-5 p-4 text-center">
   <div className="row mt-3">
       <div className="col-lg-6 col-md-6 col-sm-12 px-3">
       <h3 className="text-start">Newsletter</h3>

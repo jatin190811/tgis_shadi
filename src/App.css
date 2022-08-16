@@ -28,7 +28,7 @@ h1 {
 }
 h2{
     font-family: 'Sulphur Point', sans-serif;
-    font-size: 35px;
+    font-size: 31px;
     line-height: 1.4;
      font-weight: 500;
 
@@ -54,7 +54,7 @@ p{
     background-color: #f8f8f8;
 }
 .navbar .navbar-nav .nav-link {
-    color: #000000;
+    color: #555555;
     font-size: 1.1em;
 }
 .navbar .navbar-nav .nav-link:hover{
@@ -73,9 +73,9 @@ p{
     padding-left: 1.4rem !important;
 }
 
-img.img-fluid.logocenter {
+/* img.img-fluid.logocenter {
     margin-top: -54px;
-}
+} */
 
 .d-lg-block {
    
@@ -206,11 +206,11 @@ i.fa.fa-venus-mars {
 
  
  .ctc2{
-      width:70% !important;
+      width:80% !important;
 
  }
  .d-flex.text-left.col-sm-12.ctc {
-    width: 50% !important;
+    width: 55% !important;
 }
  
 /* Mobile Meia Qeries */
@@ -411,7 +411,7 @@ body,p,h4{
   padding: 6px 10px;
 }
 
-.image-text {
+/* .image-text {
   font-family: "Poppins";
   font-style: normal;
   font-weight: 600;
@@ -421,7 +421,7 @@ body,p,h4{
   text-align: center;
 
   color: #ffffff;
-}
+} */
 
 .onboarding-12 .user-11-1 {
   height: 31px;
@@ -608,7 +608,7 @@ span.input-group-text {
   content: "\f2bd";
   color: #f180ab;
 }
-.onboardbtn {
+/* .onboardbtn {
   background-color: #f180ab;
   border: none;
   color: #fff;
@@ -616,7 +616,7 @@ span.input-group-text {
   border-radius: 10px;
   font-size: 18px;
   height: 50px;
-}
+} */
 
 a {
   color: #f180ab;
@@ -628,12 +628,12 @@ a {
   border-radius: 10px;
   margin-left: 15%;
 }
-.heropy {
+/* .heropy {
   padding-right: 3%;
   padding-left: 3%;
   padding-top: 10%;
   padding-bottom: 10%;
-}
+} */
 .mainrow {
   border: 1px solid #0000000f;
   border-radius: 10px;
@@ -671,4 +671,160 @@ a {
 
 .card-img-overlays button {
   font-size: 12px;
+}
+
+
+
+/* New CSS */
+body {
+  max-width: 100vw;
+  max-height: 100%;
+  overflow-x: hidden;
+}
+img.img-fluid.logocenter {
+  /* margin-top: -100px; */
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -35%);
+}
+.logocenter {
+  max-width: 14%;
+}
+.navbar {
+  padding-left: 2.5%;
+  padding-right: 2.5%;
+}
+.top-header {
+  padding-left: 2.5%;
+  padding-right: 2.5%;
+  border-bottom: 2px solid;
+  border-image-slice: 1;
+  border-width: 1px;
+  border-image-source: linear-gradient(to left, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1));
+}
+p {
+  font-size: 16px;
+  color: #555555;
+  /* font-weight: 300; */
+}
+span {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+}
+.headertext {
+  font-size: 12px;
+}
+.navbar .navbar-nav .nav-link {
+  font-size: 0.8em;
+}
+#myNavbarToggler7 {
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+  padding-left: 3vw;
+  padding-right: 3vw;
+}
+.heropy {
+  padding-right: 10%;
+  padding-left: 5%;
+  padding-bottom: 20px;
+  background-color: #F8F8F8;
+}
+.logo-div {
+  max-height: 300px;
+}
+.logo-img {
+  max-width: 100%;
+  object-fit: cover;
+  max-height: 300px;
+  transform: scale(1.5);
+}
+.flex-login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  border: 1px solid #E5E5E5;
+  font-size: 14px;
+  font-weight: 500;
+}
+.hr-text {
+  padding-top: 6px;
+  font-size: 12px;
+  color: #555555;
+}
+.image-text {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 50px;
+  line-height: 170%;
+
+  text-align: center;
+
+  color: #ffffff;
+}
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.onboardbtn {
+  background-color: #f180ab;
+  border: none;
+  color: #fff;
+  width: 100%;
+  border-radius: 10px;
+  margin-right: 10%;
+  font-size: 18px;
+  height: 50px;
+  margin-bottom: 1rem !important;
+}
+
+/* Onboarding */
+.bodyhero {
+  background-image: url("../src/assets/images/Rectangle.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.next-button {
+  background-color: #f180ab;
+  border: none;
+  color: #fff;
+  width: 100%;
+  border-radius: 10px;
+  margin-right: 10%;
+  font-size: 18px;
+  height: 50px;
+  margin-bottom: 1rem !important;
+}
+.prev-button {
+  background-color: #F8F8F8;
+  border: none;
+  color: #737373;
+  text-decoration: underline #737373;
+  /* width: 100%; */
+  /* border-radius: 10px; */
+  /* margin-right: 10%; */
+  font-size: 18px;
+  /* height: 50px; */
+  margin-bottom: 1rem !important;
+}
+.pad-on {
+  padding-right: 10%;
+  padding-left: 5%;
+}
+.k {
+
+}
+.pad-money {
+  padding: 1rem 1rem;
+  background-color: #F8F8F8;
+  border: 1px solid rgba(201, 197, 197, 1);
+  border-radius: 12px;
+  font-size: 0.9em;
+}
+.img-translate {
+  transform: scale(1.2);
 }
