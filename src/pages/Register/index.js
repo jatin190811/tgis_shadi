@@ -144,7 +144,7 @@ function Login() {
             />
             <div style={{ maxWidth: '100vw' }} className="container main">
                 <div className="row mainrow">
-                    <div className="col-md-6 hero">
+                    <div className="col-md-5 hero">
                         <div className="text-center text-white">
                             <p className="image-text">India’s Best<br /> Wedding Planning <br />Platform </p>
                         </div>

@@ -459,7 +459,7 @@ function Home() {
                             <Link to={"/venue/" + item._id}>
                                 <div style={{ width: '300px', height: '325px' }} className="card-img">
 
-                                    {item?.images?.length && <img src={baseUrl + item.images[0]} className="exc-img img-fluid" />}
+                                    {item?.images?.length && <img style={{ objectFit: 'cover', width: '300px', height: '325px'  }} src={baseUrl + item.images[0]} className="exc-img img-fluid" />}
                                 </div>
 
                             </Link>
@@ -470,7 +470,7 @@ function Home() {
                             <div className="like-section" >
                                 <span onClick={() => {
                                     setFav(item,index)
-                                    }}><img src={(item.liked) ? 'pic/icon/fav.png' : 'pic/icon/h.png'} alt="loccationn" className="img-fluid " width="20px" style={{ float: 'right', position: 'relative', right: '15%' }} /></span>
+                                    }}><img  src={(item.liked) ? 'pic/icon/fav.png' : 'pic/icon/h.png'} alt="loccationn" className="img-fluid " width="20px" style={{ float: 'right', position: 'relative', right: '15%' }} /></span>
                                 <h4 style={{ fontSize: '18px',paddingTop: '1rem', paddingBottom: '0.5rem' }} className="py-2">{item.name}</h4>
                                 <img src="/pic/Vector.png" alt="loccationn" srcSet="" className="img-fluid locat" width="15px" style={{ marginLeft: '5px' }} />
                                 <span className="add-text" style={{ fontSize: '14px' }} >{item.address}</span>
@@ -478,7 +478,7 @@ function Home() {
                         </div>
                     </div>)}
 
-                    <div className="col-md-4 col-sm-12 px-3">
+            {/* <div className="col-md-4 col-sm-12 px-3">
 
             <div className="card mycd">
               <a href="http://">
@@ -501,8 +501,8 @@ function Home() {
 
             <div className="card mycd">
               <a href="http://">
-                <div className="card-img">
-                  <img src="pic/c.png" className="img-fluid" />
+                <div style={{ objectFit: 'cover', width: '250px', height: '350px' }}  className="card-img">
+                  <img style={{ objectFit:'cover', width: '250px', height: '350px' }} src="pic/c.png" className="img-fluid" />
                 </div>
               </a>
               <div className="card-img-overlays ">
@@ -515,7 +515,7 @@ function Home() {
                 lineHeight: '2px'
               }}> Agra</span >
             </div >
-          </div >
+          </div > */}
                 </div >
             </div >
 

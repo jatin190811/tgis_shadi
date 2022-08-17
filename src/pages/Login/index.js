@@ -230,20 +230,16 @@ function Login() {
                 />
             <div style={{ maxWidth: '100%' }} className="main">
                 <div className="row mainrow">
-                    <div className="col-md-6 hero">
+                    <div className="col-md-5 hero">
                         <div className="text-center text-white">
                             <p className="image-text">India’s Best<br /> Wedding Planning <br />Platform </p>
                         </div>
                     </div>
-                    <div className="col-md-6  text-center heropy">
-                        <img src="/pic/logo.png" alt="" sizes="" className="img-fluid" />
-                        <h2>Welcome Back!</h2>
+                    <div className="col-md-7  text-center heropy">
+                    <div className='logo-div'>
+                            <img src="/pic/logo.png" alt="" sizes="" className="logo-img" />
+                        </div>                         <h2>Welcome Back!</h2>
                         <p>Sign In</p>
-                        <div className="image my-5 py-2 "><img src="pic/icon/google.png" width="40px" className="img-fluid mrleft" /> Continue with Google
-                        </div>
-                        <div className="image my-5  py-2"><img src="pic/icon/facebook.png" width="40px" className="img-fluid mrleft" /> Continue with Facebook
-                        </div>
-
                         <div style={{ textAlign: 'center', display: 'inline-block' }}>
                             <div className="my-4 py-2 flex-login"><img src="pic/icon/google.png" width="35px" className="img-fluid mrleft" /> Continue with Google
                             </div>
@@ -252,11 +248,11 @@ function Login() {
                         </div>
 
                         <div className="row pb-4">
-                            <div className="col-md-4">
+                            <div className="col-md-3">
                                 <hr />
                             </div>
-                            <div className="col-md-4"><p className="hr-text">or sign in with Email/Mobile</p></div>
-                            <div className="col-md-4">
+                            <div className="col-md-6"><p className="hr-text">or sign in with Email/Mobile</p></div>
+                            <div className="col-md-3">
                                 <hr />
                             </div>
                         </div>
@@ -273,12 +269,15 @@ function Login() {
                             <div className="col-md-12 py-2"><p className="float-end" >Forget Password?</p>
                             </div>
                         </>}
-                        {state.currentStep == 'step1' && <button className="onboardbtn mt-5" onClick={checkEmail} >Next</button> }
-                        {state.currentStep == 'step2' && <button className="onboardbtn mt-5" onClick={checkPassword} >Login</button> }
-                        <p className="mt-3">Dont't have account? <Link to="/register"> Sign Up</Link></p>
+                        {state.currentStep == 'step1' && <button className="onboardbtn mt-3" onClick={checkEmail} >Next</button> }
+                        {state.currentStep == 'step2' && <button className="onboardbtn mt-3" onClick={checkPassword} >Login</button> }
+                        <p style={{ fontWeight: '500', fontSize: '14px' }} className="mt-3">Dont't have account? <Link to="/register"> Sign Up</Link></p>
                         
                         <div style={{}} className="row mt-4 pt-5 flex">
-                            <div className="col-md-4 py-2"><p  style={{ fontSize: '14px', color: 'black' }} >Are you a vendor?</p></div>
+                            <div className="col-md-5 py-2">
+                                {/* <p  style={{ fontSize: '14px', color: 'black' }} >Are you a vendor?</p> */}
+                                <Link to="/"  >< button  style={{ fontSize: '14px', backgroundColor: 'transparent', color: 'black' }} className="onboardbtn">Are you a vendor?</button></Link>
+                                </div>
                             <div className="col-md-4">
                                 <Link to="/quote"  >< button  style={{ fontSize: '14px' }} className="onboardbtn">Register Now</button></Link>
                             </div>

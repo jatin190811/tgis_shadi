@@ -1,4 +1,4 @@
-/* @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
 
 @import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600|Sulphur+Point:400,700|Montserrat:600");
 
@@ -64,9 +64,9 @@ p{
     padding: .5em 1em !important;
 }
 
-/* .navbar-expand-lg .navbar-nav {
+.navbar-expand-lg .navbar-nav {
     margin-left: 30px !important;
-} */
+}
 
 .navbar-expand-lg .navbar-nav .nav-link {
     padding-right: 1.4rem !important;
@@ -693,10 +693,10 @@ img.img-fluid.logocenter {
 .logocenter {
   max-width: 14%;
 }
-.navbar {
+/* .navbar {
   padding-left: 2.5%;
   padding-right: 2.5%;
-}
+} */
 .top-header {
   padding-left: 2.5%;
   padding-right: 2.5%;
