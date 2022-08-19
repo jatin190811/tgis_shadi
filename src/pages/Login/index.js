@@ -279,7 +279,7 @@ function Login() {
                                 <Link to="/"  >< button  style={{ fontSize: '14px', backgroundColor: 'transparent', color: 'black' }} className="onboardbtn">Are you a vendor?</button></Link>
                                 </div>
                             <div className="col-md-4">
-                                <Link to="/quote"  >< button  style={{ fontSize: '14px' }} className="onboardbtn">Register Now</button></Link>
+                                <Link to="/vendor"  >< button  style={{ fontSize: '14px' }} className="onboardbtn">Register Now</button></Link>
                             </div>
                         </div>
                     </div>
