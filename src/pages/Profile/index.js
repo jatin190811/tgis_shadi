@@ -6,12 +6,21 @@ import { ToastContainer, toast } from 'react-toastify';
 
 
 function Profile() {
+  const [selectedFile, setSelectedFile] = useState();
+  const [isFilePicked, setIsFilePicked] = useState(false);
   const uploadedImage = React.useRef(null);
   const imageUploader = React.useRef(null);
+  const [state, setState] = useState({});
+  const [imageUploaded, setImageUploaded] = useState(false);
+  const [nameState, setNameState] = useState({});
+  const [userProfile, setUserProfile] = useState({});
+  const [profilePic, setProfilePic] = useState({});
 
   const handleImageUpload = e => {
-    const [file] = e.target.files;
+    const file = e.target.files[0];
     if (file) {
+      setSelectedFile(file);
+      setIsFilePicked(true);
       const reader = new FileReader();
       const { current } = uploadedImage;
       current.file = file;
@@ -19,14 +28,39 @@ function Profile() {
         current.src = e.target.result;
       };
       reader.readAsDataURL(file);
+      setImageUploaded(true)
+    //handleSubmission()
     }
-    setImageUploaded(true)
+    
   };
-  const [state, setState] = useState({});
-  const [imageUploaded, setImageUploaded] = useState(false);
-  const [nameState, setNameState] = useState({});
-  const [userProfile, setUserProfile] = useState({});
-  const [profilePic, setProfilePic] = useState({});
+  const handleSubmission = () => {
+    // HANDLING FILE AS SENDING FILE INTO BACKEND
+    const formData = new FormData();
+    formData.append("userPic", selectedFile);
+     // ALSO ADD RANDOM VALUE IF YOU WANT LIKE STRING , OBJECT OR      ARRAY
+  // API CALL
+  let url = 'http://146.190.30.14:8090/api/v1/user/pic';
+    axios({
+      method: 'POST',
+      url,
+      headers: {
+        'content-type': 'application/json',
+        'x-access-token': localStorage.getItem('token')
+      },
+      data: formData
+    }).then((resp) => {
+      if (resp.statusText == "OK") {
+        if (resp.data.status == 'error') toast.error(resp.data.message, {});
+       
+      } else {
+
+      }
+    })
+  
+   };
+  
+  
+  
   const ref1 = useRef(null)
   const ref2 = useRef(null)
   const ref3 = useRef(null)
@@ -48,6 +82,7 @@ function Profile() {
       if (resp.statusText == "OK") {
         if (resp.data.status == 'error') toast.error(resp.data.message, {});
         else if (resp.status = 'success') {
+          console.log(resp.data.data)
           setUserProfile(resp.data.data)
         }
       } else {
@@ -69,27 +104,6 @@ function Profile() {
         if (resp.data.status == 'error') toast.error(resp.data.message, {});
         else if (resp.status = 'success') {
           setUserProfile(resp.data.data)
-        }
-      } else {
-
-      }
-    })
-  }, [])
-
-  useEffect(() => {
-    let url = 'http://146.190.30.14:8090/api/v1/pic';
-    axios({
-      method: 'POST',
-      url,
-      headers: {
-        'content-type': 'application/json',
-        'x-access-token': localStorage.getItem('token')
-      }
-    }).then((resp) => {
-      if (resp.statusText == "OK") {
-        if (resp.data.status == 'error') toast.error(resp.data.message, {});
-        else if (resp.status = 'success') {
-          setProfilePic(resp.data.data)
         }
       } else {
 
@@ -156,6 +170,7 @@ function Profile() {
     return true
   }
   console.log(state)
+  
   return (
     <>
       <ToastContainer
@@ -202,7 +217,7 @@ function Profile() {
           </div>
           <div className="col-md-1 " ></div>
           <div className="col-md-4 " style={{paddingLeft: '8%', paddingTop: '5%', position:'relative'}}>
-          {!userProfile.profilePic && !imageUploaded && <div> <img src="pic/ct/default-image.jpeg" alt="logo" width="300" height="300" style={{borderRadius: '50%'}} /> </div>}
+          {!imageUploaded && <div> <img src={userProfile.profilePic ? `http://146.190.30.14:8090/${userProfile.profilePic}` : 'pic/ct/default-image.jpeg'} alt="profile pic" width="300" height="300" style={{borderRadius: '50%'}} /> </div>}
           {<div><img ref={uploadedImage} alt="logo" width="300" height="300" style={{display: !imageUploaded ? 'none' : '', borderRadius: '50%'}}/></div>}
           <div
       style={{
@@ -227,6 +242,11 @@ function Profile() {
       >
         <img src="upload.png"/>
     </div>
+    {selectedFile && <button className="btn btn-primary btsk " style={{marginLeft:'15%', marginTop: '16%'}}
+        onClick={handleSubmission}
+      >
+       Update Pic
+    </button>}
         {/* <img
           
           style={{
