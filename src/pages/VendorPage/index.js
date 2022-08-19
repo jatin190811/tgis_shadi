@@ -104,7 +104,7 @@ function VendorPage() {
                     <img src="pic/vendor-banner.png" alt="" sizes="" className="img-fluid" />
                     </div>
                     <div className="col-md-6  text-center heropy">
-                        <img src="/pic/logo.png" alt="" sizes="" className="img-fluid" />
+                        <img src="/pic/logo.png" alt="" width="212" sizes="" className="img-fluid" />
                         <h2 className='vendor-heading'>Grow your Business</h2>
                         <form className="py-3" onSubmit={(event) => event.preventDefault()}>
                             <div className="row">
