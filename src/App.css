@@ -73,10 +73,6 @@ p{
     padding-left: 1.4rem !important;
 }
 
-/* img.img-fluid.logocenter {
-    margin-top: -54px;
-} */
-
 .d-lg-block {
    
     margin-left: 203px;
@@ -233,7 +229,6 @@ i.fa.fa-venus-mars {
 
 body,p,h4{
     
-     /*overflow: hidden !important;*/
          text-align: left !important;
 
 
@@ -269,7 +264,7 @@ body,p,h4{
     padding:5vh !important;
 }
 
-  } */
+  } 
 
   .dot {
     height: 16px;
@@ -411,17 +406,6 @@ body,p,h4{
   padding: 6px 10px;
 }
 
-/* .image-text {
-  font-family: "Poppins";
-  font-style: normal;
-  font-weight: 600;
-  font-size: 55px;
-  line-height: 170%;
-
-  text-align: center;
-
-  color: #ffffff;
-} */
 
 .onboarding-12 .user-11-1 {
   height: 31px;
@@ -608,15 +592,7 @@ span.input-group-text {
   content: "\f2bd";
   color: #f180ab;
 }
-/* .onboardbtn {
-  background-color: #f180ab;
-  border: none;
-  color: #fff;
-  width: 100%;
-  border-radius: 10px;
-  font-size: 18px;
-  height: 50px;
-} */
+
 
 a {
   color: #f180ab;
@@ -628,12 +604,6 @@ a {
   border-radius: 10px;
   margin-left: 15%;
 }
-/* .heropy {
-  padding-right: 3%;
-  padding-left: 3%;
-  padding-top: 10%;
-  padding-bottom: 10%;
-} */
 .mainrow {
   border: 1px solid #0000000f;
   border-radius: 10px;
@@ -693,10 +663,7 @@ img.img-fluid.logocenter {
 .logocenter {
   max-width: 14%;
 }
-/* .navbar {
-  padding-left: 2.5%;
-  padding-right: 2.5%;
-} */
+
 .top-header {
   padding-left: 2.5%;
   padding-right: 2.5%;
@@ -807,11 +774,7 @@ span {
   border: none;
   color: #737373;
   text-decoration: underline #737373;
-  /* width: 100%; */
-  /* border-radius: 10px; */
-  /* margin-right: 10%; */
   font-size: 18px;
-  /* height: 50px; */
   margin-bottom: 1rem !important;
 }
 .pad-on {
