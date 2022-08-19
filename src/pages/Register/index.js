@@ -142,16 +142,17 @@ function Login() {
                 position="top-right"
                 autoClose={5000}
             />
-            <div className="container main ">
+            <div style={{ maxWidth: '100vw' }} className="container main">
                 <div className="row mainrow">
-                    <div className="col-md-6 hero">
+                    <div className="col-md-5 hero">
                         <div className="text-center text-white">
                             <p className="image-text">India’s Best<br /> Wedding Planning <br />Platform </p>
                         </div>
                     </div>
-                    <div className="col-md-6  text-center heropy">
-                        <img src="/pic/logo.png" alt="" sizes="" className="img-fluid" />
-                        <h2>Forget Password?</h2>
+                    <div className="col-md-7  text-center heropy">
+                        <div className='logo-div'>
+                            <img src="/pic/logo.png" alt="" sizes="" className="logo-img" />
+                        </div>                        <h2>Forget Password?</h2>
                         {state.currentStep == 'step1' && <>
                             <label className="float-start pt-5">Full Name</label>
                             <div className="input-group pt-1">

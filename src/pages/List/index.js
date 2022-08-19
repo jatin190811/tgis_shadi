@@ -105,7 +105,7 @@ function List() {
       if(resp.data && resp.data.filters && resp.data.filters.filters) {
         console.log("resp.data.filters.filters",resp.data.filters.filters)
         let finalObj = structuredClone(resp.data.filters.filters);
-        finalObj["areas"] = areas;
+        finalObj["area"] = areas;
         console.log("resp.data.filters.filters", finalObj)
         setFilter(finalObj);
         setSubCatList(resp?.data?.filters?.sub_cat)
@@ -135,7 +135,7 @@ function List() {
       if (resp.data.status == 'error') toast.error(resp.data.message, {});
       let finalObj = structuredClone(filter);
       setAreas(resp.data.data)
-      finalObj["areas"] = resp.data.data;
+      finalObj["area"] = resp.data.data;
       setFilter(finalObj)
     } else {
 
@@ -274,7 +274,7 @@ function List() {
         <hr style={{ color: '#f180ab', border: '1px solid' }} className="mx-5 g-0" />
 
         <div className="row justify-content-center mylove g-0 p-5">
-          {subCatList && subCatList.map(item => <div className="col-2 float-end "><span className={subCat == item ? 'borderme' : 'nonborderme'} onClick={() => setSubCat(item)}>{item}</span></div>)}
+          {subCatList && subCatList.map(item => <div className="col-1 float-end "><span className={subCat == item ? 'borderme' : 'nonborderme'} onClick={() => setSubCat(item)}>{item}</span></div>)}
         </div>
         {list.length ? <div className="row justify-content-center g-4 p-5">
 

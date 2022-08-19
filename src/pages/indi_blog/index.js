@@ -41,14 +41,14 @@ function IndiBlog() {
     return (
         <div className="container py-5">
             <div className="row">
-                <div className="col-md-9">
+                <div className="col-md-9 p-5">
                     <img src={baseUrl+blog.thumbnailUrl} alt="banner" className="img-fluid" width="100%" />
-                    <div className="d-flex py-2">
+                    <div className="d-flex py-3">
                         <div className="col-md-6"><i className="fa fa-user-circle" aria-hidden="true">
-                            <span style={{lineHeight: '2px'}}>{blog.author ? blog.author : 'Admin'} - <span style={{color:'#7a7c7e'}}>{getDate(blog.createTime)}</span></span>
+                            <span style={{lineHeight: '2px', paddingLeft: '10px', fontSize: '12px' }}>{blog.author ? blog.author : 'Admin'} - <span style={{color:'#7a7c7e'}}>{getDate(blog.createTime)}</span></span>
                         </i></div>
                         <div className="col-md-6 text-end"><span style={{color:'#7a7c7e'}}></span>
-                            <img src="/pic/share.png" alt="loccationn" style={{cursor:'pointer'}} className="img-fluid " width="20px" onClick={() => setShowShare(!showShare)}/>
+                            <img src="/pic/share.png" alt="loccationn" style={{cursor:'pointer'}} className="img-fluid " width="15px" onClick={() => setShowShare(!showShare)}/>
                             {showShare  && <div class="share-container">
                   <FacebookShareButton url={`http://146.190.30.14:8090/blog/${blog._id}`}><FacebookIcon>Facebook</FacebookIcon></FacebookShareButton>
                   <WhatsappShareButton>
@@ -57,18 +57,18 @@ function IndiBlog() {
                   </div>}
                         </div>
                     </div>
-                    <hr width="100%" />
-                    <h1>{blog.title}</h1>
-                    <p>{blog.short}</p>
+                    <hr style={{ margin: '0 0'}} width="100%" />
+                    <h1 class="pt-5 pb-3">{blog.title}</h1>
+                    <p style={{ lineHeight: '1.75', fontWeight: '500', color: '#555555' }}>{blog.short}</p>
 
                     <div className="imtext ps-5 py-5">
                         <img src="/images/individual-blog/vector.png" alt="loccationn" className="img-fluid " />
                         <p className="py-4" style={{fontSize:'18px'}} >“{blog.quote}”</p>
-                        <h5><strong>{blog.author}</strong> </h5>
+                        <h5 style={{ fontWeight: '500' }}><strong>{blog.author}</strong> </h5>
                     </div>
 
                     <img src={baseUrl+blog.subImg}  alt="banner" className="img-fluid py-5" width="100%" />
-                    {blog.description}
+                    <p style={{ lineHeight: '1.75', fontWeight: '500', color: '#555555' }}>{blog.description}</p>
 
                         {/* <div className="d-flex bg-light py-5 my-5">
                             <div className="col-md-3">
@@ -175,13 +175,13 @@ function IndiBlog() {
 
                                     <h2 className="pt-4">Categories</h2>
                                     <div className="dashed">
-                                        <Link to="/blogs" style={{cursor: 'pointer', display: 'block', color:'#000', marginBottom: '5px'}}>-Storie</Link>
-                                        <Link to="/blogs" style={{cursor: 'pointer',display: 'block', color:'#000', marginBottom: '5px'}}>-Wedding Ceremony</Link>
-                                        <Link to="/blogs" style={{cursor: 'pointer',display: 'block', color:'#000', marginBottom: '5px'}}>-Bride and Groom</Link>
-                                        <Link to="/blogs" style={{cursor: 'pointer',display: 'block', color:'#000', marginBottom: '5px'}}>-Sale & Gifts</Link>
-                                        <Link to="/blogs" style={{cursor: 'pointer',display: 'block', color:'#000', marginBottom: '5px'}}>-Accessories</Link>
-                                        <Link to="/blogs" style={{cursor: 'pointer',display: 'block', color:'#000', marginBottom: '5px'}}>-Decorations</Link>
-                                        <Link to="/blogs" style={{cursor: 'pointer',display: 'block', color:'#000', marginBottom: '5px'}}>-Jewellery</Link>
+                                        <Link to="/blogs" style={{ fontSize: '12px', fontWeight: '500', cursor: 'pointer',display: 'block', color:'#888888', marginBottom: '5px'}}>-  Stories</Link>
+                                        <Link to="/blogs" style={{ fontSize: '12px', fontWeight: '500', cursor: 'pointer',display: 'block', color:'#888888', marginBottom: '5px'}}>-  Wedding Ceremony</Link>
+                                        <Link to="/blogs" style={{ fontSize: '12px', fontWeight: '500', cursor: 'pointer',display: 'block', color:'#888888', marginBottom: '5px'}}>-  Bride and Groom</Link>
+                                        <Link to="/blogs" style={{ fontSize: '12px', fontWeight: '500', cursor: 'pointer',display: 'block', color:'#888888', marginBottom: '5px'}}>-  Sale & Gifts</Link>
+                                        <Link to="/blogs" style={{ fontSize: '12px', fontWeight: '500', cursor: 'pointer',display: 'block', color:'#888888', marginBottom: '5px'}}>-  Accessories</Link>
+                                        <Link to="/blogs" style={{ fontSize: '12px', fontWeight: '500', cursor: 'pointer',display: 'block', color:'#888888', marginBottom: '5px'}}>-  Decorations</Link>
+                                        <Link to="/blogs" style={{ fontSize: '12px', fontWeight: '500', cursor: 'pointer',display: 'block', color:'#888888', marginBottom: '5px'}}>-  Jewellery</Link>
 
 
                                     </div>
@@ -201,10 +201,10 @@ function IndiBlog() {
                                         <p className="pb-2">The most important things when you choose the flowers</p>
                                     </div> */}
 
-                                    <h2 className="pt-4">Tags</h2>
+                                    <h2 style={{ fontSize: '25px' }} className="pt-4 pb-2">Tags</h2>
                                     <div className="row">
                                     {blog.tags && blog.tags.map(item => <div className="col-md-4">
-                                            <p>#{item}</p>
+                                            <p style={{ color: '#888888', fontSize: '12px', fontWeight: '500' }}>#{item}</p>
                                         </div>
                                     )}
                                     </div>

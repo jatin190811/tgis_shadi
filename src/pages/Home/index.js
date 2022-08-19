@@ -7,6 +7,9 @@ import Carousel from 'carousel-react-rcdev';
 import {FacebookShareButton, FacebookIcon, WhatsappIcon, WhatsappShareButton} from 'react-share';
 
 
+import bell from '../../assets/bell.svg';
+import checklist from '../../assets/checklist.svg';
+import bride from "../../assets/images/bride.png";
 
 function Home() {
     const [categories, setCatgories] = useState([]);
@@ -205,9 +208,9 @@ function Home() {
                 position="top-right"
                 autoClose={5000}
             />
-            <div className="container-fluid box-imgages1 pt-5 mb-5" style={{
-                backgroundImage: `url(${image})`, width: '1440px',
-                height: '818px'
+            <div className="container-fluid box-imgages1 pt-5" style={{
+                backgroundImage: `url(${image})`, width: '100%',
+                height: '90%', overflow: 'hidden'
             }} >
                 <div className="row py-5 mx-5 " style={{ marginTop: '10rem', marginBottom: '15rem' }}>
 
@@ -236,10 +239,10 @@ function Home() {
                 </div>
             </div>
 
-            <div className="container-fluid py-5"  >
+            <div className="container-fluid py-5">
                 <div className="row">
-                    <div className="col 12 text-center">
-                        <h2>Wedding Safety</h2>
+                    <div style={{ paddingBottom: '1rem' }} className="col 12 text-center">
+                        <h2 style={{ paddingBottom: '10px', fontWeight: '700'}}>Wedding Safety</h2>
                         <p>Cupidatat ad in qui est aliqua consectetur incididunt irure. <br />
                             Nostrud magna anim officia ad labore.</p>
                     </div>
@@ -262,8 +265,8 @@ function Home() {
                         <div className="card  text-dark">
                             <div className="card-body blur">
                                 <img src="pic/icon/3.png" alt="logo" className="blurimg" />
-                                <span className="blurtext"><h4>Protective Gears</h4>
-                                    <p>Routine use of masks, gloves and sanitizers.</p>
+                                <span className="blurtext"><h4>Staff Screening</h4>
+                                    <p>Regular temperature checks of the team.</p>
                                 </span>
 
 
@@ -275,8 +278,8 @@ function Home() {
                         <div className="card  text-dark">
                             <div className="card-body blur">
                                 <img src="pic/icon/2.png" alt="logo" className="blurimg" />
-                                <span className="blurtext"><h4>Protective Gears</h4>
-                                    <p>Routine use of masks, gloves and sanitizers.</p>
+                                <span className="blurtext"><h4>Sanitization Services</h4>
+                                    <p>Initiatives to disinfect the workspace frequently.</p>
                                 </span>
 
 
@@ -288,8 +291,8 @@ function Home() {
                         <div className="card  text-dark">
                             <div className="card-body blur">
                                 <img src="pic/icon/1.png" alt="logo" className="blurimg" />
-                                <span className="blurtext"><h4>Protective Gears</h4>
-                                    <p>Routine use of masks, gloves and sanitizers.</p>
+                                <span className="blurtext"><h4>Social Distancng</h4>
+                                    <p>Maintain 4 feet distance & limit working staff.</p>
                                 </span>
 
 
@@ -301,11 +304,13 @@ function Home() {
 
             </div>
 
-            <div className="container-fluid py-5" >
+            <div className="container-fluid pb-5" >
                 <div className="row">
                     <div className="col 12 text-center">
-                        <p style={{ color: '#ffabc4' }}>GET YOUR <img src="pic/icon/icon.png" alt="logo" />CHANCE</p>
-                        <h2>Popular Categories to Choose From</h2>
+                        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', color: '#ffabc4' }}>
+                        <p style={{ color: '#ffabc4' }}>GET YOUR</p><img style={{ paddingRight: '5px', paddingLeft: '5px' }} src="pic/icon/icon.png" height='16px' alt="logo" /><p style={{ color: '#ffabc4' }}>CHANCE</p>
+                        </div>
+                        <h2 style={{ fontWeight: '700', paddingBottom: '1rem' }}>Popular Categories to Choose From</h2>
                         <p>Cupidatat ad in qui est aliqua consectetur incididunt irure. <br />
                             Nostrud magna anim officia ad labore.</p>
                     </div>
@@ -314,19 +319,20 @@ function Home() {
                 <div className="row justify-content-center g-4 p-5">
                     {categories && categories.length && <Carousel>
                         {categories && categories.length && categories.map(item => (<div className="col-md-3 p-3">
-                            <div className="card justify-items-center ">
-                                <div className="cat-img">
+                            <div style={{ position: 'relative' }} className="card justify-items-center ">
+                                <div className="">
 
                                     <Link to={`list${item.url}`}>
-                                        <img src={baseUrl + item.image} width="270" height="350" className="card-img-top img-fluid category-img" /></Link>
+                                        {/* baseUrl + item.image */}
+                                        <img src={ bride } width="270" height="350" style={{ objectFit: 'cover' }} className="card-img-top img-fluid category-img" /></Link>
 
                                 </div>
-                                <div className="card-img-overlays ">
+                                <div style={{ position: 'absolute', bottom: '20%', left: '10px' }} className="">
                                     {item && item.tag?.length && <button type="button" className="btn btn-primary round">{item.tag[0]}</button>}
                                 </div>
-                                <h4 className="" style={{ paddingTop: '1rem', textTransform: 'capitalize' }}>{item.name}</h4>
-                                <img src="/pic/Vector.png" alt="loccationn" srcSet="" className="img-fluid locat" width="15px" />
-                                <span className="add-pop">{item.address}</span>
+                                <h4 className="" style={{ fontSize: '18px',paddingTop: '1rem', textTransform: 'capitalize', paddingBottom: '0.5rem' }}>{item.name}</h4>
+                                <img src="/pic/Vector.png" alt="loccationn" srcSet="" className="img-fluid locat" width="15px" style={{ marginLeft: '5px' }} />
+                                <span style={{ fontSize: '14px' }} className="add-pop">{item.address}</span>
                             </div>
                         </div>))}
                     </Carousel>}
@@ -344,7 +350,7 @@ function Home() {
             <div className="container-fluid py-5">
                 <div className="row">
                     <div className="col 12 text-center">
-                        <h2>Featured Vendor</h2>
+                        <h2  style={{ fontWeight: '700'}}>Featured Vendor</h2>
                         <p>Cupidatat ad in qui est aliqua consectetur incididunt irure. <br />
                             Nostrud magna anim officia ad labore.</p>
                     </div>
@@ -365,10 +371,10 @@ function Home() {
                                 position: 'relative',
                                 left: '20px'
                             }}>
-                                {item.name ? <h4 className="pt-3"><b>{item.name}</b></h4> : ''}
-                                <img src="/pic/Vector.png" alt="loccationn" srcSet="" className="img-fluid locat" width="15px" />
-                                <span className="add-text">{item.address}</span>
-                                {item.price ? <p className=" pt-0" style={{ marginTop: '20px', color: 'rgb(241, 128, 171)' }}>{item.price}</p> : ''}
+                                {item.name ? <h4 style={{ fontSize: '18px',paddingTop: '1rem', paddingBottom: '0.5rem' }} className="pt-3"><b>{item.name}</b></h4> : ''}
+                                <img src="/pic/Vector.png" alt="loccationn" srcSet="" className="img-fluid locat" width="15px" style={{ marginLeft: '5px' }} />
+                                <span style={{ fontSize: '14px' }} className="add-text">{item.address}</span>
+                                {item.price ? <p className=" pt-0" style={{ color: 'rgb(241, 128, 171)' }}>{item.price}</p> : ''}
                             </div>
                         </div>)}
                     </Carousel>}
@@ -379,10 +385,13 @@ function Home() {
                 <div className="row   ">
                     <div className="col-lg-6 col-md-6 col-sm-12  gx-lg-5 p-lg-5 ">
                         <div className="align-items-center justify-content-center ">
-                            <p style={{ color: '#ffabc4' }}><img src="pic/icon/icon.png" alt="logo" />
-                                FIND YOUR BEAUTY</p>
-                            <h2>We Work Hard for<br /> Your Happy Moment</h2>
-                            <h3 className="py-3">WE know that a reader will be distracted by
+                            {/* <p style={{ color: '#ffabc4' }}><img src="pic/icon/icon.png" alt="logo" />
+                                FIND YOUR BEAUTY</p> */}
+                        <div style={{ display: 'flex', alignItems: 'center', color: '#ffabc4' }}>
+                        <img style={{ paddingRight: '5px', paddingLeft: '5px' }} src="pic/icon/icon.png" height='16px' alt="logo" /><p style={{ color: '#ffabc4' }}>FIND YOUR BEAUTY</p>
+                        </div>
+                            <h2 style={{ fontWeight: '700'}}>We Work Hard for<br /> Your Happy Moment</h2>
+                            <h3 style={{ fontWeight: '500' }} className="py-3">WE know that a reader will be distracted by
                                 the readable content of a page when looking at its layout</h3>
                             <p>It is a long established fact that a reader will be distracted by
                                 the readable content of a page when looking at its layout.
@@ -411,9 +420,12 @@ function Home() {
             <div className="container py-5 mx-auto" >
                 <div className="row">
                     <div className="col-md-12 text-center">
-                        <p style={{ color: '#ffabc4' }}>INHOUSE <img src="pic/icon/icon.png" alt="logo" />
-                            SERVICES</p>
-                        <h2>TGIS In House Services</h2>
+                        {/* <p style={{ color: '#ffabc4' }}>INHOUSE <img src="pic/icon/icon.png" alt="logo" />
+                            SERVICES</p> */}
+                        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', color: '#ffabc4' }}>
+                            <p style={{ color: '#ffabc4' }}>INHOUSE</p><img style={{ paddingRight: '5px', paddingLeft: '5px' }} src="pic/icon/icon.png" height='16px' alt="logo" /><p style={{ color: '#ffabc4' }}>SERVICES</p>
+                        </div>
+                        <h2 style={{ fontWeight: '700'}}>TGIS In House Services</h2>
                     </div>
 
                     {inHouse && inHouse.length && inHouse.map(item => <div className="col-md-6 col-sm-12 pt-5">
@@ -421,7 +433,7 @@ function Home() {
                         <Link to={`${item.url}/inhouse`} params={{ inhouse: 'true' }}>
                             <img src={baseUrl + item.image} alt="venue" className="img-fluid px-3 inhouse-img" />
                         </Link>
-                        <h4 className="text-center py-3 " style={{ fontSize: '26px', fontWeight: '400' }}>{item.name}</h4>
+                        <h4 className="text-center py-3 " style={{ fontSize: '26px', fontWeight: '500' }}>{item.name}</h4>
                         {/* <img src="/pic/Vector.png" alt="loccationn" srcSet="" className="img-fluid locat" width="15px" />
               <span className="add-text">{item.address}</span> */}
                     </div>)}
@@ -432,19 +444,22 @@ function Home() {
             <div className="container mt-5">
                 <div className="row">
 
-                    <div className="col-md-12 text-center pt-5 pb-4">
-                        <p style={{ color: '#ffabc4' }}>GET YOUR <img src="pic/icon/icon.png" alt="logo" />
-                            CHANCE</p>
-                        <h2>Expore Excuisite Venues</h2>
-                        <p>It is a long established fact that a reader will be distracted<br /> by the readable content of a page </p>
+                    <div className="col-md-12 text-center pb-4">
+                        {/* <p style={{ color: '#ffabc4' }}>GET YOUR <img src="pic/icon/icon.png" alt="logo" />
+                            CHANCE</p> */}
+                        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', color: '#ffabc4' }}>
+                            <p style={{ color: '#ffabc4' }}>GET YOUR</p><img style={{ paddingRight: '5px', paddingLeft: '5px' }} src="pic/icon/icon.png" height='16px' alt="logo" /><p style={{ color: '#ffabc4' }}>CHANCE</p>
+                        </div>
+                        <h2 style={{ fontWeight: '600', fontSize: '40px' }}>Explore Excuisite Venues</h2>
+                        <p style={{ paddingTop: '1rem', paddingBottom: '5vh' }}>It is a long established fact that a reader will be distracted<br /> by the readable content of a page </p>
                     </div>
                     {venues && venues.filter(item => item.execuisite).map((item,index) => <div className="col-md-4 col-sm-12 px-3">
                         <div className="card mycd">
 
-                            <Link to={"/venue/" + item._id}>
-                                <div className="card-img">
+                            <Link to={"/entity/venue/" + item._id}>
+                                <div style={{ width: '300px', height: '325px' }} className="card-img">
 
-                                    {item?.images?.length && <img src={baseUrl + item.images[0]} className="exc-img img-fluid" />}
+                                    {item?.images?.length && <img style={{ objectFit: 'cover', width: '300px', height: '325px'  }} src={baseUrl + item.images[0]} className="exc-img img-fluid" />}
                                 </div>
 
                             </Link>
@@ -455,15 +470,15 @@ function Home() {
                             <div className="like-section" >
                                 <span onClick={() => {
                                     setFav(item,index)
-                                    }}><img src={(item.liked) ? 'pic/icon/fav.png' : 'pic/icon/h.png'} alt="loccationn" className="img-fluid " width="20px" style={{ float: 'right', position: 'relative', right: '29%' }} /></span>
-                                <h4 className="py-2">{item.name}</h4>
-                                <img src="/pic/Vector.png" alt="loccationn" srcSet="" className="img-fluid locat" width="15px" />
-                                <span className="add-text">{item.address}</span>
+                                    }}><img  src={(item.liked) ? 'pic/icon/fav.png' : 'pic/icon/h.png'} alt="loccationn" className="img-fluid " width="20px" style={{ float: 'right', position: 'relative', right: '15%' }} /></span>
+                                <h4 style={{ fontSize: '18px',paddingTop: '1rem', paddingBottom: '0.5rem' }} className="py-2">{item.name}</h4>
+                                <img src="/pic/Vector.png" alt="loccationn" srcSet="" className="img-fluid locat" width="15px" style={{ marginLeft: '5px' }} />
+                                <span className="add-text" style={{ fontSize: '14px' }} >{item.address}</span>
                             </div>
                         </div>
                     </div>)}
 
-                    {/* <div className="col-md-4 col-sm-12 px-3">
+            {/* <div className="col-md-4 col-sm-12 px-3">
 
             <div className="card mycd">
               <a href="http://">
@@ -486,8 +501,8 @@ function Home() {
 
             <div className="card mycd">
               <a href="http://">
-                <div className="card-img">
-                  <img src="pic/c.png" className="img-fluid" />
+                <div style={{ objectFit: 'cover', width: '250px', height: '350px' }}  className="card-img">
+                  <img style={{ objectFit:'cover', width: '250px', height: '350px' }} src="pic/c.png" className="img-fluid" />
                 </div>
               </a>
               <div className="card-img-overlays ">
@@ -505,13 +520,16 @@ function Home() {
             </div >
 
 
-            <div className="container-fluid my-5 imgbog" style={{ backgroundImage: 'url("pic/banner.png")' }}>
+            <div className="container-fluid my-5 imgbog" style={{ paddingTop: '0', backgroundImage: 'url("pic/banner.png")' }}>
                 <div className="row">
 
                     <div className="col-md-12 text-center py-5">
-                        <p style={{ color: '#ffabc4' }}>OUR  <img src="pic/icon/icon.png" alt="logo" />
-                            BLOG</p>
-                        <h2>The Latest In TGIS</h2>
+                        {/* <p style={{ color: '#ffabc4' }}>OUR  <img src="pic/icon/icon.png" alt="logo" />
+                            BLOG</p> */}
+                        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', color: '#ffabc4' }}>
+                            <p style={{ color: '#ffabc4' }}>OUR</p><img style={{ paddingRight: '5px', paddingLeft: '5px' }} src="pic/icon/icon.png" height='16px' alt="logo" /><p style={{ color: '#ffabc4' }}>BLOG</p>
+                        </div>
+                        <h2 style={{ fontWeight: '700'}}>The Latest In TGIS</h2>
                     </div>
                     {blogs && blogs.slice(3, blogs.length).map((item,index) => <div className="col-md-4 col-sm-12 px-3">
                         <div className="card" style={{ paddingRight: '15px' }}>
@@ -614,20 +632,23 @@ function Home() {
                 <div className="row">
 
                     <div className="col-md-12 text-center  pb-4">
-                        <p style={{ color: '#ffabc4' }}>CLIENT <img src="pic/icon/icon.png" alt="logo" />
-                            SPEAK</p>
-                        <h2>Testimonials</h2>
-                        <p>It is a long established fact that a reader will be distracted<br /> by the readable content of a page </p>
+                        {/* <p style={{ color: '#ffabc4' }}>CLIENT <img src="pic/icon/icon.png" alt="logo" />
+                            SPEAK</p> */}
+                        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', color: '#ffabc4' }}>
+                            <p style={{ color: '#ffabc4' }}>CLIENT</p><img style={{ paddingRight: '5px', paddingLeft: '5px' }} src="pic/icon/icon.png" height='16px' alt="logo" /><p style={{ color: '#ffabc4' }}>SPEAK</p>
+                        </div>
+                        <h2 style={{ fontWeight: '700'}}>Testimonials</h2>
+                        <p style={{ paddingTop: '1rem', paddingBottom: '1rem' }} >It is a long established fact that a reader will be distracted<br /> by the readable content of a page </p>
                     </div>
 
                     <div className="col-md-6">
                         <img src={baseUrl + test.image} className="img-fluid" style={{ minWidth: '546px', minHeight: '645px' }} alt="..." />
                     </div>
-                    <div className="col-md-6 testt  p-5">
+                    <div style={{ fontWeight: '500' }} className="col-md-6 testt  p-5">
 
-                        <h3 className="text-center">{test.name}</h3>
+                        <h3 style={{ fontSize: '1.5em' }} className="text-center">{test.name}</h3>
                         <div className="align-items-center justify-content-center pt-3">
-                            <p className="text-center">
+                            <p style={{ fontSize: '1.25em' }} className="text-center">
                                 {test.testimonials}
                             </p>
                         </div>
@@ -643,26 +664,33 @@ function Home() {
 
             <div className="container-fluid my-5  mb-5 " style={{
                 backgroundImage: "url('pic/hh.png')",
-                backgroundSize: 'cover', backgroundPosition: 'center', padding: '10vh'
+                backgroundSize: '90% 95%', backgroundPosition: 'center', padding: '10vh',
+                backgroundRepeat: 'no-repeat'
             }}>
                 <div className="row px-lg-5  align-items-center ">
                     <div className="col-lg-8 col-md-8 col-sm-12 py-5">
                         <h1 className="py-2 lg-display-6">Download The Mobile App Today</h1>
                         <div className="d-flex py-2 col-sm-12 ctc2">
                             <div className="col-lg-6 col-md-6 col-sm-12  text-left">
-                                <i className="fa fa-bell" aria-hidden="true">
-                                    <span style={{ color: '#f9326e' }}>Get Instant Notification</span>
+                                {/* <i className="fa fa-bell" aria-hidden="true">
+                                    <span style={{ color: '#F8004A', paddingLeft: '10px' }}>Get Instant Notification</span>
+                                </i> */}
+                                <i style={{ display: 'flex', alignItems: 'center' }}>
+                                    <img src={ bell } />
+                                    <span style={{ color: '#F8004A', paddingLeft: '10px' }}>Get Instant Notification</span>
                                 </i>
                             </div>
 
                             <div className="col-lg-6 col-md-6 col-sm-12 text-left">
-                                <i className="fa fa-clipboard" aria-hidden="true">
-                                    <span style={{ color: '#f9326e' }}>Get Free Wedding checklist</span>
+                                {/* <i className="fa fa-clipboard" aria-hidden="true">
+                                    <span style={{ color: '#F8004A', paddingLeft: '10px' }}>Get Free Wedding checklist</span>
+                                </i> */}
+                                <i style={{ display: 'flex', alignItems: 'center' }}><img src={ checklist } />
+                                    <span style={{ color: '#F8004A', paddingLeft: '10px' }}>Get Free Wedding checklist</span>
                                 </i>
                             </div>
                         </div>
-                        <p className="py-3">In publishing and graphic design, Lorem ipsum is a placeholder text
-                            commonly</p>
+                        <p className="py-3">You will recieve an SMS with a link to download the App</p>
                         <p className="border-bottom">+91 <i className="fas fa-angle-down"></i> 9022222222</p>
 
                         <div className="d-flex text-left col-sm-12 ctc" >
@@ -674,11 +702,11 @@ function Home() {
 
                             <div className="col-lg-2 col-md-2 col-sm-6 col-sm-12  py-3 ">
                                 <img src="" alt="" sizes="" />
-                                <img src="pic/icon/ap.png" alt="" width="60%" className="img-fluid" />
+                                <img style={{ marginTop: '5px' }} src="pic/icon/ap.png" alt="" width="50%" className="img-fluid" />
                             </div>
 
                             <div className="col-lg-2 col-md-2 col-sm-6 col-sm-12  py-3 ">
-                                <img src="pic/icon/an.png" alt="" width="60%" className="img-fluid" />
+                                <img style={{ marginTop: '5px' }} src="pic/icon/an.png" alt="" width="50%" className="img-fluid" />
 
                             </div>
                         </div>
