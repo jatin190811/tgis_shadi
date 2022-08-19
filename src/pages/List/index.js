@@ -105,7 +105,7 @@ function List() {
       if(resp.data && resp.data.filters && resp.data.filters.filters) {
         console.log("resp.data.filters.filters",resp.data.filters.filters)
         let finalObj = structuredClone(resp.data.filters.filters);
-        finalObj["areas"] = areas;
+        finalObj["area"] = areas;
         console.log("resp.data.filters.filters", finalObj)
         setFilter(finalObj);
         setSubCatList(resp?.data?.filters?.sub_cat)
@@ -135,7 +135,7 @@ function List() {
       if (resp.data.status == 'error') toast.error(resp.data.message, {});
       let finalObj = structuredClone(filter);
       setAreas(resp.data.data)
-      finalObj["areas"] = resp.data.data;
+      finalObj["area"] = resp.data.data;
       setFilter(finalObj)
     } else {
 

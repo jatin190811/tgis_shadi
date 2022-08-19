@@ -456,7 +456,7 @@ function Home() {
                     {venues && venues.filter(item => item.execuisite).map((item,index) => <div className="col-md-4 col-sm-12 px-3">
                         <div className="card mycd">
 
-                            <Link to={"/venue/" + item._id}>
+                            <Link to={"/entity/venue/" + item._id}>
                                 <div style={{ width: '300px', height: '325px' }} className="card-img">
 
                                     {item?.images?.length && <img style={{ objectFit: 'cover', width: '300px', height: '325px'  }} src={baseUrl + item.images[0]} className="exc-img img-fluid" />}

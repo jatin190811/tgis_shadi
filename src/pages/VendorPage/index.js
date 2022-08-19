@@ -41,7 +41,7 @@ function VendorPage() {
             if (resp.statusText == "OK") {
                 if (resp.data.status == 'error') toast.error(resp.data.message, {});
                 else if (resp.data.status == 'success') {
-                   
+                    toast.success('Details catputed successfully', {});
                 }
             } else {
 
