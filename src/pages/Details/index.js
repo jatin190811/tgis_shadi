@@ -179,9 +179,9 @@ function Details() {
 				<div className="container ftco-section">
 					<div className="row">
 						<div className="col-lg-7">
-							<div style={{display: 'flex'}}>
+							<div className='pb-3' style={{display: 'flex', alignItems: 'end' }}>
 							<div className="col-md-9" style={{textTransform: 'capitalize'}}>
-								<h3 class="detail-name">
+								<h3 class="detail-name pb-3">
 									{details.name}
 								</h3>
 								<p><img src="/images/vector/loction.png" alt="" /> Chanakyapuri, New Delhi</p>
@@ -190,9 +190,9 @@ function Details() {
 							
 							<div className="col-md-3">
 								<h3 class="detail-rating">{details.avgRating}</h3>
-								<p className="rate">
-									<span>{Array.from({length: details.avgRating}, (_, i) => i + 1).map(item => <img src="/pic/ct/str1.png" alt="star" srcSet="" width="25" className="img-fluid pt-3 star-img" />)}
-                {Array.from({length: 5 - (details.avgRating ? details.avgRating : 0)}, (_, i) => i + 1).map(item => <img src="/pic/ct/str2.png" alt="star" srcSet="" width="25" className="img-fluid pt-3 star-img" />)}
+								<p style={{ fontSize: '12px', textAlign: 'center' }} className="rate">
+									<span>{Array.from({length: details.avgRating}, (_, i) => i + 1).map(item => <img src="/pic/ct/str1.png" alt="star" srcSet="" width="15" className="img-fluid pt-3 star-img" />)}
+                {Array.from({length: 5 - (details.avgRating ? details.avgRating : 0)}, (_, i) => i + 1).map(item => <img src="/pic/ct/str2.png" alt="star" srcSet="" width="15" className="img-fluid pt-3 star-img" />)}
 										<br />{details.review_count} reviews</span></p>
 							</div>
 							</div>
@@ -201,14 +201,14 @@ function Details() {
 						</div>
 						</div>
 						<div className="col-lg-5 cellpadding">
-							<div className="wbr">
+							<div  className="wbr">
 								<p className="hborder">{details?.detailedPrice?.tag3}</p>
-								{<p><span>{details?.detailedPrice?.tag1[0]}</span><span className="fright">{details?.detailedPrice?.tag1[1]} {type == "venues" && <i className="fa fa-circle fsize green"></i>}</span></p>}
-								{<p>Rs {details?.detailedPrice?.tag2[0]}<span className="fright">{details?.detailedPrice?.tag2[1]} {type == "venues" && <i className="fa fa-circle fsize red"></i>}</span></p>}
+								{<p><span style={{ fontSize: '14px', color: 'black', fontWeight: '500' }} >{details?.detailedPrice?.tag1[0]}</span><span style={{ fontSize: '14px', color: 'black', fontWeight: '500' }} className="fright">{details?.detailedPrice?.tag1[1]} {type == "venues" && <i className="fa fa-circle fsize green"></i>}</span></p>}
+								{<p style={{ fontSize: '14px', color: 'black', fontWeight: '500' }} >Rs {details?.detailedPrice?.tag2[0]}<span style={{ fontSize: '14px', color: 'black', fontWeight: '500' }} className="fright">{details?.detailedPrice?.tag2[1]} {type == "venues" && <i className="fa fa-circle fsize red"></i>}</span></p>}
 							</div>
 							<div className="wbrt">
 								<div className="d-flex">
-									<button type="button" className="btn btn-outline-primary" style={{ fontSize: '14px', backgroundColor: disableSend ? 'pink' : '', color:  disableSend ? 'white' : '', cursor: disableSend ? 'not-allowed' : ''}} onClick={() => {setShowSendMsg(true)
+									<button type="button" className="btn btn-outline-primary" style={{ fontSize: '14px', backgroundColor: disableSend ? 'pink' : '', color:  disableSend ? 'white' : '', cursor: disableSend ? 'not-allowed' : '', border: 'none' }} onClick={() => {setShowSendMsg(true)
 									setShowContact(false)
 									setShowOtp(false)}} disabled={disableSend}>
 										<img src="/images/vector/latter.png" className="" alt="" style={{ position: 'relative', top: '2px' }} /> Send Message
@@ -317,7 +317,7 @@ sent to the vendor</p>
 
 				{type == 'venues' && <div className="container rptb">
 					<h2 className='area-title'>Ameneties</h2>
-					<div className="row" style={{ width: '80%',     marginTop: '20px' }}>
+					<div className="row" style={{ width: '70%',     marginTop: '20px' }}>
 						{details && details.ameneties && details.ameneties.map(item => <div className="col-md-3">
 							<div className="ptb">
 								<img src={`/pic/ct/${item}.png`} className="msz" alt="" /><span className="amenities">{item}</span>
@@ -339,7 +339,7 @@ sent to the vendor</p>
 				{type == 'venues' && <div className="container rptb">
 					<h2 className='area-title'>Areas Available</h2>
 					<div className="row">
-						{details && details.area_avail && details.area_avail.map(item => <div className="col-lg-6" style={{marginTop: '20px',marginBottom: '20px'}}>
+						{details && details.area_avail && details.area_avail.map(item => <div className="col-lg-4" style={{marginTop: '20px',marginBottom: '20px'}}>
 							<div className="ptb">
 								<p className='capacity'><b>{item.type}</b><br /><span className='capacity'>Capacity {item.capacity} people</span></p>
 							</div>
@@ -405,7 +405,7 @@ sent to the vendor</p>
 					{/* <div className="more"><a href="#">load more</a> <span>&#8595;</span></div> */}
 				</div>
 				<div className="col-lg-6 reviewform">
-					<h4 className="pb"><b>Leave a review</b></h4>
+					<h4 style={{ fontSize: '1.2rem', fontWeight: '500', fontColor: 'black' }} className="pb"><b>Leave a Review</b></h4>
 					<p className="pb">Leave your product review so other buyers can rely on your opinion about the product.</p>
 					{arr.map((item,index) => <span onClick={() => setReview(index)}><img src={reveiewArray[index] ? '/pic/ct/str1.png' : '/pic/ct/str2.png'} alt="star" srcSet="" width="25" className="img-fluid pt-3 star-img" /></span>)}
 					<form onSubmit={(event) => event.preventDefault()}>

@@ -274,7 +274,7 @@ function List() {
         <hr style={{ color: '#f180ab', border: '1px solid' }} className="mx-5 g-0" />
 
         <div className="row justify-content-center mylove g-0 p-5">
-          {subCatList && subCatList.map(item => <div className="col-2 float-end "><span className={subCat == item ? 'borderme' : 'nonborderme'} onClick={() => setSubCat(item)}>{item}</span></div>)}
+          {subCatList && subCatList.map(item => <div className="col-1 float-end "><span className={subCat == item ? 'borderme' : 'nonborderme'} onClick={() => setSubCat(item)}>{item}</span></div>)}
         </div>
         {list.length ? <div className="row justify-content-center g-4 p-5">
 
