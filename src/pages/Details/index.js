@@ -315,7 +315,7 @@ sent to the vendor</p>
 				</div>
 
 
-				{type == 'venues' && <div className="container rptb">
+				{ details?.ameneties?.length && <div className="container rptb">
 					<h2 className='area-title'>Ameneties</h2>
 					<div className="row" style={{ width: '70%',     marginTop: '20px' }}>
 						{details && details.ameneties && details.ameneties.map(item => <div className="col-md-3">
@@ -336,7 +336,7 @@ sent to the vendor</p>
 						</div>}
                     
       </Modal>}
-				{type == 'venues' && <div className="container rptb">
+				{details?.area_avail?.length && <div className="container rptb">
 					<h2 className='area-title'>Areas Available</h2>
 					<div className="row">
 						{details && details.area_avail && details.area_avail.map(item => <div className="col-lg-4" style={{marginTop: '20px',marginBottom: '20px'}}>
