@@ -274,13 +274,14 @@ body,p,h4{
     display: inline-block;
     position: relative;
     left: 2px;
+    bottom: 6px;
     color: #ffffff;
   }
   .wishCount {
     position: relative;
     font-size: 12px;
     left: 5px;
-    bottom: 3px;
+    bottom: -1px;
   }
 .screen a {
   display: contents;
