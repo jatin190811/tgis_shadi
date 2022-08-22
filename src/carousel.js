@@ -83,5 +83,5 @@ const Carosel = ({ children, max_width }) => {
                 React__default["default"].createElement("button", { onClick: handleCarouselAction, id: "next", className: "next" }, ">")))));
 };
 
-exports["default"] = Carosel;
+export default Carosel;
 //# sourceMappingURL=index.js.map
