@@ -795,3 +795,7 @@ span {
 .img-translate {
   transform: scale(1.2);
 }
+
+.finput {
+  margin: 0px !important
+}

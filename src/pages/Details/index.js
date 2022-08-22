@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import './index.css';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import Modal from "react-modal";
 import Carousel from 'carousel-react-rcdev';
 
@@ -10,6 +10,7 @@ import Carousel from 'carousel-react-rcdev';
 
 
 function Details() {
+	const navigate = useNavigate();
 	var ToggleButton = require('react-toggle-button')
 	let { type, id } = useParams();
 	let type1 = type;
@@ -35,6 +36,7 @@ function Details() {
 	const [showSendMsg, setShowSendMsg] = useState(false);
 	const [toggle, setToggle] = useState(false);
 	const [state,setState] = useState({})
+	const [istate,setIstate] = useState(0)
 	const [msgState,setMsgState] = useState({})
 	const [otp,setOtp] = useState();
 	const [ref,setRef] = useState();
@@ -49,11 +51,19 @@ function Details() {
 	const [reveiewArray,setReviewArray] = useState(arr)
 	const [count,setCount] = useState(0)
 	
-	const baseUrl = 'http://146.190.30.14:8090/';
+	const baseUrl = 'http://localhost:8090/';
 	useEffect(() => {
-		getData(`http://146.190.30.14:8090/api/v1/${type1}/${id}`)
-		getRatingList(`http://146.190.30.14:8090/api/v1/list-rating`)
+		getData(`http://localhost:8090/api/v1/${type1}/${id}`)
+		getRatingList(`http://localhost:8090/api/v1/list-rating`)
+		window.scrollTo(0,0);
 	}, [])
+
+	useEffect(() => {
+		getData(`http://localhost:8090/api/v1/${type1}/${id}`)
+		getRatingList(`http://localhost:8090/api/v1/list-rating`)
+		window.scrollTo(0,0);
+	}, [type, id])
+
 	const getData = (url) => axios({
 		method: 'POST',
 		url,
@@ -85,7 +95,7 @@ function Details() {
 		}
 	})
 	const sendMessage = () => {
-		let url = 'http://146.190.30.14:8090/api/v1/message-us';
+		let url = 'http://localhost:8090/api/v1/message-us';
 		axios({
 			method: 'POST',
 			url,
@@ -125,7 +135,7 @@ function Details() {
 		
 	}
 	const addRating = () => {
-		let url = 'http://146.190.30.14:8090/api/v1/add-rating';
+		let url = 'http://localhost:8090/api/v1/add-rating';
 		axios({
 			method: 'POST',
 			url,
@@ -139,7 +149,7 @@ function Details() {
 				if (resp.data.status == 'error') toast.error(resp.data.message, {});
 				else if(resp.data.status == 'success') {
 					clearReview();
-					getRatingList(`http://146.190.30.14:8090/api/v1/list-rating`)
+					getRatingList(`http://localhost:8090/api/v1/list-rating`)
 				}
 			} else {
 	
@@ -148,7 +158,7 @@ function Details() {
 	}
 
 	const verifyOtp = () => {
-		let url = 'http://146.190.30.14:8090/api/v1/verify-message'
+		let url = 'http://localhost:8090/api/v1/verify-message'
 		axios({
 			method: 'POST',
 			url,
@@ -189,11 +199,11 @@ function Details() {
 							</div>
 							
 							<div className="col-md-3">
-								<h3 class="detail-rating">{details.avgRating}</h3>
+								<h3 class="detail-rating">{Math.floor(details.avgRating)}</h3>
 								<p style={{ fontSize: '12px', textAlign: 'center' }} className="rate">
 									<span>{Array.from({length: details.avgRating}, (_, i) => i + 1).map(item => <img src="/pic/ct/str1.png" alt="star" srcSet="" width="15" className="img-fluid pt-3 star-img" />)}
                 {Array.from({length: 5 - (details.avgRating ? details.avgRating : 0)}, (_, i) => i + 1).map(item => <img src="/pic/ct/str2.png" alt="star" srcSet="" width="15" className="img-fluid pt-3 star-img" />)}
-										<br />{details.review_count} reviews</span></p>
+										<br />{details?.reviews?.length} reviews</span></p>
 							</div>
 							</div>
 							<div>
@@ -203,8 +213,8 @@ function Details() {
 						<div className="col-lg-5 cellpadding">
 							<div  className="wbr">
 								<p className="hborder">{details?.detailedPrice?.tag3}</p>
-								{<p><span style={{ fontSize: '14px', color: 'black', fontWeight: '500' }} >{details?.detailedPrice?.tag1[0]}</span><span style={{ fontSize: '14px', color: 'black', fontWeight: '500' }} className="fright">{details?.detailedPrice?.tag1[1]} {type == "venues" && <i className="fa fa-circle fsize green"></i>}</span></p>}
-								{<p style={{ fontSize: '14px', color: 'black', fontWeight: '500' }} >Rs {details?.detailedPrice?.tag2[0]}<span style={{ fontSize: '14px', color: 'black', fontWeight: '500' }} className="fright">{details?.detailedPrice?.tag2[1]} {type == "venues" && <i className="fa fa-circle fsize red"></i>}</span></p>}
+								{<p><span style={{ fontSize: '14px', color: 'black', fontWeight: '500' }} >{details?.detailedPrice?.tag1[0]}</span><span style={{ fontSize: '14px', color: 'black', fontWeight: '500' }} className="fright">{details?.detailedPrice?.tag1[1]} {type1 == "venue" && <i className="fa fa-circle fsize green"></i>}</span></p>}
+								{<p style={{ fontSize: '14px', color: 'black', fontWeight: '500' }} >Rs {details?.detailedPrice?.tag2[0]}<span style={{ fontSize: '14px', color: 'black', fontWeight: '500' }} className="fright">{details?.detailedPrice?.tag2[1]} {type1 == "venue" && <i className="fa fa-circle fsize red"></i>}</span></p>}
 							</div>
 							<div className="wbrt">
 								<div className="d-flex">
@@ -246,7 +256,7 @@ function Details() {
 									<form onSubmit={(event) => event.preventDefault()}>
 									<div className="row">
 										<div className='col-md-6'><input type="text" placeholder='Enter full name *' required onChange={(event) => setState({...state, name: event.target.value})} /></div>
-										<div className='col-md-6'><input type="tel" placeholder='+91 Mobile No' required onChange={(event) => setState({...state, phone: event.target.value})} /></div>
+										<div className='col-md-6'><input type="tel" placeholder='Enter Mobile No' required onChange={(event) => setState({...state, phone: event.target.value})} /></div>
 										<div className='col-md-6'><input type="text" placeholder='Email Address *' required onChange={(event) => setState({...state, email: event.target.value})}/></div>
 										<div className='col-md-6'><input type="date" placeholder='Function date *' required onChange={(event) => setState({...state, date: event.target.value})}/></div>
 										{type == 'venues' && <div className='col-md-6'><input type="number" placeholder='No. of Guests *' required onChange={(event) => setMsgState({...msgState, guests: event.target.value})}/></div>}
@@ -272,10 +282,10 @@ function Details() {
 											setMsgState({...msgState, prewed: state.prewed ? false : true})}} />
 											<label className="form-check-label" htmlFor="check1">Day</label></div>
 									</div>
-									<div className='toggle-section'><span     style={{marginRight: '38%'}}>Notify Me on Whatsapp</span><ToggleButton
+									<div className='toggle-section'><span     style={{marginRight: '37%'}}>Notify Me on Whatsapp{toggle}</span><ToggleButton
 										value={toggle}
 										onToggle={(value) => {
-											setToggle(true)
+											setToggle(!toggle)
 											setMsgState({
 												...msgState, toggle: !value,
 											})
@@ -330,9 +340,11 @@ sent to the vendor</p>
 					<span className="close-modal" onClick={() => {setShowModal(false);
 						setCount(0)}}>x</span>
 				 {details.images && details.images.length && <div className="col-md-12 car-img">
-							<span style={{marginRight: '10%'}} onClick={() => 
-								count !=0 ? setCount(count-1) : ''}>{`<`} Prev</span><img src={baseUrl + details.images[count]} dataAtr={count} className="img-rounded mgtz" alt="" width="60%" height="500px" /><span style={{marginLeft: '10%'}} onClick={() => {
-									if(count != details.images.length+1) {setCount(count+1)}}}>Next {`>`}</span>
+							<span className="prev-buttn"  onClick={() => 
+								count !=0 ? setCount(count-1) : ''}>{`<`}</span>
+								<img src={baseUrl + details.images[count]} dataAtr={count} className="img-rounded mgtz" alt="" width="60%" height="500px" />
+								<span className="next-buttn" onClick={() => {
+									if(count != details.images.length-1) {setCount(count+1)}}}>{`>`}</span>
 						</div>}
                     
       </Modal>}
@@ -376,7 +388,7 @@ sent to the vendor</p>
 							setShowModal(true)}} src={baseUrl + item} className="img-rounded mgtz" alt="" width="100%" height="auto" />
 						</div>)}
 
-						{isVideo && details && details.images && details.videos.map(item => <div className="col-lg-3">
+						{isVideo && details?.videos?.length && details.videos.map(item => <div className="col-lg-3">
 							
 							<iframe width="250" height="360" src={baseUrl + item} title="YouTube video player" frameBorder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
 						</div>)}
@@ -395,10 +407,11 @@ sent to the vendor</p>
 					<h3><b>Customer Review</b></h3>
 					{ratingList && ratingList.length && ratingList.map(item => <div className="reviewpb">
 						<p className="rate">
-							<img src={baseUrl + item.pic} className="img-rounded" alt="" width="30" height="auto"  /> 
-						{item.name}
-						{Array.from({length: item.rating}, (_, i) => i + 1).map(item => <img src="/pic/ct/str1.png" alt="star" srcSet="" width="25" className="img-fluid pt-3 star-img" />)}
-                {Array.from({length: 5 - (item.avgRating ? item.avgRating : 0)}, (_, i) => i + 1).map(item => <img src="/pic/ct/str2.png" alt="star" srcSet="" width="25" className="img-fluid pt-3 star-img" />)}
+							<img src={item.pic ? `baseUrl + ${item.pic}` : 'pic/ct/default-image.jpeg'} className="img-rounded" alt="" width="30" height="auto"  /> 
+						<span style={{fontWeight: 600,position: 'relative',
+    bottom: '5px'}}>{item.name}</span>
+						<span>{Array.from({length: item.rating}, (_, i) => i + 1).map(item => <img src="/pic/ct/str1.png" alt="star" srcSet="" width="25" className="img-fluid pt-3 star-img" />)}</span>
+                {Array.from({length: 5 - (item.rating ? item.rating : 0)}, (_, i) => i + 1).map(item => <img src="/pic/ct/str2.png" alt="star" srcSet="" width="25" className="img-fluid pt-3 star-img" />)}
 							</p>
 						<p>{item.review}</p>
 					</div>)}
@@ -407,7 +420,7 @@ sent to the vendor</p>
 				<div className="col-lg-6 reviewform">
 					<h4 style={{ fontSize: '1.2rem', fontWeight: '500', fontColor: 'black' }} className="pb"><b>Leave a Review</b></h4>
 					<p className="pb">Leave your product review so other buyers can rely on your opinion about the product.</p>
-					{arr.map((item,index) => <span onClick={() => setReview(index)}><img src={reveiewArray[index] ? '/pic/ct/str1.png' : '/pic/ct/str2.png'} alt="star" srcSet="" width="25" className="img-fluid pt-3 star-img" /></span>)}
+					{arr.map((item,index) => <span style={{cursor: 'pointer'}} onClick={() => setReview(index)}><img src={reveiewArray[index] ? '/pic/ct/str1.png' : '/pic/ct/str2.png'} alt="star" srcSet="" width="25" className="img-fluid pt-3 star-img" /></span>)}
 					<form onSubmit={(event) => event.preventDefault()}>
 					<input type="feedback"  ref={ref1} className="form-control botm"  placeholder="Enter your feedback" name="feedback" onChange={event => setFeedback(event.target.value)}/><br /><br />
 						<button className="btn btn-primary btsk mt-5" onClick={() => {
@@ -442,13 +455,13 @@ sent to the vendor</p>
 				</div>
 				<div className="container bbox" ><div className='row' ><h4><span style={{fontSize: '31px', fontWeight: '500'}}>Related Vendors</span></h4>
 				{/* <hr style={{borderBottom: '3px solid #FF477E'}}></hr> */}
-				{details && details.relatedObjects &&  details.relatedObjects.map(item => <div className="col-md-3 p-3">
+				{details && details.relatedObjects &&  details.relatedObjects.filter(item => item._id!=details._id).map(item => <div className="col-md-3 p-3">
 				
             <div className="card justify-items-center ">
-              <div className="card-img">
-                <Link to={`/entity/${type}/${item._id}`}>
-                  {item?.images?.length && <img src={baseUrl + item.images[0]} className="card-img-top img-fluid cat-img" />}
-                </Link>
+              <div className="card-img" style={{cursor: 'pointer'}}>
+				   {item?.images?.length && <img src={baseUrl + item.images[0]} onClick={()=>{
+					  navigate(`/entity/${type}/${item._id}`);
+				  }}className="card-img-top img-fluid cat-img" />}
               </div>
               <div className="card-img-overlays " style={{bottom: '27%'}}>
                 <button type="button" className="btn btn-primary round">{(item.tag && item.tag.length) ? item.tag[0] : 'Primary'}</button>

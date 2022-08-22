@@ -138,7 +138,7 @@ function ForgetPassword() {
                 position="top-right"
                 autoClose={5000}
             />
-            <div className="container main py-5">
+            <div className="">
                 <div className="row mainrow">
                     <div className="col-md-6 hero">
                         <div className="text-center text-white">
@@ -146,13 +146,13 @@ function ForgetPassword() {
                         </div>
                     </div>
                     <div className="col-md-6  text-center heropy">
-                        <img src="/pic/logo.png" alt="" sizes="" className="img-fluid" />
+                        <img src="/pic/logo.png" alt="" sizes="" width="212" className="img-fluid" />
                         <h2>Forget Password?</h2>
                         {state.currentStep == 'step1' && <>
                             <label className="float-start mt-5">Email ID or Mobile Number</label>
                             <div className="input-group pt-3">
                                 <span className="input-group-text"><i className='far fa-user-circle' style={{ fontSize: '36px' }}></i></span>
-                                <input onChange={(e) => setState({ ...state, username: e.target.value })}  type="text" className="form-control newb" placeholder="Enter Email or Mobile" />
+                                <input onChange={(e) => setState({ ...state, username: e.target.value })} type="text" className="form-control newb finput" placeholder="Enter Email or Mobile" />
                             </div>
 
                             <button className="onboardbtn mt-5" onClick={checkEmail}>Next</button>
@@ -160,8 +160,8 @@ function ForgetPassword() {
                         {state.currentStep == 'step2' && <>
                             <div className="input-group pt-5">
                                 <span className="input-group-text"><i className='far fa-user-circle' style={{ fontSize: '36px' }}></i></span>
-                                <input onChange={(e) => setState({ ...state, otp: e.target.value })} type="text" className="form-control newb" placeholder="Enter OTP" />
-                                <span className="input-group-text"><i className="fas fa-times-circle" style={{ fontSize: '36px' }}></i></span>
+                                <input onChange={(e) => setState({ ...state, otp: e.target.value })} type="text" className="form-control newb finput" placeholder="Enter OTP" />
+                                {/* <span className="input-group-text"><i className="fas fa-times-circle" style={{ fontSize: '36px' }}></i></span> */}
                             </div>    
                             <div className="col-md-12 py-2"><p>One Time Password has been send to your mail/mobile number</p>
                             </div>

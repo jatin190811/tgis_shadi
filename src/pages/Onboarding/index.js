@@ -200,7 +200,7 @@
 //                                                 <img src="pic/ct/m.png" alt="mumbai" className="img-fuild" width="60%;" />
 //                                             </center>
 //                                             <div className="text-light-gray pt-3">
-//                                                 <h3> Chandigrah</h3>
+//                                                 <h3> Chandigarh</h3>
 //                                             </div>
 //                                         </div>
 //                                     </div>
@@ -403,6 +403,11 @@ function Onboarding() {
                 if (resp.data.status == 'error') toast.error(resp.data.message, {});
                 else {
                     window.location.href = '/'
+                    let profile = JSON.parse(localStorage.getItem('profile'))
+                    localStorage.setItem('profile',JSON.stringify({...profile, city: state.city,
+                        budget: state.budget,
+                        date: state.date,
+                        personal: state.personal,}))
                     return 
                 }
             } else {
@@ -540,7 +545,7 @@ function Onboarding() {
                                                 <img src={ chandigarh } alt="Chandigarh" className="img-fuild" width="50%;" />
                                             </center>
                                             <div className="text-light-gray pt-3">
-                                                <h3> Chandigrah</h3>
+                                                <h3> Chandigarh</h3>
                                             </div>
                                         </div>
                                     </div>
@@ -570,7 +575,7 @@ function Onboarding() {
                             </form>
                         </div>}
                         {state.currentStep == 'step3' && <><div className="row text-center py-md-5">
-
+                        <h2 className=" py-4 ">What is your budget?</h2>
                             <div className="col-md-4">
                                 <div className="pad-money card" style={{ backgroundColor: (state.budget == '< 15 Lakhs' ? '#F180AB' : '#F8F8F8') }} onClick={() => setState({ ...state, budget: '< 15 Lakhs' })}>
                                     <div className="lakhs">
@@ -580,15 +585,15 @@ function Onboarding() {
                             </div>
 
                             <div className="col-md-4">
-                                <div className="card" style={{ backgroundColor: (state.budget == '15-30 Lakhs'  ? '#F180AB' : '#F8F8F8') }} onClick={() => setState({ ...state, budget: '15-30 Lakhs' })}>
-                                    <div className="pad-money lakhs">
+                                <div className="pad-money card" style={{ backgroundColor: (state.budget == '15-30 Lakhs'  ? '#F180AB' : '#F8F8F8') }} onClick={() => setState({ ...state, budget: '15-30 Lakhs' })}>
+                                    <div className="lakhs">
                                         15-30 Lakhs
                                     </div>
                                 </div>
                             </div>
                             <div className="col-md-4" >
-                                <div className="card" style={{ backgroundColor: (state.budget == '30-40 Lakhs' ? '#F180AB' : '#F8F8F8') }} onClick={() => setState({ ...state, budget: '30-40 Lakhs' })}>
-                                    <div className="pad-money lakhs">
+                                <div className="pad-money card" style={{ backgroundColor: (state.budget == '30-40 Lakhs' ? '#F180AB' : '#F8F8F8') }} onClick={() => setState({ ...state, budget: '30-40 Lakhs' })}>
+                                    <div className="lakhs">
                                         30-40 Lakhs
                                     </div>
                                 </div>
@@ -599,23 +604,23 @@ function Onboarding() {
                             <div className="row text-center pb-5">
 
                                 <div className="col-md-4">
-                                    <div className="card" style={{ backgroundColor: (state.budget == '30-50 Lakhs' ? '#F180AB' : '#F8F8F8') }} onClick={() => setState({ ...state, budget: '30-50 Lakhs' })}>
-                                        <div className="pad-money lakhs">
+                                    <div className="pad-money card" style={{ backgroundColor: (state.budget == '30-50 Lakhs' ? '#F180AB' : '#F8F8F8') }} onClick={() => setState({ ...state, budget: '30-50 Lakhs' })}>
+                                        <div className="lakhs">
                                             30-50 Lakhs
                                         </div>
                                     </div>
                                 </div>
 
                                 <div className="col-md-4">
-                                    <div className="card" style={{ backgroundColor: (state.budget == '50 Lakhs-1 Crore' ? '#F180AB' : '#F8F8F8') }} onClick={() => setState({ ...state, budget: '50 Lakhs-1 Crore' })}>
-                                        <div className="pad-money lakhs">
+                                    <div className="pad-money card" style={{ backgroundColor: (state.budget == '50 Lakhs-1 Crore' ? '#F180AB' : '#F8F8F8') }} onClick={() => setState({ ...state, budget: '50 Lakhs-1 Crore' })}>
+                                        <div className="lakhs">
                                             50 Lakhs-1 Crore
                                         </div>
                                     </div>
                                 </div>
                                 <div className="col-md-4">
-                                    <div className="card" style={{ backgroundColor: (state.budget == '1+ Crore' ? '#F180AB' : '#F8F8F8') }} onClick={() => setState({ ...state, budget: '1+ Crore' })}>
-                                        <div className="pad-money lakhs">
+                                    <div className="pad-money card" style={{ backgroundColor: (state.budget == '1+ Crore' ? '#F180AB' : '#F8F8F8') }} onClick={() => setState({ ...state, budget: '1+ Crore' })}>
+                                        <div className="lakhs">
                                             1+ Crore
                                         </div>
                                     </div>

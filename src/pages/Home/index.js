@@ -3,7 +3,7 @@ import './index.css';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import { Link, useNavigate } from "react-router-dom";
-import Carousel from 'carousel-react-rcdev';
+import Carousel from '../../carousel';
 import {FacebookShareButton, FacebookIcon, WhatsappIcon, WhatsappShareButton} from 'react-share';
 
 
@@ -13,6 +13,7 @@ import bride from "../../assets/images/bride.png";
 
 function Home() {
     const [categories, setCatgories] = useState([]);
+    const [number, setNumber] = useState();
     const [showShare, setShowShare] = useState(false)
     const [inHouse, setinHouse] = useState([]);
     const [vendors, setVendors] = useState([]);
@@ -358,10 +359,10 @@ function Home() {
                 <div className="row g-4 p-3">
                     {vendors && vendors.length && <Carousel>
                         {vendors && vendors.length && vendors.filter(item => item.isFeatured).map(item => <div className="col-md-3 vendor-card">
-                            <div className="card p-3 ">
+                            <div className="card p-3 " onClick={()=> navigate(`/entity/${item.type}/${item._id}`)}>
                                 <div className="" >
                                     {item?.images?.length && item.images[0] ?
-                                        <img src={baseUrl + item.images[0]} style={{ width: '364px', height: '332px' }} className="img-fluid vendor-img" /> : ""}
+                                        <img src={baseUrl + item.images[0]} onClick={()=> navigate(`/entity/${item.type}/${item._id}`)} style={{ width: '364px', height: '332px' }} className="img-fluid vendor-img" /> : ""}
                                 </div>
                                 {<div className="card-img-overlay ">
                                     <i className="fas fa-star-half-alt" style={{ float: 'right', marginRight: '20px' }}>{item?.avgRating ? item?.avgRating : 0}</i>
@@ -469,7 +470,19 @@ function Home() {
 
                             <div className="like-section" >
                                 <span onClick={() => {
-                                    setFav(item,index)
+                                    let temp = JSON.parse(JSON.stringify(venues))
+                                    let mutateObjIn = -1;
+                                    temp.map((i,ind)=>{
+                                        if(i._id==item._id){
+                                            mutateObjIn = ind
+                                        }
+                                        return i;
+                                    })
+                                    temp[mutateObjIn]['liked'] = !temp[mutateObjIn]['liked']
+                                    setVenues(temp);
+                                    setTimeout(()=>{
+                                        setFav(item,index)
+                                    },0)
                                     }}><img  src={(item.liked) ? 'pic/icon/fav.png' : 'pic/icon/h.png'} alt="loccationn" className="img-fluid " width="20px" style={{ float: 'right', position: 'relative', right: '15%' }} /></span>
                                 <h4 style={{ fontSize: '18px',paddingTop: '1rem', paddingBottom: '0.5rem' }} className="py-2">{item.name}</h4>
                                 <img src="/pic/Vector.png" alt="loccationn" srcSet="" className="img-fluid locat" width="15px" style={{ marginLeft: '5px' }} />
@@ -691,7 +704,8 @@ function Home() {
                             </div>
                         </div>
                         <p className="py-3">You will recieve an SMS with a link to download the App</p>
-                        <p className="border-bottom">+91 <i className="fas fa-angle-down"></i> 9022222222</p>
+                        <p className="">
+                            <input type="phone" className="mobile-link border-bottom" placeholder="Enter phone number" onChange={(event)=> setNumber(event.target.value)}/></p>
 
                         <div className="d-flex text-left col-sm-12 ctc" >
                             <div className="col-lg-8 col-md-8 col-sm-12 py-3 ">
