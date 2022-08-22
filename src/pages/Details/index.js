@@ -403,9 +403,9 @@ sent to the vendor</p>
 					</div>
 				</div>
 				<div className="container rptb">
-				<div className="col-lg-6 ">
+				{!!ratingList?.length && <div className="col-lg-6 ">
 					<h3><b>Customer Review</b></h3>
-					{ratingList && ratingList.length && ratingList.map(item => <div className="reviewpb">
+					{ratingList && !!ratingList.length && ratingList.map(item => <div className="reviewpb">
 						<p className="rate">
 							<img src={item.pic ? `baseUrl + ${item.pic}` : 'pic/ct/default-image.jpeg'} className="img-rounded" alt="" width="30" height="auto"  /> 
 						<span style={{fontWeight: 600,position: 'relative',
@@ -416,7 +416,7 @@ sent to the vendor</p>
 						<p>{item.review}</p>
 					</div>)}
 					{/* <div className="more"><a href="#">load more</a> <span>&#8595;</span></div> */}
-				</div>
+				</div>}
 				<div className="col-lg-6 reviewform">
 					<h4 style={{ fontSize: '1.2rem', fontWeight: '500', fontColor: 'black' }} className="pb"><b>Leave a Review</b></h4>
 					<p className="pb">Leave your product review so other buyers can rely on your opinion about the product.</p>
