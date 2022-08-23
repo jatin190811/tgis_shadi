@@ -31,6 +31,7 @@ function Details() {
 		let arr=[false,false,false,false,false];
 
 	const [details, setDetails] = useState([]);
+	const [disableCheck, setDisableCheck] = useState(false);
 	const [ratingList, setRatingList] = useState([]);
 	const [showContact, setShowContact] = useState(false);
 	const [showSendMsg, setShowSendMsg] = useState(false);
@@ -110,6 +111,29 @@ function Details() {
 					setRef(resp.data.data.ref)
 					setShowOtp(true)
 					setShowSendMsg(false)
+				}
+			} else {
+	
+			}
+		})
+	}
+
+	const connectMe = () => {
+		let url = 'http://146.190.30.14:8090/api/v1/connect-me';
+		axios({
+			method: 'POST',
+			url,
+			headers: {
+				'content-type': 'application/json',
+				'x-access-token': localStorage.getItem('token')
+			},
+			data : {pid: details?._id}
+		}).then((resp) => {
+			if (resp.statusText == "OK") {
+				if (resp.data.status == 'error') toast.error(resp.data.message, {});
+				else if(resp.data.status == 'success') {
+					toast.success("Vendor will contact you soon.", {})
+					setDisableCheck(true)
 				}
 			} else {
 	
@@ -242,8 +266,8 @@ function Details() {
 										</span>
 									</div>
 									<div className="textcenter">
-										<div action="/action_page.php">
-											<input type="checkbox" id="sadi" name="sadi" value="sadi" />
+										<div>
+											<input type="checkbox" onChange={connectMe} disabled={disableCheck} id="sadi" name="sadi" value="sadi" />
 											<label htmlFor="vehicle1"> Allow this vendor to reach me</label>
 										</div>
 									</div>
