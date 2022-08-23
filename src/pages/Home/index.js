@@ -13,7 +13,7 @@ import bride from "../../assets/images/bride.png";
 
 function Home() {
     const [categories, setCatgories] = useState([]);
-    const [number, setNumber] = useState();
+    const [phone, setPhone] = useState();
     const [showShare, setShowShare] = useState(false)
     const [inHouse, setinHouse] = useState([]);
     const [vendors, setVendors] = useState([]);
@@ -169,6 +169,44 @@ function Home() {
 
         }
     })
+
+    const checkNumber = () => {
+        if (phone) {
+            let regMobEx = '^[0-9]{10}';
+            let result1 = phone.match(regMobEx)
+            if (result1) {
+                appLink()
+            }
+            else {
+                toast.error('Invalid mobile number', {});
+            }
+
+        } else {
+            toast.error('Please enter phone number', {});
+        }
+
+    }
+
+    const appLink = () => {
+        let url = 'http://146.190.30.14:8090/api/v1/app-link';
+		axios({
+			method: 'POST',
+			url,
+			headers: {
+				'content-type': 'application/json'
+			},
+			data : {phone}
+		}).then((resp) => {
+			if (resp.statusText == "OK") {
+				if (resp.data.status == 'error') toast.error(resp.data.message, {});
+				else if(resp.data.status == 'success') {
+					toast.success(resp.data.message, {})
+				}
+			} else {
+	
+			}
+		})
+    }
 
     const getVendors = (url) => axios({
         method: 'GET',
@@ -705,11 +743,11 @@ function Home() {
                         </div>
                         <p className="py-3">You will recieve an SMS with a link to download the App</p>
                         <p className="">
-                            <input type="phone" className="mobile-link border-bottom" placeholder="Enter phone number" onChange={(event)=> setNumber(event.target.value)}/></p>
+                            <input type="phone" className="mobile-link border-bottom" placeholder="Enter phone number" onChange={(event)=> setPhone(event.target.value)}/></p>
 
                         <div className="d-flex text-left col-sm-12 ctc" >
                             <div className="col-lg-8 col-md-8 col-sm-12 py-3 ">
-                                <button className="btn btsk1">
+                                <button className="btn btsk1" onClick={checkNumber}>
                                     <i className="fa fa-chevron-circle-down" aria-hidden="true"></i> Download The App</button>
 
                             </div>
