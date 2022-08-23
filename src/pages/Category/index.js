@@ -17,6 +17,7 @@ function Category() {
 
   useEffect(() => {
     getCategories('http://146.190.30.14:8090/api/v1/categories')
+    window.scrollTo(0,0);
   }, [])
 
   const viewAllChange = event => {
@@ -68,7 +69,7 @@ function Category() {
   }
   return (
     <>
-      <div className="container-fluid  box-imgages" style={{ backgroundImage: 'url("pic/ct/banner.png")' }} >
+      <div className="container-fluid  box-imgages" style={{ backgroundImage: 'url("pic/ct/catbanner.png")' }} >
         <div className="row">
           <div className="clo-lg-12 col-md-12 col-sm-12">
 
@@ -130,7 +131,7 @@ fontStyle: 'normal'}}>
         }).length != 0 && <div className="cat-listing">
             <h4><span style={{fontSize: '30px', fontWeight: '500', color:'#49516F',fontFamily: 'Poppins',
 fontStyle: 'normal'}}>Venue</span><span style={{ color: '#f180ab',fontSize: '16px', paddingTop: '15px', float: 'right', paddingRight: '48px', cursor: 'pointer' }} onClick={() => viewAllChange('Venue')}>View All</span></h4>
-            <hr style={{ color: '#f180ab', border: '1px solid', marginTop: '0px' }} className="mx-5 g-0" />
+            <hr style={{ color: '#f180ab', border: '1px solid'}} className="mx-5 g-0" />
             <div className="row justify-content-center g-4 p-5">
               {categories?.venues && categories?.venues?.filter(i => {
                 if (!searchValue) return true;

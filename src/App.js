@@ -28,12 +28,13 @@ import Wishlist from './pages/Wishlist';
 import SearchPage from './pages/SearchPage';
 import VendorPage from './pages/VendorPage';
 import Inhouse from './pages/Inhouse';
+import ChangePassword from './pages/ChangePassword';
 
 
 function App() {
     return (
         <BrowserRouter>
-{<Layout hideHeaderPaths={["/login","/onboarding","/register","/vendor"]} isHeader="true" />}
+{<Layout hideHeaderPaths={["/login","/onboarding","/register","/vendor","/forget-password","/change-password"]} isHeader="true" />}
             <Routes>
             
                 <Route path="/" element={<Home/>} />
@@ -48,14 +49,15 @@ function App() {
                 <Route path="/register" element={<Register />} />
                 <Route path="/contact" element={<ContactUs />} />
                 <Route path="/forget-password" element={<ForgetPassword />} />
-                <Route path="/change-password" element={<Register />} />
+                <Route path="/change-password" element={<ChangePassword />} />
                 <Route path="/update-profile" element={<Register />} />
                 <Route path="/profile" element={<Profile />} />
                 <Route path="/wishlist" element={<Wishlist />} />
                 <Route path="/search" element={<SearchPage />} />
                 <Route path="/vendor" element={<VendorPage />} />
+                <Route path="*" element={<Home />} />
             </Routes>
-            {<Layout hideHeaderPaths={["/login","/onboarding","/register","/vendor"]} isFooter="true" />}
+            {<Layout hideHeaderPaths={["/login","/onboarding","/register","/vendor","/forget-password","/change-password"]} isFooter="true" />}
             {/* <Footer/> */}
         </BrowserRouter>
     );

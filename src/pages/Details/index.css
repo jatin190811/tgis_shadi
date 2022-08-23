@@ -364,3 +364,17 @@ color: #111111;
   font-size: 20px;
   cursor: pointer;
 }
+
+.prev-buttn {
+  margin-right: 5%;
+  font-size: 30px;
+  border-radius: 24px;
+  background: #e6e3e3 !important;
+}
+
+.next-buttn {
+  margin-left: 5%;
+  font-size: 30px;
+  border-radius: 24px;
+  background: #e6e3e3 !important;
+}

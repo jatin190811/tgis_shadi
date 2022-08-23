@@ -7,7 +7,7 @@ import './index.css';
 
 import 'react-toastify/dist/ReactToastify.css';
 function VendorPage() {
-    const [state, setState] = useState({ currentStep: 'step1' })
+    const [state, setState] = useState()
     const checkEmail = () => {
         if (state.email) {
             let regEmailEx = "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$";
@@ -16,7 +16,8 @@ function VendorPage() {
             let result1 = state.email.match(regMobEx)
             console.log(result, result1)
             if (result || result1) {
-                setState({ ...state, currentStep: 'step2' });
+                setState({ ...state });
+                submitVendorDetails();
             }
             else {
                 toast.error('Invalid email address or mobile number', {});
@@ -26,6 +27,26 @@ function VendorPage() {
             toast.error('Please Enter Email', {});
         }
 
+    }
+
+    const submitVendorDetails = () => {
+        axios({
+            method: 'post',
+            url: 'http://146.190.30.14:8090/api/v1/vendors/request',
+            data: {...state},
+            headers: {
+                'content-type': 'application/json'
+            }
+        }).then((resp) => {
+            if (resp.statusText == "OK") {
+                if (resp.data.status == 'error') toast.error(resp.data.message, {});
+                else if (resp.data.status == 'success') {
+                    toast.success('Details catputed successfully', {});
+                }
+            } else {
+
+            }
+        }) 
     }
 
     const doLogin = () => {
@@ -83,12 +104,12 @@ function VendorPage() {
                     <img src="pic/vendor-banner.png" alt="" sizes="" className="img-fluid" />
                     </div>
                     <div className="col-md-6  text-center heropy">
-                        <img src="/pic/logo.png" alt="" sizes="" className="img-fluid" />
+                        <img src="/pic/logo.png" alt="" width="212" sizes="" className="img-fluid" />
                         <h2 className='vendor-heading'>Grow your Business</h2>
                         <form className="py-3" onSubmit={(event) => event.preventDefault()}>
                             <div className="row">
                                 <div className="col-md-12">
-                                    <input type="text"  className="form-control botm" onChange={(event) => setState({ ...state, name: event.target.value })} placeholder="Brand Name" name="name" required/>
+                                    <input type="text"  className="form-control botm" onChange={(event) => setState({ ...state, brand_name: event.target.value })} placeholder="Brand Name" name="name" required/>
                                 </div>
                                 <div className="col-md-12">
                                     <input type="text"  onChange={(event) => setState({ ...state, city: event.target.value })} className="form-control botm" placeholder="City" name="name" required/>
@@ -111,21 +132,10 @@ function VendorPage() {
                                 <div className="col-md-12">
                                     <input type="" onChange={(event) => setState({ ...state, phone: event.target.value })} className="form-control botm" placeholder="Mobile Number" name="tel" required/>
                                 </div>
-                                {/* <div className="col-md-12">
-                                    <input type="" ref={ref4} onChange={(event) => setState({ ...state, phone: event.target.value })} className="form-control botm" placeholder="Password" name="tel" />
-                                </div> */}
                                 </div>
                         </form>
 
                         <button className="onboardbtn mt-5" onClick={checkEmail} >Next</button>
-
-
-                        {/* <div className="row mt-5 pt-5">
-                            <div className="col-md-6 py-2"><p>Already have an account?</p></div>
-                            <div className="col-md-6">
-                                <Link to="/vendor"><button className="onboardbtn">Sign in</button></Link>
-                            </div>
-                        </div> */}
                     </div>
                 </div>
 

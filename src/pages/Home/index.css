@@ -244,10 +244,13 @@ position: relative;
 } */
 .border-bottom {
     border-bottom: 1px solid gray!important;
-    width: 21%;
     font-weight: 500;
     color: #555555;
     margin-bottom: 10px;
+    background: #ffccd6;
+    padding-bottom: 10px;
+    border-bottom: 1px solid gray!important;
+    width: 25%;
 }
 .add-text {
     position: relative;

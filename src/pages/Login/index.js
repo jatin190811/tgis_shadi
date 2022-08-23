@@ -266,7 +266,8 @@ function Login() {
                             <div className="input-group pt-1">
                                 <input type="password" onChange={(e) => setState({ ...state, password: e.target.value })} className="form-control newb" placeholder="Enter Password" />
                             </div>
-                            <div className="col-md-12 py-2"><p className="float-end" >Forget Password?</p>
+                            <div className="col-md-12 py-2"><Link to="/forget-password" className="float-end">Forget Password?</Link>
+                            
                             </div>
                         </>}
                         {state.currentStep == 'step1' && <button className="onboardbtn mt-3" onClick={checkEmail} >Next</button> }
@@ -279,7 +280,7 @@ function Login() {
                                 <Link to="/"  >< button  style={{ fontSize: '14px', backgroundColor: 'transparent', color: 'black' }} className="onboardbtn">Are you a vendor?</button></Link>
                                 </div>
                             <div className="col-md-4">
-                                <Link to="/quote"  >< button  style={{ fontSize: '14px' }} className="onboardbtn">Register Now</button></Link>
+                                <Link to="/vendor"  >< button  style={{ fontSize: '14px' }} className="onboardbtn">Register Now</button></Link>
                             </div>
                         </div>
                     </div>

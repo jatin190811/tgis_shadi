@@ -343,6 +343,7 @@ function List() {
   const [searchValue, setSearchValue] = useState('');
   const [subCatList, setSubCatList] = useState([]);
   const [subCat, setSubCat] = useState('');
+  const [defaultmsg, setDefaultmsg] = useState('Loading Data...');
   const [city, setCity] = useState('');
   const [inhouse, setInhouse] = useState(false);
   // const [types, setTypes] = useState('');
@@ -352,6 +353,7 @@ function List() {
   const baseUrl = "http://146.190.30.14:8090/";
 
   let type, type1;
+  let banner = {};
   // useEffect(() => {
     
   // },[])
@@ -367,27 +369,76 @@ function List() {
 //   type = types["type"].split("-")[0];
 // }
    type= types["type"];
-  if(type == 'venues')
+  if(type == 'venues') {
   type1 = 'venues';
-  if(type == 'makeup')
+  banner = {
+    img: 'banner.png',
+    text: {
+      title: 'Venues',
+      desc: 'Home - Venues'
+    }
+  }}
+  if(type == 'makeup') {
 	type1 = 'bridal-makeups';
-  else if(type == 'bridalwear')
-  type1 =  'bridal-wears';
-  else if(type == 'groomwear')
+    banner = {
+      img: 'makeupbanner.png',
+      text: {
+        title: 'Bridal Makeup',
+        desc: 'Home - Bridal Makeup'
+      }
+    }}
+  else if(type == 'bridalwear') {
+  type1 =  'bridal-wears'; 
+    banner = {
+      img: 'bridalbanner.png',
+      text: {
+        title: 'Bridal Wear',
+        desc: 'Home - Bridal Wear'
+      }
+    }}
+  else if(type == 'groomwear') {
   type1 =  'groom';
-  else if(type == 'photographer')
+    banner = {
+      img: 'groombanner.png',
+      text: {
+        title: 'Groom Wear',
+        desc: 'Home - Groom Wear'
+      }
+    }}
+  else if(type == 'photographer') {
   type1 =  'photographers';
-  else if(type == 'mehandi')
+    banner = {
+      img: 'photobanner.png',
+      text: {
+        title: 'Wedding Photographer',
+        desc: 'Home - Wedding Photographer'
+      }
+    }}
+  else if(type == 'mehandi') {
   type1 =  'mehndi';
-  else if(type == 'decor')
+    banner = {
+      img: 'mehndibanner.png',
+      text: {
+        title: 'Mehndi',
+        desc: 'Home - Mehndi'
+      }
+    }}
+  else if(type == 'decor') {
   type1 =  'planner';
+    banner = {
+      img: 'plannerbanner.png',
+      text: {
+        title: "Wedding Planner & Decor",
+        desc: 'Home - Planner & Decor'
+      }
+    }}
   
 
   useEffect(() => {
     
       getCategories(`http://146.190.30.14:8090/api/v1/${type1}`)
       getAreas(`http://146.190.30.14:8090/api/v1/areas`)
-    
+      window.scrollTo(0,0);
     
     
   }, [])
@@ -395,6 +446,8 @@ function List() {
     getAreas(`http://146.190.30.14:8090/api/v1/areas`)
   }
   useEffect(() => {
+    setList([])
+    setDefaultmsg('Loading Data...')
     getCategories(`http://146.190.30.14:8090/api/v1/${type1}`)
   }, [subCat])
 
@@ -427,13 +480,14 @@ function List() {
   }).then((resp) => {
     if (resp.statusText == "OK") {
       if (resp.data.status == 'error') toast.error(resp.data.message, {});
+      if(resp.data.data.length == 0)
+      setDefaultmsg('No Data Found!')
       setList(resp.data.data);
       setMessage(resp.data.message)
       if(resp.data && resp.data.filters && resp.data.filters.filters) {
-        console.log("resp.data.filters.filters",resp.data.filters.filters)
         let finalObj = structuredClone(resp.data.filters.filters);
-        finalObj["areas"] = areas;
-        console.log("resp.data.filters.filters", finalObj)
+        if(areas && areas.length)
+        finalObj["area"] = areas;
         setFilter(finalObj);
         setSubCatList(resp?.data?.filters?.sub_cat)
       }
@@ -462,7 +516,8 @@ function List() {
       if (resp.data.status == 'error') toast.error(resp.data.message, {});
       let finalObj = structuredClone(filter);
       setAreas(resp.data.data)
-      finalObj["areas"] = resp.data.data;
+      if(resp.data.data && resp.data.data.length)
+      finalObj["area"] = resp.data.data;
       setFilter(finalObj)
     } else {
 
@@ -497,10 +552,17 @@ function List() {
   }
 
   const getFilteredResults = () => {
-  getCategories(`http://146.190.30.14:8090/api/v1/${type1}`)
+    setList([])
+    setDefaultmsg('Loading Data...');
+
+    getCategories(`http://146.190.30.14:8090/api/v1/${type1}`)
    
   }
   const clearFilter = () => {
+    setList([])
+    setDefaultmsg('Loading Data...');
+
+
     setFilterObj({});
     }
 
@@ -508,12 +570,12 @@ function List() {
   return (
     <>
     <div>
-      <div className="container-fluid  box-imgages" style={{ backgroundImage: 'url("/pic/ct/banner.png")' }} >
+      <div className="container-fluid  box-imgages" style={{ backgroundImage: `url("/pic/ct/${banner.img}")` }} >
         <div className="row">
           <div className="clo-lg-12 col-md-12 col-sm-12">
-{/* 
-            <h1 className="list-text text-white text-center">Venues</h1>
-            <h4 className="text-white text-center">Home.Venues</h4> */}
+
+            <h1 className="list-text text-white text-center">{banner.text.title}</h1>
+            <h4 className="text-white text-center">{banner.text.desc}</h4>
 
           </div>
 
@@ -548,7 +610,7 @@ function List() {
           <div style={{ display: 'flex', alignItems: 'center' }} className="col-md-2 col-sm-12">
             <form style={{ width: '100%', height: '60px' }} action="/action_page.php">
               <select className="form-select" id="sel1" name="sellist1"  onChange={(event) => handleChange(event.target.value)}>
-                <option> By relevance</option>
+                <option> By Rating</option>
                 <option value="1" >1</option>
                 <option value="2" >2</option>
                 <option value="3" >3</option>
@@ -568,11 +630,10 @@ function List() {
       </div>
       {showFilter  && <div className="container my-5 p-5 bbox">
         <div className="row"> 
-          {filter && Object.keys(filter).map((key,index) => <div className="col-md-2" >
+          {filter && Object.keys(filter).map((key,index) => <div className="col-md-2" style={{padding: '11px'}}>
             <img src={`/pic/ct/${key}.png`} alt="" srcSet="" className="img-fluid" /><span className='filter-icon'></span>
             <span style={{ fontSize: '15px', fontWeight: '500' , position: 'relative', bottom:'5px', left: '2px'}}>{startCase(key)}</span>
             <form action="/action_page.php" className="pt-4">
-              {/* {JSON.stringify(filter[key])} */}
             { filter[key].map((item,index) => <div className=""> 
             <input type="checkbox" className="form-check-input" id="check1" name="option1" value={filter[key][index]} 
             checked={filterObj[key] && filterObj[key].includes(filter[key][index])}  onChange={(event) => checkHandler(event,key)}/>
@@ -628,7 +689,7 @@ function List() {
             </div>
           </div>)}
 
-        </div> : <div className="row"   style={{display: 'flex', justifyContent: 'center', fontSize:'36px', margin: '100px', fontWeight: '500'}}>No Data Found!</div>}
+        </div> : <div className="row"   style={{display: 'flex', justifyContent: 'center', fontSize:'36px', margin: '100px', fontWeight: '500'}}>{defaultmsg}</div>}
 
 
 

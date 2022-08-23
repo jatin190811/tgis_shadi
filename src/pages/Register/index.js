@@ -125,6 +125,7 @@ function Login() {
             if(resp.statusText == "OK"){
                 if(resp.data.status =='error') toast.error(resp.data.message, {});
                 localStorage.setItem('token',resp.data.data.token)
+                localStorage.setItem('profile',JSON.stringify(resp.data.data.profile))
                 navigate('/onboarding')
             } else  {
                 toast.error('Something went wrong', {});
@@ -152,7 +153,7 @@ function Login() {
                     <div className="col-md-7  text-center heropy">
                         <div className='logo-div'>
                             <img src="/pic/logo.png" alt="" sizes="" className="logo-img" />
-                        </div>                        <h2>Forget Password?</h2>
+                        </div>                        <h2>Sign Up</h2>
                         {state.currentStep == 'step1' && <>
                             <label className="float-start pt-5">Full Name</label>
                             <div className="input-group pt-1">
