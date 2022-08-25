@@ -1,3 +1,47 @@
 .footer-container {
     background-color: #F8F8FA;
 }
+.footer-container p {
+    color: #888888;
+}
+.pad-foot {
+    padding-right: 3rem;
+    padding-left: 0;
+}
+.send-btn {
+    border: none;
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+}
+.news-section {
+    border-bottom: 1px #888888 solid;
+    padding: 0;
+}
+.news-email {
+    margin: 0 !important;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    /* border-bottom: 1px #888888 solid; */
+    border-radius: 0;
+    font-size: 0.8rem;
+}
+.news-email:focus {
+    background-color: transparent;
+    outline: none;
+    border: none;
+    /* border-bottom: 1px #888888 solid; */
+    border-radius: 0;
+}
+.footer-h3 {
+    font-size: 1.5rem;
+}
+.foot-bt-pad {
+    font-size: 0.9rem;
+    padding-bottom: 0.8rem;
+}
+.foot-lt-pad {
+    font-size: 0.9rem;
+}
