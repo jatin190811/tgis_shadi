@@ -156,59 +156,65 @@ function Header() {
     },[]
     )
     return (
-        <div className='header'>
+        <div className='header' style={{ backgroundColor: '#f8f8f8' }}>
             <div className="container-fluid top-header">
-                <div className="row bg-red pt-2">
-                    <div className="col-md-6 col-sm-12 text-black text-start" style={{ paddingLeft: '6%' }}>
+                <div className="row bg-red pt-2 " style={{ maxWidth: '100vw', margin: '0', paddingRight: '5vw', paddingLeft: '5vw' }}>
+                    <div className="col-md-6 col-sm-12 text-black text-start" style={{ paddingRight: '0', paddingLeft: '1.5rem' }}>
                         <p className="headertext"><b>30% off</b> on all products enter code: thegreatindianshaadi2022</p>
                     </div>
-                    <div className="col-md-6 col-sm-12 text-black text-end" style={{ paddingRight: '5%' }}>
+                    <div className="col-md-6 col-sm-12 text-black text-end" style={{ paddingLeft: '0%', paddingRight: '1.5rem' }}>
                         <p className="headertext">Call us: <b>+1 800 452 78 87</b></p>
                     </div>
                 </div>
             </div>
 
-            <nav className="navbar navbar-expand-lg navbar-light bg-color">
+            <nav style={{ paddingRight: '5vw', paddingLeft: '5vw' }} className="navbar navbar-expand-lg navbar-light bg-color">
                 <a className="navbar-brand d-lg-none" href="#wedding"><img src="/pic/logo.png" className='cur-point'/></a>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbarToggler7"
                     aria-controls="myNavbarToggler7" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className="collapse navbar-collapse" id="myNavbarToggler7">
-                    <ul className="navbar-nav  mx-auto" style={{ alignItems: 'center' }}>
+                    <ul className="navbar-nav  mx-auto" style={{ alignItems: 'center', width: '100%' }}>
+
+                        <div className='float-start col-md-3' style={{ display: 'flex'}} id='Navlinks'>
+                            <NavLink className="nav-item" to="/list/venues">
+                                <span className="nav-link">Venues</span>
+                            </NavLink>
+                            <NavLink className="nav-item" to="/category">
+                                <span className="nav-link">Vendors</span>
+                            </NavLink>
+                            <NavLink className="nav-item" to="/blogs">
+                                <span className="nav-link">Blog</span>
+                            </NavLink>
+                            <NavLink className="nav-item" to="/contact">
+                                <span className="nav-link">Contact</span>
+                            </NavLink>
+                        </div>
 
 
-                        <NavLink className="nav-item" to="/list/venues">
-                            <span className="nav-link">Venues</span>
-                        </NavLink>
-                        <NavLink className="nav-item" to="/category">
-                            <span className="nav-link">Vendors</span>
-                        </NavLink>
-                        <NavLink className="nav-item" to="/blogs">
-                            <span className="nav-link">Blog</span>
-                        </NavLink>
-                        <NavLink className="nav-item" to="/contact">
-                            <span className="nav-link">Contact</span>
-                        </NavLink>
+                        <Link className="col-md-6" to="/" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', maxHeight: '50px' }}><img src="/pic/logo.png" className="img-fluid logocenter" alt="logo" width='200px' style={{ objectFit: 'cover' }} /></Link>
 
-                        <Link className="d-none d-lg-block" to="/"><img src="/pic/logo.png" className="img-fluid logocenter" alt="logo" /></Link>
-                        <Link className="nav-link" to="/search">
-                        {/* <i className="fa fa-fw fa-search "></i> */}
-                        <i><img src={ searchIcon } /></i>
-                        </Link>
-                        <li className="nav-item">
-                            {/* {!token && <Link className="nav-link" to="/login"><i className="fa fa-fw fa-user "></i></Link>}
-                            {token && <Link className="nav-link" to="/profile"><i className="fa fa-fw fa-user "></i></Link>} */}
-                            {!token && <Link className="nav-link" to="/login"><i><img src={ userIcon } /></i></Link>}
-                            {token && <Link className="nav-link" to="/profile"><i><img src={ userIcon } /></i></Link>}
-                        </li>
-                        <li className="nav-item">
-                            {/* {!token && <Link className="nav-link" to="/login"><i className="fa fa-heart" aria-hidden="true"></i></Link>}
-                            {token && <Link className="nav-link" to="/wishlist"    ><i className="fa fa-heart" aria-hidden="true"><span class="dot"><span className='wishCount'>{list?.length}</span></span></i></Link>} */}
-                            {!token && <Link className="nav-link" to="/login"><i><img src={ heartIcon } /></i></Link>}
-                            {token && <Link className="nav-link" to="/wishlist"    ><i><img src={ heartIcon } /><span class="dot"><span className='wishCount'>{list?.length}</span></span></i></Link>}
+                        {/* <Link className="d-none d-lg-block col-md-6" to="/"><img src="/pic/logo.png" className="img-fluid logocenter" alt="logo" /></Link> */}
+                        <div className='col-md-3' style={{ display: 'flex', justifyContent: 'flex-end'}} id='UserSection'>
+                            <Link className="nav-link" to="/search">
+                            {/* <i className="fa fa-fw fa-search "></i> */}
+                            <i><img src={ searchIcon } /></i>
+                            </Link>
+                            <li className="nav-item">
+                                {/* {!token && <Link className="nav-link" to="/login"><i className="fa fa-fw fa-user "></i></Link>}
+                                {token && <Link className="nav-link" to="/profile"><i className="fa fa-fw fa-user "></i></Link>} */}
+                                {!token && <Link className="nav-link" to="/login"><i><img src={ userIcon } /></i></Link>}
+                                {token && <Link className="nav-link" to="/profile"><i><img src={ userIcon } /></i></Link>}
+                            </li>
+                            <li className="nav-item">
+                                {/* {!token && <Link className="nav-link" to="/login"><i className="fa fa-heart" aria-hidden="true"></i></Link>}
+                                {token && <Link className="nav-link" to="/wishlist"    ><i className="fa fa-heart" aria-hidden="true"><span class="dot"><span className='wishCount'>{list?.length}</span></span></i></Link>} */}
+                                {!token && <Link className="nav-link" to="/login"><i><img src={ heartIcon } /></i></Link>}
+                                {token && <Link className="nav-link" to="/wishlist"    ><i><img src={ heartIcon } /><span class="dot"><span className='wishCount'>{list?.length}</span></span></i></Link>}
 
-                        </li>
+                            </li>
+                        </div>
                     </ul>
                 </div>
             </nav>

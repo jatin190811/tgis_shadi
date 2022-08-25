@@ -65,7 +65,7 @@ p{
 }
 
 .navbar-expand-lg .navbar-nav {
-    margin-left: 30px !important;
+    /* margin-left: 30px !important; */
 }
 
 .navbar-expand-lg .navbar-nav .nav-link {
@@ -657,17 +657,19 @@ body {
 }
 img.img-fluid.logocenter {
   /* margin-top: -100px; */
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%, -35%);
+  /* position: absolute; */
+  /* left: 50%; */
+  /* transform: translate(-50%, -35%); */
 }
 .logocenter {
-  max-width: 14%;
+  /* max-width: 14%; */
 }
 
 .top-header {
-  padding-left: 2.5%;
-  padding-right: 2.5%;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
   border-bottom: 2px solid;
   border-image-slice: 1;
   border-width: 1px;
@@ -689,10 +691,13 @@ span {
   font-size: 0.8em;
 }
 #myNavbarToggler7 {
-  padding-top: 2vh;
-  padding-bottom: 2vh;
-  padding-left: 3vw;
-  padding-right: 3vw;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+  /* padding-left: 3vw; */
+  /* padding-right: 3vw; */
+  width: 100%;
+  position: relative;
+
 }
 .heropy {
   padding-right: 10%;
