@@ -596,7 +596,7 @@ function List() {
           <span style={{cursor:'pointer', color: '#49516F'}} onClick={() => {
             
             if(areas.length) getArea();
-            setShowFilter(!showFilter)}}><img src="/pic/icon/vector.png" alt="" srcSet="" className="img-fluid" />
+            setShowFilter(!showFilter)}}><img style={{ paddingRight: '10px' }} src="/pic/icon/vector.png" alt="" srcSet="" className="img-fluid" />
             Filters</span>
           </div>
 
@@ -659,7 +659,7 @@ function List() {
       </div>}
 
       <div className="container-fluid ">
-        <hr style={{ color: '#f180ab', border: '1px solid' }} className="mx-5 g-0" />
+        <hr style={{ border: '1px solid #F180AB', opacity: '1', marginTop: '0' }} className="mx-5 g-0" />
 
         <div className="justify-content-center mylove g-0 pt-3 px-5 pb-5">
           {subCatList && subCatList.map(item => <div className="categories"><span className={subCat == item ? 'borderme' : 'nonborderme'} onClick={() => setSubCat(item)}>{item}</span></div>)}

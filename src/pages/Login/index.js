@@ -238,8 +238,8 @@ function Login() {
                     <div className="col-md-7  text-center heropy">
                     <div className='logo-div'>
                             <img src="/pic/logo.png" alt="" sizes="" className="logo-img" />
-                        </div>                         <h2>Welcome Back!</h2>
-                        <p>Sign In</p>
+                        </div>                         <h2 style={{ fontWeight: '600' }}>Welcome Back!</h2>
+                        <p style={{ fontWeight: '500', color: 'black' }}>Sign In</p>
                         <div style={{ textAlign: 'center', display: 'inline-block' }}>
                             <div className="my-4 py-2 flex-login"><img src="pic/icon/google.png" width="35px" className="img-fluid mrleft" /> Continue with Google
                             </div>
