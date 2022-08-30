@@ -19,10 +19,10 @@ function IndiBlog() {
 
       const { id } = useParams();
       console.log("id",id)
-      const baseUrl = "http://146.190.30.14:8090/";
+      const baseUrl = "http://134.209.153.76:8090/";
     
       useEffect(() => {
-        if(id) getBlog(`http://146.190.30.14:8090/api/v1/blog/${id}`)
+        if(id) getBlog(`http://134.209.153.76:8090/api/v1/blog/${id}`)
       }, [])
       const getBlog = (url) => axios({
         method: 'GET',
@@ -50,9 +50,9 @@ function IndiBlog() {
                         <div className="col-md-6 text-end"><span style={{color:'#7a7c7e'}}></span>
                             <img src="/pic/share.png" alt="loccationn" style={{cursor:'pointer'}} className="img-fluid " width="15px" onClick={() => setShowShare(!showShare)}/>
                             {showShare  && <div class="share-container">
-                  <FacebookShareButton url={`http://146.190.30.14:8090/blog/${blog._id}`}><FacebookIcon>Facebook</FacebookIcon></FacebookShareButton>
+                  <FacebookShareButton url={`http://134.209.153.76:8090/blog/${blog._id}`}><FacebookIcon>Facebook</FacebookIcon></FacebookShareButton>
                   <WhatsappShareButton>
-                    <WhatsappIcon url={`http://146.190.30.14:8090/blog/${blog._id}`}>Whatsapp</WhatsappIcon></WhatsappShareButton>
+                    <WhatsappIcon url={`http://134.209.153.76:8090/blog/${blog._id}`}>Whatsapp</WhatsappIcon></WhatsappShareButton>
                   
                   </div>}
                         </div>

@@ -22,7 +22,7 @@
 //   const [rating, setRating] = useState();
 //   const [areas, setAreas] = useState([]);
 //   const [selectValue, setSelectValue] = useState('');
-//   const baseUrl = "http://146.190.30.14:8090/";
+//   const baseUrl = "http://134.209.153.76:8090/";
 
 //   let type, type1;
 //   // useEffect(() => {
@@ -58,17 +58,17 @@
 
 //   useEffect(() => {
     
-//       getCategories(`http://146.190.30.14:8090/api/v1/${type1}`)
-//       getAreas(`http://146.190.30.14:8090/api/v1/areas`)
+//       getCategories(`http://134.209.153.76:8090/api/v1/${type1}`)
+//       getAreas(`http://134.209.153.76:8090/api/v1/areas`)
     
     
     
 //   }, [])
 //   const getArea = () => {
-//     getAreas(`http://146.190.30.14:8090/api/v1/areas`)
+//     getAreas(`http://134.209.153.76:8090/api/v1/areas`)
 //   }
 //   useEffect(() => {
-//     getCategories(`http://146.190.30.14:8090/api/v1/${type1}`)
+//     getCategories(`http://134.209.153.76:8090/api/v1/${type1}`)
 //   }, [subCat])
 
 //   // useEffect(() => {
@@ -78,10 +78,10 @@
 
 //   useEffect(() => {
 //     if(Object.keys(filterObj).length == 0) 
-//     getCategories(`http://146.190.30.14:8090/api/v1/${type1}`)
+//     getCategories(`http://134.209.153.76:8090/api/v1/${type1}`)
 //   }, [filterObj])
 //   // useEffect(() => {
-//   //   getCategories(`http://146.190.30.14:8090/api/v1/${type1}`)
+//   //   getCategories(`http://134.209.153.76:8090/api/v1/${type1}`)
 //   // }, [rating])
 //   const getCategories = (url) => axios({
 //     method: 'POST',
@@ -146,7 +146,7 @@
     
 //   }
 //   useEffect(()=>{
-//     getCategories(`http://146.190.30.14:8090/api/v1/${type1}`)
+//     getCategories(`http://134.209.153.76:8090/api/v1/${type1}`)
 //   },[rating])
 //   const checkHandler = (event,key) => {
 //     let applyFilters = structuredClone(filterObj);
@@ -170,7 +170,7 @@
 //   }
 
 //   const getFilteredResults = () => {
-//   getCategories(`http://146.190.30.14:8090/api/v1/${type1}`)
+//   getCategories(`http://134.209.153.76:8090/api/v1/${type1}`)
    
 //   }
 //   const clearFilter = () => {
@@ -350,7 +350,7 @@ function List() {
   const [rating, setRating] = useState();
   const [areas, setAreas] = useState([]);
   const [selectValue, setSelectValue] = useState('');
-  const baseUrl = "http://146.190.30.14:8090/";
+  const baseUrl = "http://134.209.153.76:8090/";
 
   let type, type1;
   let banner = {};
@@ -436,19 +436,19 @@ function List() {
 
   useEffect(() => {
     
-      getCategories(`http://146.190.30.14:8090/api/v1/${type1}`)
-      getAreas(`http://146.190.30.14:8090/api/v1/areas`)
+      getCategories(`http://134.209.153.76:8090/api/v1/${type1}`)
+      getAreas(`http://134.209.153.76:8090/api/v1/areas`)
       window.scrollTo(0,0);
     
     
   }, [])
   const getArea = () => {
-    getAreas(`http://146.190.30.14:8090/api/v1/areas`)
+    getAreas(`http://134.209.153.76:8090/api/v1/areas`)
   }
   useEffect(() => {
     setList([])
     setDefaultmsg('Loading Data...')
-    getCategories(`http://146.190.30.14:8090/api/v1/${type1}`)
+    getCategories(`http://134.209.153.76:8090/api/v1/${type1}`)
   }, [subCat])
 
   // useEffect(() => {
@@ -458,10 +458,10 @@ function List() {
 
   useEffect(() => {
     if(Object.keys(filterObj).length == 0) 
-    getCategories(`http://146.190.30.14:8090/api/v1/${type1}`)
+    getCategories(`http://134.209.153.76:8090/api/v1/${type1}`)
   }, [filterObj])
   // useEffect(() => {
-  //   getCategories(`http://146.190.30.14:8090/api/v1/${type1}`)
+  //   getCategories(`http://134.209.153.76:8090/api/v1/${type1}`)
   // }, [rating])
   const getCategories = (url) => axios({
     method: 'POST',
@@ -528,7 +528,7 @@ function List() {
     
   }
   useEffect(()=>{
-    getCategories(`http://146.190.30.14:8090/api/v1/${type1}`)
+    getCategories(`http://134.209.153.76:8090/api/v1/${type1}`)
   },[rating])
   const checkHandler = (event,key) => {
     let applyFilters = structuredClone(filterObj);
@@ -555,7 +555,7 @@ function List() {
     setList([])
     setDefaultmsg('Loading Data...');
 
-    getCategories(`http://146.190.30.14:8090/api/v1/${type1}`)
+    getCategories(`http://134.209.153.76:8090/api/v1/${type1}`)
    
   }
   const clearFilter = () => {

@@ -14,7 +14,7 @@
 //     useEffect(()=> {
 //         axios({
 //             method: 'post',
-//             url: 'http://146.190.30.14:8090/api/v1/cities',
+//             url: 'http://134.209.153.76:8090/api/v1/cities',
 //         }).then((resp) => {
 //             if (resp.statusText == "OK") {
 //                 if (resp.data.status == 'error') toast.error(resp.data.message, {});
@@ -51,7 +51,7 @@
 
 //         axios({
 //             method: 'post',
-//             url: 'http://146.190.30.14:8090/api/v1/onboarding',
+//             url: 'http://134.209.153.76:8090/api/v1/onboarding',
 //             data: qs.stringify({
 //                 city: state.city,
 //                 budget: state.budget,
@@ -350,7 +350,7 @@ function Onboarding() {
     useEffect(()=> {
         axios({
             method: 'post',
-            url: 'http://146.190.30.14:8090/api/v1/cities',
+            url: 'http://134.209.153.76:8090/api/v1/cities',
         }).then((resp) => {
             if (resp.statusText == "OK") {
                 if (resp.data.status == 'error') toast.error(resp.data.message, {});
@@ -387,7 +387,7 @@ function Onboarding() {
 
         axios({
             method: 'post',
-            url: 'http://146.190.30.14:8090/api/v1/onboarding',
+            url: 'http://134.209.153.76:8090/api/v1/onboarding',
             data: qs.stringify({
                 city: state.city,
                 budget: state.budget,

@@ -32,7 +32,7 @@ function VendorPage() {
     const submitVendorDetails = () => {
         axios({
             method: 'post',
-            url: 'http://146.190.30.14:8090/api/v1/vendors/request',
+            url: 'http://134.209.153.76:8090/api/v1/vendors/request',
             data: {...state},
             headers: {
                 'content-type': 'application/json'
@@ -52,7 +52,7 @@ function VendorPage() {
     const doLogin = () => {
         axios({
             method: 'post',
-            url: 'http://146.190.30.14:8090/api/v1/login',
+            url: 'http://134.209.153.76:8090/api/v1/login',
             data: qs.stringify({
                 username: state.email,
                 password: state.password,

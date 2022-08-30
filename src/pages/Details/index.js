@@ -52,16 +52,16 @@ function Details() {
 	const [reveiewArray,setReviewArray] = useState(arr)
 	const [count,setCount] = useState(0)
 	
-	const baseUrl = 'http://146.190.30.14:8090/';
+	const baseUrl = 'http://134.209.153.76:8090/';
 	useEffect(() => {
-		getData(`http://146.190.30.14:8090/api/v1/${type1}/${id}`)
-		getRatingList(`http://146.190.30.14:8090/api/v1/list-rating`)
+		getData(`http://134.209.153.76:8090/api/v1/${type1}/${id}`)
+		getRatingList(`http://134.209.153.76:8090/api/v1/list-rating`)
 		window.scrollTo(0,0);
 	}, [])
 
 	useEffect(() => {
-		getData(`http://146.190.30.14:8090/api/v1/${type1}/${id}`)
-		getRatingList(`http://146.190.30.14:8090/api/v1/list-rating`)
+		getData(`http://134.209.153.76:8090/api/v1/${type1}/${id}`)
+		getRatingList(`http://134.209.153.76:8090/api/v1/list-rating`)
 		window.scrollTo(0,0);
 	}, [type, id])
 
@@ -96,7 +96,7 @@ function Details() {
 		}
 	})
 	const sendMessage = () => {
-		let url = 'http://146.190.30.14:8090/api/v1/message-us';
+		let url = 'http://134.209.153.76:8090/api/v1/message-us';
 		axios({
 			method: 'POST',
 			url,
@@ -119,7 +119,7 @@ function Details() {
 	}
 
 	const connectMe = () => {
-		let url = 'http://146.190.30.14:8090/api/v1/connect-me';
+		let url = 'http://134.209.153.76:8090/api/v1/connect-me';
 		axios({
 			method: 'POST',
 			url,
@@ -159,7 +159,7 @@ function Details() {
 		
 	}
 	const addRating = () => {
-		let url = 'http://146.190.30.14:8090/api/v1/add-rating';
+		let url = 'http://134.209.153.76:8090/api/v1/add-rating';
 		axios({
 			method: 'POST',
 			url,
@@ -173,7 +173,7 @@ function Details() {
 				if (resp.data.status == 'error') toast.error(resp.data.message, {});
 				else if(resp.data.status == 'success') {
 					clearReview();
-					getRatingList(`http://146.190.30.14:8090/api/v1/list-rating`)
+					getRatingList(`http://134.209.153.76:8090/api/v1/list-rating`)
 				}
 			} else {
 	
@@ -182,7 +182,7 @@ function Details() {
 	}
 
 	const verifyOtp = () => {
-		let url = 'http://146.190.30.14:8090/api/v1/verify-message'
+		let url = 'http://134.209.153.76:8090/api/v1/verify-message'
 		axios({
 			method: 'POST',
 			url,

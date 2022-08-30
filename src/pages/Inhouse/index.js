@@ -21,7 +21,7 @@ function Inhouse() {
   // const [types, setTypes] = useState('');
   const [rating, setRating] = useState();
   const [selectValue, setSelectValue] = useState('');
-  const baseUrl = "http://146.190.30.14:8090/";
+  const baseUrl = "http://134.209.153.76:8090/";
 
   let type, type1;
   // useEffect(() => {
@@ -56,20 +56,20 @@ else {
   
 
   useEffect(() => {
-    getCategories(`http://146.190.30.14:8090/api/v1/${type1}`)
+    getCategories(`http://134.209.153.76:8090/api/v1/${type1}`)
     
     
   }, [])
 
   useEffect(() => {
-    getCategories(`http://146.190.30.14:8090/api/v1/${type1}`)
+    getCategories(`http://134.209.153.76:8090/api/v1/${type1}`)
   }, [subCat])
   useEffect(() => {
     if(Object.keys(filterObj).length == 0) 
-    getCategories(`http://146.190.30.14:8090/api/v1/${type1}`)
+    getCategories(`http://134.209.153.76:8090/api/v1/${type1}`)
   }, [filterObj])
   // useEffect(() => {
-  //   getCategories(`http://146.190.30.14:8090/api/v1/${type1}`)
+  //   getCategories(`http://134.209.153.76:8090/api/v1/${type1}`)
   // }, [rating])
   const getCategories = (url) => {
     const arr = {...filterObj, inhouse:true};
@@ -107,7 +107,7 @@ else {
     
   }
   useEffect(()=>{
-    getCategories(`http://146.190.30.14:8090/api/v1/${type1}`)
+    getCategories(`http://134.209.153.76:8090/api/v1/${type1}`)
   },[rating])
   const checkHandler = (event,key) => {
     let applyFilters = structuredClone(filterObj);
@@ -131,7 +131,7 @@ else {
   }
 
   const getFilteredResults = () => {
-  getCategories(`http://146.190.30.14:8090/api/v1/${type1}`)
+  getCategories(`http://134.209.153.76:8090/api/v1/${type1}`)
    
   }
   const clearFilter = () => {

@@ -23,7 +23,7 @@ function Footer() {
 
     }
     const subscribe = () => {
-		let url = 'http://146.190.30.14:8090/api/v1/subscribe';
+		let url = 'http://134.209.153.76:8090/api/v1/subscribe';
 		axios({
 			method: 'POST',
 			url,

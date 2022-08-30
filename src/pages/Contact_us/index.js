@@ -17,7 +17,7 @@ function ContactUs() {
 
   const contactUs = () => {
     
-    let url = 'http://146.190.30.14:8090/api/v1/contact-us';
+    let url = 'http://134.209.153.76:8090/api/v1/contact-us';
     axios({
       method: 'POST',
       url,
@@ -31,12 +31,20 @@ function ContactUs() {
         message
       }
     }).then((resp) => {
-      if(resp.status = 'success') {
-        toast("Contact Message Sent")
+      if (resp.statusText == "OK") {
+        if (resp.data.status == 'error') toast.error(resp.data.message, {});
+      } else if(resp.data.status == 'success'){
+            toast("Contact Message Sent")
         ref1.current.value = '';
         ref2.current.value = '';
         ref3.current.value = '';
       }
+      // if(resp.status = 'success') {
+      //   toast("Contact Message Sent")
+      //   ref1.current.value = '';
+      //   ref2.current.value = '';
+      //   ref3.current.value = '';
+      // }
     })
   }
 
