@@ -39,17 +39,17 @@ function Home() {
     }
 
     useEffect(() => {
-        getData('http://146.190.30.14:8090/api/v1/categories/popular');
-        getHouseCategories('http://146.190.30.14:8090/api/v1/inhouse');
-        getVendors('http://146.190.30.14:8090/api/v1/vendors');
-        getBlogs('http://146.190.30.14:8090/api/v1/blogs');
-        getVenues('http://146.190.30.14:8090/api/v1/venues');
-        getTestimonials('http://146.190.30.14:8090/api/v1/testimonials')
+        getData('http://134.209.153.76:8090/api/v1/categories/popular');
+        getHouseCategories('http://134.209.153.76:8090/api/v1/inhouse');
+        getVendors('http://134.209.153.76:8090/api/v1/vendors');
+        getBlogs('http://134.209.153.76:8090/api/v1/blogs');
+        getVenues('http://134.209.153.76:8090/api/v1/venues');
+        getTestimonials('http://134.209.153.76:8090/api/v1/testimonials')
 
 
     }, [])
 
-    const baseUrl = "http://146.190.30.14:8090/";
+    const baseUrl = "http://134.209.153.76:8090/";
     const getData = (url) => axios({
         method: 'GET',
         url,
@@ -84,7 +84,7 @@ function Home() {
         let token = localStorage.getItem('token');
         if (token && !item.liked) {  // todo 
           
-            let url = 'http://146.190.30.14:8090/api/v1/like';
+            let url = 'http://134.209.153.76:8090/api/v1/like';
             axios({
                 method: 'POST',
                 url,
@@ -98,11 +98,11 @@ function Home() {
                 }
             }).then((resp) => {
                 
-               getVenues('http://146.190.30.14:8090/api/v1/venues');
+               getVenues('http://134.209.153.76:8090/api/v1/venues');
             })
         }
         else if (token && item.liked) {
-            let url = 'http://146.190.30.14:8090/api/v1/unlike';
+            let url = 'http://134.209.153.76:8090/api/v1/unlike';
             axios({
                 method: 'POST',
                 url,
@@ -115,7 +115,7 @@ function Home() {
                     type: 'venue'
                 }
             }).then((resp) => {
-               getVenues('http://146.190.30.14:8090/api/v1/venues');
+               getVenues('http://134.209.153.76:8090/api/v1/venues');
             })
         }
         else {
@@ -190,7 +190,7 @@ function Home() {
     }
 
     const appLink = () => {
-        let url = 'http://146.190.30.14:8090/api/v1/app-link';
+        let url = 'http://134.209.153.76:8090/api/v1/app-link';
 		axios({
 			method: 'POST',
 			url,
@@ -607,8 +607,8 @@ function Home() {
                                        
                                     }} width="20px" />
                                     {showShare && showIndex == index && <div class="share-container">
-                                        <FacebookShareButton url={`http://146.190.30.14:8090/blog/${item._id}`}><FacebookIcon>Facebook</FacebookIcon></FacebookShareButton>
-                                        <WhatsappShareButton url={`http://146.190.30.14:8090/blog/${item._id}`}>
+                                        <FacebookShareButton url={`http://134.209.153.76:8090/blog/${item._id}`}><FacebookIcon>Facebook</FacebookIcon></FacebookShareButton>
+                                        <WhatsappShareButton url={`http://134.209.153.76:8090/blog/${item._id}`}>
                                             <WhatsappIcon >Whatsapp</WhatsappIcon></WhatsappShareButton>
 
                                     </div>}

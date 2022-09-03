@@ -75,7 +75,7 @@ function Login() {
 
         axios({
             method: 'post',
-            url: 'http://146.190.30.14:8090/api/v1/register',
+            url: 'http://134.209.153.76:8090/api/v1/register',
             data: qs.stringify({
                 email: state.email,
                 password: state.password,
@@ -113,7 +113,7 @@ function Login() {
 
         axios({
             method: 'post',
-            url: 'http://146.190.30.14:8090/api/v1/verify-register',
+            url: 'http://134.209.153.76:8090/api/v1/verify-register',
             data: qs.stringify({
                 ref: state.ref,
                 otp: state.otp,

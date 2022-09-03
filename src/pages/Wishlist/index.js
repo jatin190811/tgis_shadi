@@ -5,8 +5,8 @@ import { ToastContainer, toast } from 'react-toastify';
 import { Link,useParams } from "react-router-dom";
 
 function Wishlist() {
-  let url = 'http://146.190.30.14:8090/api/v1/likelist';
-  let baseUrl = 'http://146.190.30.14:8090/';
+  let url = 'http://134.209.153.76:8090/api/v1/likelist';
+  let baseUrl = 'http://134.209.153.76:8090/';
   const [list, setList] = useState([]);
 
 
@@ -32,7 +32,7 @@ function Wishlist() {
   const setUnFav = (item) => {
     let token = localStorage.getItem('token');
 
-    let url = 'http://146.190.30.14:8090/api/v1/unlike';
+    let url = 'http://134.209.153.76:8090/api/v1/unlike';
     axios({
       method: 'POST',
       url,

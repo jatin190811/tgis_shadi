@@ -19,7 +19,7 @@ function SearchPage() {
   const [city, setCity] = useState('');
   const [rating, setRating] = useState(null);
   const [selectValue, setSelectValue] = useState('');
-  const baseUrl = "http://146.190.30.14:8090/";
+  const baseUrl = "http://134.209.153.76:8090/";
 
   let { type } = useParams();
   let type1 = type;
@@ -37,18 +37,18 @@ function SearchPage() {
   type1 =  'planner';
 
 //   useEffect(() => {
-//     getCategories(`http://146.190.30.14:8090/api/v1/${type1}`)
+//     getCategories(`http://134.209.153.76:8090/api/v1/${type1}`)
 //   }, [])
 
 //   useEffect(() => {
-//     getCategories(`http://146.190.30.14:8090/api/v1/${type1}`)
+//     getCategories(`http://134.209.153.76:8090/api/v1/${type1}`)
 //   }, [subCat])
 //   useEffect(() => {
 //     if(Object.keys(filterObj).length == 0) 
-//     getCategories(`http://146.190.30.14:8090/api/v1/${type1}`)
+//     getCategories(`http://134.209.153.76:8090/api/v1/${type1}`)
 //   }, [filterObj])
 //   useEffect(() => {
-//     getCategories(`http://146.190.30.14:8090/api/v1/${type1}`)
+//     getCategories(`http://134.209.153.76:8090/api/v1/${type1}`)
 //   }, [rating])
 
   const getCategories = (url) => axios({
@@ -104,7 +104,7 @@ function SearchPage() {
   }
 
   const getFilteredResults = () => {
-  getCategories(`http://146.190.30.14:8090/api/v1/search`)
+  getCategories(`http://134.209.153.76:8090/api/v1/search`)
    
   }
   const clearFilter = () => {

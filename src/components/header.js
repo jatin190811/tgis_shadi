@@ -251,7 +251,7 @@
     
 //     useEffect(() => {
 //         if(token) {
-//             let url = 'http://146.190.30.14:8090/api/v1/likelist';
+//             let url = 'http://134.209.153.76:8090/api/v1/likelist';
 //             axios({
 //                 method: 'POST',
 //                 url,
@@ -369,7 +369,7 @@ function Header() {
     
     useEffect(() => {
         if(token) {
-            let url = 'http://146.190.30.14:8090/api/v1/likelist';
+            let url = 'http://134.209.153.76:8090/api/v1/likelist';
             axios({
                 method: 'POST',
                 url,

@@ -13,10 +13,10 @@ function Category() {
   const [searchValue, setSearchValue] = useState('');
 
   const navigate = useNavigate();
-  const baseUrl = "http://146.190.30.14:8090/";
+  const baseUrl = "http://134.209.153.76:8090/";
 
   useEffect(() => {
-    getCategories('http://146.190.30.14:8090/api/v1/categories')
+    getCategories('http://134.209.153.76:8090/api/v1/categories')
     window.scrollTo(0,0);
   }, [])
 

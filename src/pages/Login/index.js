@@ -30,7 +30,7 @@
 //     const doLogin = () => {
 //        axios({
 // 			method: 'post',
-// 			url: 'http://146.190.30.14:8090/api/v1/login',
+// 			url: 'http://134.209.153.76:8090/api/v1/login',
 // 			data: qs.stringify({
 // 				username: state.email,
 // 				password: state.password,
@@ -155,6 +155,8 @@ import { ToastContainer, toast } from 'react-toastify';
 import { Link } from "react-router-dom";
 import qs from 'qs'
 import axios from 'axios';
+import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props';
+import { GoogleLogin } from 'react-google-login';
 
 import 'react-toastify/dist/ReactToastify.css';
 function Login() {
@@ -182,7 +184,7 @@ function Login() {
     const doLogin = () => {
         axios({
             method: 'post',
-            url: 'http://146.190.30.14:8090/api/v1/login',
+            url: 'http://134.209.153.76:8090/api/v1/login',
             data: qs.stringify({
                 username: state.email,
                 password: state.password,
@@ -221,6 +223,14 @@ function Login() {
             toast.error('Please Enter Password', {});
         }
     }
+    
+    const responseFacebook = (data) =>{
+        console.log("dataaaa",data)
+    }
+
+    const responseGoogle = (data) =>{
+        console.log("dataaaa",data)
+    }
 
     return (
         <>
@@ -241,10 +251,28 @@ function Login() {
                         </div>                         <h2 style={{ fontWeight: '600' }}>Welcome Back!</h2>
                         <p style={{ fontWeight: '500', color: 'black' }}>Sign In</p>
                         <div style={{ textAlign: 'center', display: 'inline-block' }}>
-                            <div className="my-4 py-2 flex-login"><img src="pic/icon/google.png" width="35px" className="img-fluid mrleft" /> Continue with Google
-                            </div>
-                            <div className="my-4 py-2 flex-login"><img src="pic/icon/facebook.png" width="35px" className="img-fluid mrleft" /> Continue with Facebook
-                            </div>
+                           
+                            <GoogleLogin
+    clientId="658977310896-knrl3gka66fldh83dao2rhgbblmd4un9.apps.googleusercontent.com"
+    render={renderProps => (
+        <div style={{cursor: 'pointer'}} className="my-4 py-2 flex-login"><img src="pic/icon/google.png" width="35px" className="img-fluid mrleft" /> Continue with Google
+        </div>
+    )}
+    buttonText="Login"
+    onSuccess={responseGoogle}
+    onFailure={responseGoogle}
+    cookiePolicy={'single_host_origin'}
+  />
+                           
+                            <FacebookLogin
+  appId="423171089728998"
+  callback={responseFacebook}
+  render={renderProps => (
+    
+    <div className="my-4 py-2 flex-login" onClick={renderProps.onClick} style={{cursor: 'pointer'}}><img src="pic/icon/facebook.png" width="35px" className="img-fluid mrleft" /> Continue with Facebook
+    </div>
+  )}
+/>
                         </div>
 
                         <div className="row pb-4">

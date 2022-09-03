@@ -20,7 +20,7 @@ function ForgetPassword() {
             if (result || result1) {
                 axios({
                     method: 'post',
-                    url: 'http://146.190.30.14:8090/api/v1/forget-password',
+                    url: 'http://134.209.153.76:8090/api/v1/forget-password',
                     data: qs.stringify({
                         username: state.username,
                     }),
@@ -62,7 +62,7 @@ function ForgetPassword() {
 
         axios({
             method: 'post',
-            url: 'http://146.190.30.14:8090/api/v1/recover-password',
+            url: 'http://134.209.153.76:8090/api/v1/recover-password',
             data: qs.stringify({
                 ref: state.ref,
                 otp: state.otp,
@@ -92,7 +92,7 @@ function ForgetPassword() {
             if (result) {
                 axios({
                     method: 'post',
-                    url: 'http://146.190.30.14:8090/api/v1/change-password',
+                    url: 'http://134.209.153.76:8090/api/v1/change-password',
                     data: qs.stringify({
                         ref: state.ref,
                         password: state.password,

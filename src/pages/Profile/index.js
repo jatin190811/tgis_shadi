@@ -39,7 +39,7 @@ function Profile() {
     formData.append("userPic", selectedFile);
      // ALSO ADD RANDOM VALUE IF YOU WANT LIKE STRING , OBJECT OR      ARRAY
   // API CALL
-  let url = 'http://146.190.30.14:8090/api/v1/user/pic';
+  let url = 'http://134.209.153.76:8090/api/v1/user/pic';
     axios({
       method: 'POST',
       url,
@@ -66,11 +66,11 @@ function Profile() {
   const ref3 = useRef(null)
   const ref4 = useRef(null)
 
-  // let url = 'http://146.190.30.14:8090/api/v1/profile';
+  // let url = 'http://134.209.153.76:8090/api/v1/profile';
 
   // console.log("profile")
   const updateDetails = () => {
-    let url = 'http://146.190.30.14:8090/api/v1/profile';
+    let url = 'http://134.209.153.76:8090/api/v1/profile';
     axios({
       method: 'POST',
       url,
@@ -91,7 +91,7 @@ function Profile() {
     })
   }
   useEffect(() => {
-    let url = 'http://146.190.30.14:8090/api/v1/profile';
+    let url = 'http://134.209.153.76:8090/api/v1/profile';
     axios({
       method: 'POST',
       url,
@@ -112,7 +112,7 @@ function Profile() {
   }, [])
 
   const updateProfile = () => {
-    let url = 'http://146.190.30.14:8090/api/v1/update-profile';
+    let url = 'http://134.209.153.76:8090/api/v1/update-profile';
     axios({
       method: 'POST',
       url,
@@ -217,7 +217,7 @@ function Profile() {
           </div>
           <div className="col-md-1 " ></div>
           <div className="col-md-4 " style={{paddingLeft: '8%', paddingTop: '5%', position:'relative'}}>
-          {!imageUploaded && <div> <img src={userProfile.profilePic ? `http://146.190.30.14:8090/${userProfile.profilePic}` : 'pic/ct/default-image.jpeg'} alt="profile pic" width="300" height="300" style={{borderRadius: '50%'}} /> </div>}
+          {!imageUploaded && <div> <img src={userProfile.profilePic ? `http://134.209.153.76:8090/${userProfile.profilePic}` : 'pic/ct/default-image.jpeg'} alt="profile pic" width="300" height="300" style={{borderRadius: '50%'}} /> </div>}
           {<div><img ref={uploadedImage} alt="logo" width="300" height="300" style={{display: !imageUploaded ? 'none' : '', borderRadius: '50%'}}/></div>}
           <div
       style={{

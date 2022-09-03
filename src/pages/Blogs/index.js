@@ -14,10 +14,10 @@ function Blogs() {
 }
   const [blogs, setBlogs] = useState([]);
   const [showIndex, setShowIndex] = useState(null);
-  const baseUrl = "http://146.190.30.14:8090/";
+  const baseUrl = "http://134.209.153.76:8090/";
 
   useEffect(() => {
-    getBlogs('http://146.190.30.14:8090/api/v1/blogs')
+    getBlogs('http://134.209.153.76:8090/api/v1/blogs')
   }, [])
   const getBlogs = (url) => axios({
     method: 'GET',
@@ -73,8 +73,8 @@ function Blogs() {
                   setShowIndex(index);
                 } }width="20px"/>
                 {showShare && showIndex == index && <div class="share-container" >
-                  <FacebookShareButton url={`http://146.190.30.14:8090/blog/${item._id}`}><FacebookIcon>Facebook</FacebookIcon></FacebookShareButton>
-                  <WhatsappShareButton url={`http://146.190.30.14:8090/blog/${item._id}`}>
+                  <FacebookShareButton url={`http://134.209.153.76:8090/blog/${item._id}`}><FacebookIcon>Facebook</FacebookIcon></FacebookShareButton>
+                  <WhatsappShareButton url={`http://134.209.153.76:8090/blog/${item._id}`}>
                     <WhatsappIcon >Whatsapp</WhatsappIcon></WhatsappShareButton>
                   
                   </div>}
