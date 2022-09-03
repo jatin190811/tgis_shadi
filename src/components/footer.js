@@ -87,7 +87,7 @@ return(
   </div>
 <hr style={{width:'100%'}} className="mt-5"/>
 
-<div className="row py-3">
+<div className="row py-3 foot-terms">
     <div className='col-lg-1 col-md-1'></div>
       <div style={{ paddingLeft: '0' }} className="col-lg-4 col-md-4 col-sm-12">
       
