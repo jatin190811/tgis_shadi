@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './index.css';
-// import './index_mobile.css';
+import './index_mobile.css';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import { Link, useNavigate } from "react-router-dom";
@@ -253,7 +253,7 @@ function Home() {
                 backgroundImage: `url(${image})`, width: '100%',
                 height: '90%', overflow: 'hidden'
             }} >
-                <div className="row py-5 mx-5 " style={{ marginTop: '10rem', marginBottom: '15rem' }}>
+                <div className="row py-5 mx-5 intro-text" style={{}}>
 
                     <div className="col-md-6 col-sm-12 hero-text">
                         <p style={{ color: '#ffabc4' }}>AN AFFAIR TO REMEMBER</p>
@@ -280,7 +280,7 @@ function Home() {
                 </div>
             </div>
 
-            <div className="container-fluid py-5">
+            <div className="container-fluid py-5 scroll-part-desktop">
                 <div className="row">
                     <div style={{ paddingBottom: '1rem' }} className="col 12 text-center">
                         <h2 style={{ paddingBottom: '10px', fontWeight: '700'}}>Wedding Safety</h2>
@@ -344,6 +344,79 @@ function Home() {
                 </div>
 
             </div>
+
+
+
+
+<div className="container-fluid py-5 scroll-part-mobile">
+                <div className="row py-5" style={{ paddingLeft: '10vw', paddingRight: '10vw' }}>
+                    <div style={{ paddingBottom: '1rem' }} className="col 12 text-center">
+                        <h2 style={{ paddingBottom: '10px', fontWeight: '700'}}>Wedding Safety</h2>
+                        <p>Cupidatat ad in qui est aliqua consectetur incididunt irure. <br />
+                            Nostrud magna anim officia ad labore.</p>
+                    </div>
+                </div>
+                <div className="scroll-div">
+                    <div className="col-10">
+                        <div className="card  text-dark">
+                            <div className="card-body blur">
+                                <img src="pic/icon/4.png" alt="logo" className="blurimg" />
+                                <span className="blurtext"><h4>Protective Gears</h4>
+                                    <p>Routine use of masks, gloves and sanitizers.</p>
+                                </span>
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="col-10">
+                        <div className="card  text-dark">
+                            <div className="card-body blur">
+                                <img src="pic/icon/3.png" alt="logo" className="blurimg" />
+                                <span className="blurtext"><h4>Staff Screening</h4>
+                                    <p>Regular temperature checks of the team.</p>
+                                </span>
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="col-10">
+                        <div className="card  text-dark">
+                            <div className="card-body blur">
+                                <img src="pic/icon/2.png" alt="logo" className="blurimg" />
+                                <span className="blurtext"><h4>Sanitization Services</h4>
+                                    <p>Initiatives to disinfect the workspace frequently.</p>
+                                </span>
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="col-10">
+                        <div className="card  text-dark">
+                            <div className="card-body blur">
+                                <img src="pic/icon/1.png" alt="logo" className="blurimg" />
+                                <span className="blurtext"><h4>Social Distancng</h4>
+                                    <p>Maintain 4 feet distance & limit working staff.</p>
+                                </span>
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+
+
 
             <div className="container-fluid pb-5 category-home" >
                 <div className="row">

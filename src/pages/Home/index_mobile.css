@@ -1,0 +1,172 @@
+@media screen and (max-width: 768px) {
+    #root {
+        overflow: hidden;
+    }
+    .text-center h2, .align-items-center h2 {
+        font-size: 2.2rem !important;
+    }
+    .text-center p, .align-items-center p {
+        /* text-align: left !important; */
+    }
+
+    .hero-text h1 {
+        font-size: 2.2rem !important;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+    .hero-text p {
+        text-align: left !important;
+        font-size: 1rem;
+    }
+    .pic-num {
+        text-align: center;
+    }
+    .pic-num span {
+        font-size: 20px;
+    }
+    .pic-num + .text-center {
+        /* margin-top: 1rem; */
+        display: none;
+    }
+    .text-dark .blur .blurtext p {
+        text-align: left !important;
+    }
+    .category-home {
+        /* width: 100% !important; */
+        padding: 0 !important;
+    }
+    .category-home .row {
+        /* width: 100% !important; */
+        padding: 3rem;
+    }
+    .category-home .p-5 {
+        /* width: 100% !important; */
+        padding: 0 !important;
+    }
+    .category-home .card-img-top {
+        width: 270px !important; 
+        height: 350px !important;
+        max-width: fit-content !important;
+    }
+    .category-home .vendor-img {
+        width: 350px !important; 
+        height: 350px !important;
+        max-width: fit-content !important;
+    }
+    .align-items-center div {
+        /* justify-content: center; */
+    }
+    .align-items-center h2 {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+    .align-items-center h3, .align-items-center p {
+        text-align: justify !important;
+    }
+    .yt-frame {
+        padding-left: 0 !important;
+        padding-right: 0 !important ;
+    }
+    .yt-frame .p-lg-5 {
+        padding-left: 10vw !important;
+        padding-right: 10vw !important ; 
+    }
+    .yt-frame iframe {
+        max-width: 100% !important;
+        max-height: fit-content !important;
+    }
+    .yt-frame .py-5 {
+        padding-bottom: 0 !important;
+    }
+    .venues-home {
+        padding-left: 10vw !important;
+        padding-right: 10vw !important;
+        width: 80vw !important;
+    }
+    .venues-home .like-section {
+        margin-top: 5%;
+        width: 80vw;
+    }
+    .venues-home .like-heart {
+        right: 0px !important;
+    }
+    .d-flex {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .testt {
+        margin-top: 0;
+    }
+    .testt h3 {
+        font-size: 2rem !important;
+    }
+    .testt-img {
+        width: 90vw !important;
+        min-width: 90vw !important;
+        min-height: auto !important;
+    }
+    .download-img {
+        /* background-size: cover !important;
+        background-size: 100vh 100vw !important; */
+        /* background-color: aqua; */
+        background-image: linear-gradient(103.09deg, #FFC2CD 37.23%, rgba(255, 194, 205, 0.44) 91.36%) !important;
+        margin: auto 5vw;
+        width: 90vw;
+        border-radius: 20px;
+    }
+    .download-img .ctc2 {
+        font-size: 0.8rem !important;
+        width: 75vw !important;
+        margin: 0 !important;
+    }
+    .download-img .border-bottom { 
+        background-color: transparent;
+        width: 70%;
+        font-size: 0.8rem;
+        padding-bottom: 5px;
+    }
+    .download-img #ctc {
+        width: 70vw !important;
+        margin: 0 !important;
+        /* display: inline-block !important; */
+        align-items: center;
+    }
+    .download-img #ctc div {
+        display: inline-block !important;
+        padding: 0 !important;
+    }
+    .download-img #ctc button {
+        font-size: 0.8rem !important;
+    
+
+    }
+    .download-img #ctc img {
+        width: 30px !important;
+    }
+    .intro-text {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        margin-left: 0rem !important;
+        margin-right: 1rem !important;
+    }
+    .scroll-part-desktop {
+        display: none;
+    }
+    .scroll-part-mobile {
+        display: contents;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+    .scroll-div {
+        overflow-x: scroll;
+        display: flex;
+    }
+    .scroll-div div {
+        /* display: inline-block; */
+    }
+
+}
+
+
+
+

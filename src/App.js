@@ -1,5 +1,5 @@
 import './App.css';
-// import './App_mobile.css';
+import './App_Mobile.css';
 import React,{useEffect} from 'react';
 import Header from './components/header';
 import Layout from './components/Layout';
