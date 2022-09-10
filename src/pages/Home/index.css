@@ -233,7 +233,7 @@ position: relative;
       z-index: 10000000000;
       background-color: white;
       right: 14% !important;
-  }
+}
 
 
 
@@ -276,4 +276,11 @@ position: relative;
     /* margin-top: 15px; */
     line-height: 1.5;
     font-size: 14px;
+}
+.intro-text {
+    margin-top: 10rem;
+    margin-bottom: 15rem;
+}
+.scroll-part-mobile {
+    display: none;
 }

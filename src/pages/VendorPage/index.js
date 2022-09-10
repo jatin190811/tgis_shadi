@@ -98,23 +98,23 @@ function VendorPage() {
                 position="top-right"
                 autoClose={5000}
             />
-            <div className="container main">
+            <div id='vendor-container' style={{}} className="container main">
                 <div className="row mainrow">
-                    <div className="col-md-6 ">
-                    <img src="pic/vendor-banner.png" alt="" sizes="" className="img-fluid" />
+                    <div className="col-md-5 ">
+                    <img style={{ width: '100%', objectFit: 'cover' }} src="pic/vendor-banner.png" alt="" sizes="" className="img-fluid" />
                     </div>
-                    <div className="col-md-6  text-center heropy">
+                    <div className="col-md-7  text-center heropy">
                         <img src="/pic/logo.png" alt="" width="212" sizes="" className="img-fluid" />
                         <h2 className='vendor-heading'>Grow your Business</h2>
                         <form className="py-3" onSubmit={(event) => event.preventDefault()}>
                             <div className="row">
-                                <div className="col-md-12">
+                                <div className="col-md-10">
                                     <input type="text"  className="form-control botm" onChange={(event) => setState({ ...state, brand_name: event.target.value })} placeholder="Brand Name" name="name" required/>
                                 </div>
-                                <div className="col-md-12">
+                                <div className="col-md-10">
                                     <input type="text"  onChange={(event) => setState({ ...state, city: event.target.value })} className="form-control botm" placeholder="City" name="name" required/>
                                 </div>
-                                <div className="col-md-12">
+                                <div className="col-md-10">
                                 <select className="form-control form-select vendor-select" onChange={(e) => setState({ ...state, type: e.target.value })}>
                                     <option value="" >Select Type</option>
                                     <option value="venue">Venue</option>
@@ -126,16 +126,17 @@ function VendorPage() {
                                     <option value="decor">Decor</option>
                                 </select>
                                 </div>
-                                <div className="col-md-12">
+                                <div className="col-md-10">
                                     <input type="email"  className="form-control botm" onChange={(event) => setState({ ...state, email: event.target.value })} placeholder="Email ID" name="email" />
                                 </div>
-                                <div className="col-md-12">
+                                <div className="col-md-10">
                                     <input type="" onChange={(event) => setState({ ...state, phone: event.target.value })} className="form-control botm" placeholder="Mobile Number" name="tel" required/>
                                 </div>
                                 </div>
                         </form>
-
-                        <button className="onboardbtn mt-5" onClick={checkEmail} >Next</button>
+                        <div className='col-md-10'>
+                            <button className="onboardbtn mt-5" onClick={checkEmail} >Next</button>
+                        </div>
                     </div>
                 </div>
 

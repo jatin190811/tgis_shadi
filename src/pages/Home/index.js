@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './index.css';
+import './index_mobile.css';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import { Link, useNavigate } from "react-router-dom";
@@ -10,6 +11,7 @@ import {FacebookShareButton, FacebookIcon, WhatsappIcon, WhatsappShareButton} fr
 import bell from '../../assets/bell.svg';
 import checklist from '../../assets/checklist.svg';
 import bride from "../../assets/images/bride.png";
+import PopUp from '../../components/popup';
 
 function Home() {
     const [categories, setCatgories] = useState([]);
@@ -251,9 +253,9 @@ function Home() {
                 backgroundImage: `url(${image})`, width: '100%',
                 height: '90%', overflow: 'hidden'
             }} >
-                <div className="row py-5 mx-5 " style={{ marginTop: '10rem', marginBottom: '15rem' }}>
+                <div className="row py-5 mx-5 intro-text" style={{}}>
 
-                    <div className="col-md-6 col-sm-12">
+                    <div className="col-md-6 col-sm-12 hero-text">
                         <p style={{ color: '#ffabc4' }}>AN AFFAIR TO REMEMBER</p>
                         <h1 className="text-white">Be Charming<br /> More Than Ever</h1>
                         <p className="text-white">One stop destination for your wedding needs</p>
@@ -278,7 +280,7 @@ function Home() {
                 </div>
             </div>
 
-            <div className="container-fluid py-5">
+            <div className="container-fluid py-5 scroll-part-desktop">
                 <div className="row">
                     <div style={{ paddingBottom: '1rem' }} className="col 12 text-center">
                         <h2 style={{ paddingBottom: '10px', fontWeight: '700'}}>Wedding Safety</h2>
@@ -343,7 +345,80 @@ function Home() {
 
             </div>
 
-            <div className="container-fluid pb-5" >
+
+
+
+<div className="container-fluid py-5 scroll-part-mobile">
+                <div className="row py-5" style={{ paddingLeft: '10vw', paddingRight: '10vw' }}>
+                    <div style={{ paddingBottom: '1rem' }} className="col 12 text-center">
+                        <h2 style={{ paddingBottom: '10px', fontWeight: '700'}}>Wedding Safety</h2>
+                        <p>Cupidatat ad in qui est aliqua consectetur incididunt irure. <br />
+                            Nostrud magna anim officia ad labore.</p>
+                    </div>
+                </div>
+                <div className="scroll-div">
+                    <div className="col-10">
+                        <div className="card  text-dark">
+                            <div className="card-body blur">
+                                <img src="pic/icon/4.png" alt="logo" className="blurimg" />
+                                <span className="blurtext"><h4>Protective Gears</h4>
+                                    <p>Routine use of masks, gloves and sanitizers.</p>
+                                </span>
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="col-10">
+                        <div className="card  text-dark">
+                            <div className="card-body blur">
+                                <img src="pic/icon/3.png" alt="logo" className="blurimg" />
+                                <span className="blurtext"><h4>Staff Screening</h4>
+                                    <p>Regular temperature checks of the team.</p>
+                                </span>
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="col-10">
+                        <div className="card  text-dark">
+                            <div className="card-body blur">
+                                <img src="pic/icon/2.png" alt="logo" className="blurimg" />
+                                <span className="blurtext"><h4>Sanitization Services</h4>
+                                    <p>Initiatives to disinfect the workspace frequently.</p>
+                                </span>
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="col-10">
+                        <div className="card  text-dark">
+                            <div className="card-body blur">
+                                <img src="pic/icon/1.png" alt="logo" className="blurimg" />
+                                <span className="blurtext"><h4>Social Distancng</h4>
+                                    <p>Maintain 4 feet distance & limit working staff.</p>
+                                </span>
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+
+
+
+            <div className="container-fluid pb-5 category-home" >
                 <div className="row">
                     <div className="col 12 text-center">
                         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', color: '#ffabc4' }}>
@@ -370,7 +445,7 @@ function Home() {
                                     {item && item.tag?.length && <button type="button" className="btn btn-primary round">{item.tag[0]}</button>}
                                 </div>
                                 <h4 className="" style={{ fontSize: '18px',paddingTop: '1rem', textTransform: 'capitalize', paddingBottom: '0.5rem' }}>{item.name}</h4>
-                                <img src="/pic/Vector.png" alt="loccationn" srcSet="" className="img-fluid locat" width="15px" style={{ marginLeft: '5px' }} />
+                                <img src="/pic/Vector.png" alt="loccationn" srcSet="" className="img-fluid locat" width="15px" style={{ marginLeft: '0px' }} />
                                 <span style={{ fontSize: '14px' }} className="add-pop">{item.address}</span>
                             </div>
                         </div>))}
@@ -386,7 +461,7 @@ function Home() {
                 </div>
             </div >
 
-            <div className="container-fluid py-5">
+            <div className="container-fluid py-5 category-home">
                 <div className="row">
                     <div className="col 12 text-center">
                         <h2  style={{ fontWeight: '700'}}>Featured Vendor</h2>
@@ -411,7 +486,7 @@ function Home() {
                                 left: '20px'
                             }}>
                                 {item.name ? <h4 style={{ fontSize: '18px',paddingTop: '1rem', paddingBottom: '0.5rem' }} className="pt-3"><b>{item.name}</b></h4> : ''}
-                                <img src="/pic/Vector.png" alt="loccationn" srcSet="" className="img-fluid locat" width="15px" style={{ marginLeft: '5px' }} />
+                                <img src="/pic/Vector.png" alt="loccationn" srcSet="" className="img-fluid locat" width="15px" style={{ marginLeft: '0px' }} />
                                 <span style={{ fontSize: '14px' }} className="add-text">{item.address}</span>
                                 {item.price ? <p className=" pt-0" style={{ color: 'rgb(241, 128, 171)' }}>{item.price}</p> : ''}
                             </div>
@@ -420,7 +495,7 @@ function Home() {
                 </div >
             </div >
 
-            <div className="container-fluid mybg py-5 " style={{ backgroundImage: 'url("pic/mybg.png")' }}>
+            <div className="container-fluid mybg py-5 yt-frame" style={{ backgroundImage: 'url("pic/mybg.png")' }}>
                 <div className="row   ">
                     <div className="col-lg-6 col-md-6 col-sm-12  gx-lg-5 p-lg-5 ">
                         <div className="align-items-center justify-content-center ">
@@ -492,7 +567,7 @@ function Home() {
                         <h2 style={{ fontWeight: '600', fontSize: '40px' }}>Explore Excuisite Venues</h2>
                         <p style={{ paddingTop: '1rem', paddingBottom: '5vh' }}>It is a long established fact that a reader will be distracted<br /> by the readable content of a page </p>
                     </div>
-                    {venues && venues.filter(item => item.execuisite).map((item,index) => <div className="col-md-4 col-sm-12 px-3">
+                    {venues && venues.filter(item => item.execuisite).map((item,index) => <div className="col-md-4 col-sm-12 px-3 venues-home">
                         <div className="card mycd">
 
                             <Link to={"/entity/venue/" + item._id}>
@@ -521,9 +596,9 @@ function Home() {
                                     setTimeout(()=>{
                                         setFav(item,index)
                                     },0)
-                                    }}><img  src={(item.liked) ? 'pic/icon/fav.png' : 'pic/icon/h.png'} alt="loccationn" className="img-fluid " width="20px" style={{ float: 'right', position: 'relative', right: '15%' }} /></span>
+                                    }}><img  src={(item.liked) ? 'pic/icon/fav.png' : 'pic/icon/h.png'} alt="loccationn" className="img-fluid like-heart" width="20px" style={{ float: 'right', position: 'relative', right: '15%' }} /></span>
                                 <h4 style={{ fontSize: '18px',paddingTop: '1rem', paddingBottom: '0.5rem' }} className="py-2">{item.name}</h4>
-                                <img src="/pic/Vector.png" alt="loccationn" srcSet="" className="img-fluid locat" width="15px" style={{ marginLeft: '5px' }} />
+                                <img src="/pic/Vector.png" alt="loccationn" srcSet="" className="img-fluid locat" width="15px" style={{ marginLeft: '0px' }} />
                                 <span className="add-text" style={{ fontSize: '14px' }} >{item.address}</span>
                             </div>
                         </div>
@@ -593,11 +668,11 @@ function Home() {
 
                             </div>
                             <div className="d-flex  text-center py-2">
-                                <div className="col-md-4"><i className="fa fa-user-circle" style={{ float: 'left' }} aria-hidden="true">
+                                <div className="col-md-4 col-sm-4"><i className="fa fa-user-circle" style={{ float: 'left' }} aria-hidden="true">
                                     <span style={{ lineHeight: '2px' }}>{item.createdBy ? item.createdBy : 'Admin'}</span>
                                 </i></div>
-                                <div className="col-md-4">-{getDate(item.createTime)}</div>
-                                <div className="col-md-4">
+                                <div className="col-md-4 col-sm-4">-{getDate(item.createTime)}</div>
+                                <div className="col-md-4 col-sm-4">
                                     <img src="pic/share.png" alt="loccation" className="img-fluid " style={{cursor: 'pointer'}}  onClick={(event) => {
                                         
                                             setShowShare(!showShare)
@@ -693,7 +768,7 @@ function Home() {
                     </div>
 
                     <div className="col-md-6">
-                        <img src={baseUrl + test.image} className="img-fluid" style={{ minWidth: '546px', minHeight: '645px' }} alt="..." />
+                        <img src={baseUrl + test.image} className="img-fluid testt-img" style={{ minWidth: '546px', minHeight: '645px' }} alt="..." />
                     </div>
                     <div style={{ fontWeight: '500' }} className="col-md-6 testt  p-5">
 
@@ -713,7 +788,7 @@ function Home() {
             </div>}
 
 
-            <div className="container-fluid my-5  mb-5 " style={{
+            <div className="container-fluid my-5  mb-5 download-img " style={{
                 backgroundImage: "url('pic/hh.png')",
                 backgroundSize: '90% 95%', backgroundPosition: 'center', padding: '10vh',
                 backgroundRepeat: 'no-repeat'
@@ -722,7 +797,7 @@ function Home() {
                     <div className="col-lg-8 col-md-8 col-sm-12 py-5">
                         <h1 className="py-2 lg-display-6">Download The Mobile App Today</h1>
                         <div className="d-flex py-2 col-sm-12 ctc2">
-                            <div className="col-lg-6 col-md-6 col-sm-12  text-left">
+                            <div className="col-lg-6 col-md-6 col-sm-6  text-left">
                                 {/* <i className="fa fa-bell" aria-hidden="true">
                                     <span style={{ color: '#F8004A', paddingLeft: '10px' }}>Get Instant Notification</span>
                                 </i> */}
@@ -732,7 +807,7 @@ function Home() {
                                 </i>
                             </div>
 
-                            <div className="col-lg-6 col-md-6 col-sm-12 text-left">
+                            <div className="col-lg-6 col-md-6 col-sm-6 text-left">
                                 {/* <i className="fa fa-clipboard" aria-hidden="true">
                                     <span style={{ color: '#F8004A', paddingLeft: '10px' }}>Get Free Wedding checklist</span>
                                 </i> */}
@@ -745,19 +820,19 @@ function Home() {
                         <p className="">
                             <input type="phone" className="mobile-link border-bottom" placeholder="Enter phone number" onChange={(event)=> setPhone(event.target.value)}/></p>
 
-                        <div className="d-flex text-left col-sm-12 ctc" >
-                            <div className="col-lg-8 col-md-8 col-sm-12 py-3 ">
+                        <div id='ctc' className="d-flex text-left col-sm-12 ctc" >
+                            <div className="col-lg-8 col-md-8 col-sm-8 py-3 ">
                                 <button className="btn btsk1" onClick={checkNumber}>
                                     <i className="fa fa-chevron-circle-down" aria-hidden="true"></i> Download The App</button>
 
                             </div>
 
-                            <div className="col-lg-2 col-md-2 col-sm-6 col-sm-12  py-3 ">
+                            <div className="col-lg-2 col-md-2 col-sm-2  py-3 ">
                                 <img src="" alt="" sizes="" />
                                 <img style={{ marginTop: '5px' }} src="pic/icon/ap.png" alt="" width="50%" className="img-fluid" />
                             </div>
 
-                            <div className="col-lg-2 col-md-2 col-sm-6 col-sm-12  py-3 ">
+                            <div className="col-lg-2 col-md-2 col-sm-2  py-3 ">
                                 <img style={{ marginTop: '5px' }} src="pic/icon/an.png" alt="" width="50%" className="img-fluid" />
 
                             </div>
@@ -767,6 +842,7 @@ function Home() {
                     </div>
                 </div>
             </div>
+            <PopUp />
         </>
     )
 }

@@ -175,13 +175,13 @@ function IndiBlog() {
 
                                     <h2 className="pt-4">Categories</h2>
                                     <div className="dashed">
-                                        <Link to="/blogs" style={{ fontSize: '12px', fontWeight: '500', cursor: 'pointer',display: 'block', color:'#888888', marginBottom: '5px'}}>-  Stories</Link>
-                                        <Link to="/blogs" style={{ fontSize: '12px', fontWeight: '500', cursor: 'pointer',display: 'block', color:'#888888', marginBottom: '5px'}}>-  Wedding Ceremony</Link>
-                                        <Link to="/blogs" style={{ fontSize: '12px', fontWeight: '500', cursor: 'pointer',display: 'block', color:'#888888', marginBottom: '5px'}}>-  Bride and Groom</Link>
-                                        <Link to="/blogs" style={{ fontSize: '12px', fontWeight: '500', cursor: 'pointer',display: 'block', color:'#888888', marginBottom: '5px'}}>-  Sale & Gifts</Link>
-                                        <Link to="/blogs" style={{ fontSize: '12px', fontWeight: '500', cursor: 'pointer',display: 'block', color:'#888888', marginBottom: '5px'}}>-  Accessories</Link>
-                                        <Link to="/blogs" style={{ fontSize: '12px', fontWeight: '500', cursor: 'pointer',display: 'block', color:'#888888', marginBottom: '5px'}}>-  Decorations</Link>
-                                        <Link to="/blogs" style={{ fontSize: '12px', fontWeight: '500', cursor: 'pointer',display: 'block', color:'#888888', marginBottom: '5px'}}>-  Jewellery</Link>
+                                        <Link to="/blogs" style={{ fontSize: '12px', fontWeight: '500', cursor: 'pointer',display: 'block', color:'#888888', marginBottom: '0.8rem'}}>-  Stories</Link>
+                                        <Link to="/blogs" style={{ fontSize: '12px', fontWeight: '500', cursor: 'pointer',display: 'block', color:'#888888', marginBottom: '0.8rem'}}>-  Wedding Ceremony</Link>
+                                        <Link to="/blogs" style={{ fontSize: '12px', fontWeight: '500', cursor: 'pointer',display: 'block', color:'#888888', marginBottom: '0.8rem'}}>-  Bride and Groom</Link>
+                                        <Link to="/blogs" style={{ fontSize: '12px', fontWeight: '500', cursor: 'pointer',display: 'block', color:'#888888', marginBottom: '0.8rem'}}>-  Sale & Gifts</Link>
+                                        <Link to="/blogs" style={{ fontSize: '12px', fontWeight: '500', cursor: 'pointer',display: 'block', color:'#888888', marginBottom: '0.8rem'}}>-  Accessories</Link>
+                                        <Link to="/blogs" style={{ fontSize: '12px', fontWeight: '500', cursor: 'pointer',display: 'block', color:'#888888', marginBottom: '0.8rem'}}>-  Decorations</Link>
+                                        <Link to="/blogs" style={{ fontSize: '12px', fontWeight: '500', cursor: 'pointer',display: 'block', color:'#888888', marginBottom: '0.8rem'}}>-  Jewellery</Link>
 
 
                                     </div>
@@ -204,7 +204,7 @@ function IndiBlog() {
                                     <h2 style={{ fontSize: '25px' }} className="pt-4 pb-2">Tags</h2>
                                     <div className="row">
                                     {blog.tags && blog.tags.map(item => <div className="col-md-4">
-                                            <p style={{ color: '#888888', fontSize: '12px', fontWeight: '500' }}>#{item}</p>
+                                            <p style={{ color: '#888888', fontSize: '12px', fontWeight: '500', marginBottom: '0.8rem' }}>#{item}</p>
                                         </div>
                                     )}
                                     </div>

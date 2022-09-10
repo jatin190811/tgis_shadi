@@ -45,3 +45,17 @@
 .foot-lt-pad {
     font-size: 0.9rem;
 }
+
+
+
+@media screen and (max-width: 768px) {
+    .pad-foot {
+        padding-left: 3rem;
+    }
+    .foot-terms .foot-lt-pad {
+        text-align: center !important;
+    }
+    .foot-bt-pad {
+        display: block;
+    }
+}

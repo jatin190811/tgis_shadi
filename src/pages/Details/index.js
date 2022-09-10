@@ -245,24 +245,24 @@ function Details() {
 									<button type="button" className="btn btn-outline-primary" style={{ fontSize: '14px', backgroundColor: disableSend ? 'pink' : '', color:  disableSend ? 'white' : '', cursor: disableSend ? 'not-allowed' : '', border: 'none' }} onClick={() => {setShowSendMsg(true)
 									setShowContact(false)
 									setShowOtp(false)}} disabled={disableSend}>
-										<img src="/images/vector/latter.png" className="" alt="" style={{ position: 'relative', top: '2px' }} /> Send Message
+										<div style={{ display: 'flex', alignItems: 'center'}}><img src="/images/vector/latter.png" className="" alt="" style={{ position: 'relative', top: '0px', paddingRight: "5px" }} /> Send Message</div>
 									</button>
 									<button type="button" className="btn btn-outline-green ml-auto" onClick={() => {setShowContact(true)
 									setOtpSuccess(false)
 									setShowOtp(false)
 									setShowSendMsg(false);
 									}} style={{ fontSize: '14px' }}>
-										<img src="/images/vector/mobile.png" className="" alt="" style={{ position: 'relative', top: '5px' }} /> View Contact
+										<div style={{ display: 'flex', alignItems: 'center'}}><img src="/images/vector/mobile.png" className="" alt="" style={{ position: 'relative', top: '0px' }} /> View Contact</div>
 									</button>
 								</div>
 								{showContact && <div className='contact-section'>
 									<p className="dlgt">Here are the contact details of the vendor</p>
-									<div className="d-flex">
+									<div style={{ display: "flex", flexDirection: "column" }} className="">
 										<span className="link">
-											<img src="/images/vector/mob_black.png" className="" alt="" /> <a href={`tel:${details?.contact_details?.number}`}>{details?.contact_details?.number}</a>
+											<div style={{ display: 'flex', alignItems: 'center'}}><img src="/images/vector/mob_black.png" className="" alt="" /> <a href={`tel:${details?.contact_details?.number}`}>{details?.contact_details?.number}</a></div>
 										</span>
-										<span className="ml-auto link">
-											<img src="/images/vector/message.png" className="" alt="" /> <a href={`mailto:${details?.contact_details?.email}`}>{details?.contact_details?.email}</a>
+										<span className=" link">
+											<div style={{ display: 'flex', alignItems: 'center', paddingTop: '1rem' }}><img src="/images/vector/message.png" className="" alt="" /> <a href={`mailto:${details?.contact_details?.email}`}>{details?.contact_details?.email}</a></div>
 										</span>
 									</div>
 									<div className="textcenter">
