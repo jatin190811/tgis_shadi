@@ -454,9 +454,9 @@ function Onboarding() {
 
 
 
-                    <div className="row text-center">
+                    <div className="row text-center onboarding-flex-m">
                         {state.currentStep == 'step1' && <>
-                            <div className="col-lg-4 col-md-4 col-sm-12 text-black ">
+                            <div className="col-lg-4 col-md-4 col-sm-4 width-50 text-black ">
                                 <div className="card border  px-4 py-4 splc " style={{ backgroundColor: (state.personal == 'bride' ? '#F180AB' : '#F8F8F8') }} onClick={() => setState({ ...state, personal: 'bride' })}>
                                     <center>
                                         <img src="pic/ct/bride.png" alt="mumbai" className="img-fuild" width="45%;" />
@@ -466,7 +466,7 @@ function Onboarding() {
                                     </div>
                                 </div>
                             </div>
-                            <div className="col-lg-4 col-md-4 col-sm-12 text-black">
+                            <div className="col-lg-4 col-md-4 col-sm-4 width-50 text-black">
                                 <div className="card border  px-4 py-4 splc" style={{ backgroundColor: (state.personal == 'groom' ? '#F180AB' : '#F8F8F8') }} onClick={() => setState({ ...state, personal: 'groom' })}>
                                     <center>
                                         <img src="pic/ct/groom.svg" alt="mumbai" className="img-fuild" width="45%;" />
@@ -477,7 +477,7 @@ function Onboarding() {
                                 </div>
                             </div>
 
-                            <div className="col-lg-4 col-md-4 col-sm-12 text-black">
+                            <div className="col-lg-4 col-md-4 col-sm-4 text-black width-50">
                                 <div className="card border  px-4 py-4 splc" style={{
                                     backgroundColor: (['bride', 'groom'].includes(state.personal) || !state.per)
                                         ? '#F8F8F8' : '#F180AB'
@@ -518,7 +518,7 @@ function Onboarding() {
 
                                 <h2 className=" py-4 ">Which city is your wedding in?</h2>
                                 <div className="row text-center">
-                                    <div className="col-lg-3 col-md-3 col-sm-12 text-black ">
+                                    <div className="col-lg-3 col-md-3 col-sm-12 text-black width-50">
                                         <div className="card border  px-2 py-3" style={{ backgroundColor: (state.city == 'mumbai' ? '#F180AB' : '#F8F8F8') }} onClick={() => setState({ ...state, city: 'mumbai' })}>
                                             <center>
                                                 <img src={ mumbai } alt="mumbai" className="img-fuild" width="50%;" />
@@ -528,7 +528,7 @@ function Onboarding() {
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="col-lg-3 col-md-3 col-sm-12 text-black">
+                                    <div className="col-lg-3 col-md-3 col-sm-12 text-black width-50">
                                         <div className="card border  px-2 py-3" style={{ backgroundColor: (state.city == 'delhi' ? '#F180AB' : '#F8F8F8') }} onClick={() => setState({ ...state, city: 'delhi' })}>
                                             <center>
                                                 <img src={ delhi } alt="delhi" className="img-fuild" width="50%;" />
@@ -539,7 +539,7 @@ function Onboarding() {
                                         </div>
                                     </div>
 
-                                    <div className="col-lg-3 col-md-3 col-sm-12 text-black">
+                                    <div className="col-lg-3 col-md-3 col-sm-12 text-black width-50">
                                         <div className="card border  px-1 py-3" style={{ backgroundColor: (state.city == 'chandigarh' ? '#F180AB' : '#F8F8F8') }} onClick={() => setState({ ...state, city: 'chandigarh' })}>
                                             <center>
                                                 <img src={ chandigarh } alt="Chandigarh" className="img-fuild" width="50%;" />
@@ -550,7 +550,7 @@ function Onboarding() {
                                         </div>
                                     </div>
 
-                                    <div className="col-lg-3 col-md-3 col-sm-12 text-black">
+                                    <div className="col-lg-3 col-md-3 col-sm-12 text-black width-50">
                                         <div className="card border  px-2 py-3" style={{ backgroundColor: (state.city == 'hyderabad' ? '#F180AB' : '#F8F8F8') }} onClick={() => setState({ ...state, city: 'hyderabad' })}>
                                             <center>
                                                 <img src={ hyderabad } alt="hyderabad" className="img-fuild" width="50%;" />

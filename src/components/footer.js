@@ -68,14 +68,14 @@ return(
     </form>
     
       </div>
-      <div className="col-lg-3 col-md-3 col-sm-12 px-5">
+      <div style={{}} className="col-lg-3 col-md-3 col-sm-6 px-5">
           <h3 className="text-start footer-h3 py-3">HIt Us Up:</h3>
           <p style={{ fontWeight: '600' }} className="text-start foot-bt-pad">+1 800 452 78 87</p>
           <p className="text-start foot-bt-pad">info@sitename.com</p>
           <p className="text-start foot-bt-pad">27 Division St, New York, NY 10002, USA</p>
 
       </div>
-      <div className="col-lg-3 col-md-3 col-sm-12 px-5">
+      <div className="col-lg-3 col-md-3 col-sm-6 px-5 pad-m-2">
           <h3 className="text-start footer-h3 py-3">Find Us</h3>
           <p className="text-start foot-bt-pad">- Facebook</p>
           <p className="text-start foot-bt-pad">- Twitter</p>
@@ -91,13 +91,13 @@ return(
     <div className='col-lg-1 col-md-1'></div>
       <div style={{ paddingLeft: '0' }} className="col-lg-4 col-md-4 col-sm-12">
       
-      <p className='float-start foot-lt-pad' >&#169; All rights reserved to the great Indian shadi.com</p>
+      <p id='footer-end-1' className='float-start foot-lt-pad' >&#169; All rights reserved to the great Indian shadi.com</p>
       </div>
       <div className="col-lg-3 col-md-3 col-sm-12">
        
       </div>
       <div className="col-lg-3 col-md-3 col-sm-12">
-          <p className=' float-end foot-lt-pad' >Privacy Policy - Terms & Condition</p>
+          <p className=' float-end foot-lt-pad' id='footer-end-2' >Privacy Policy - Terms & Condition</p>
       </div>
       <div style={{ padding: '0' }} className='col-lg-1 col-md-1'></div>
 
