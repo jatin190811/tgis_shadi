@@ -100,7 +100,7 @@ function VendorPage() {
             />
             <div id='vendor-container' style={{}} className="container main">
                 <div className="row mainrow">
-                    <div className="col-md-5 ">
+                    <div className="col-md-5 hero-vendor">
                     <img style={{ width: '100%', objectFit: 'cover' }} src="pic/vendor-banner.png" alt="" sizes="" className="img-fluid" />
                     </div>
                     <div className="col-md-7  text-center heropy">

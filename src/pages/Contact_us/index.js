@@ -64,7 +64,7 @@ function ContactUs() {
   </div>
 </div>
 
-<div className="container py-5" >
+<div id='contact' className="container py-5" >
   <div className="row justfy-content-center">
     <div className="col-md-3">
         <img src="pic/contact/h.png" alt="" className="img-fluid pb-4"/>

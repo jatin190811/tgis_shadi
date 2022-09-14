@@ -238,9 +238,9 @@ function Login() {
                 position="top-right"
                 autoClose={5000}
                 />
-            <div style={{ maxWidth: '100%' }} className="main">
+            <div style={{ maxWidth: '100%' }} className="main" id='login'>
                 <div className="row mainrow">
-                    <div className="col-md-5 hero">
+                    <div className="col-md-5 hero login-hero">
                         <div className="text-center text-white">
                             <p className="image-text">India’s Best<br /> Wedding Planning <br />Platform </p>
                         </div>
@@ -276,11 +276,11 @@ function Login() {
                         </div>
 
                         <div className="row pb-4">
-                            <div className="col-md-3">
+                            <div className="col-md-3 hr">
                                 <hr />
                             </div>
                             <div className="col-md-6"><p className="hr-text">or sign in with Email/Mobile</p></div>
-                            <div className="col-md-3">
+                            <div className="col-md-3 hr">
                                 <hr />
                             </div>
                         </div>

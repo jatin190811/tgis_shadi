@@ -570,19 +570,23 @@ function List() {
   return (
     <>
     <div>
-      <div className="container-fluid  box-imgages" style={{ backgroundImage: `url("/pic/ct/${banner.img}")` }} >
-        <div className="row">
-          <div className="clo-lg-12 col-md-12 col-sm-12">
+      <div id="list" className="container-fluid  box-imgages" style={{ backgroundImage: `url("/pic/ct/${banner.img}")` }} >
+        <div className="row list-hero">
+          <div className="clo-lg-12 col-md-12 col-sm-12 list-hero-content-d">
 
             <h1 className="list-text text-white text-center">{banner.text.title}</h1>
             <h4 className="text-white text-center">{banner.text.desc}</h4>
 
           </div>
+          <div className='list-hero-content-m'>
+            <h1 className=" text-white tw1">{banner.text.title}</h1>
+            <h4 className="text-white">{banner.text.desc}</h4>
+          </div>
 
         </div>
       </div>
 
-      <div className="container mt-5">
+      <div className="container mt-5 list-options">
 
 
         <div className="row">
@@ -602,7 +606,7 @@ function List() {
 
           <div className="col-md-5 col-sm-12 px-3">
             <form className="example" style={{height: '60px'}} onSubmit={(event) => event.preventDefault()} >
-              <input type="text" placeholder="Search venue or location" style={{ height: '45px', backgroundColor: 'transparent', fontSize: '1rem' }} name="search" onChange={(event)=> setSearchValue(event.target.value)}/>
+              <input id='list-example-input' type="text" placeholder="Search venue or location" style={{ height: '45px', backgroundColor: 'transparent', fontSize: '1rem' }} name="search" onChange={(event)=> setSearchValue(event.target.value)}/>
               <button ><i className="fa fa-search" onClick={getFilteredResults}></i></button>
             </form>
           </div>
@@ -659,12 +663,12 @@ function List() {
       </div>}
 
       <div className="container-fluid ">
-        <hr style={{ border: '1px solid #F180AB', opacity: '1', marginTop: '0' }} className="mx-5 g-0" />
+        <hr id='list-line' style={{ border: '1px solid #F180AB', opacity: '1', marginTop: '0' }} className="mx-5 g-0" />
 
-        <div className="justify-content-center mylove g-0 pt-3 px-5 pb-5">
+        <div id='list-cat' className="justify-content-center mylove g-0 pt-3 px-5 pb-5">
           {subCatList && subCatList.map(item => <div className="categories"><span className={subCat == item ? 'borderme' : 'nonborderme'} onClick={() => setSubCat(item)}>{item}</span></div>)}
         </div>
-        {list.length ? <div className="row justify-content-center g-4 p-5">
+        {list.length ? <div className="items-list row justify-content-center g-4 p-5">
 
           {list && list.map(item => <div className="col-md-3 p-3">
             <div className="card justify-items-center ">

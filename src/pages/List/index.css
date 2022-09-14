@@ -1,6 +1,12 @@
 * {
     box-sizing: border-box;
   }
+.list-hero .list-hero-content-d {
+    display: auto;
+}
+.list-hero .list-hero-content-m {
+    display: none;
+}
   .round {
       border-radius: 20px;
       padding-left: 20px;
@@ -154,4 +160,78 @@ button.btn.btsk {
     padding-right: 3rem;
     color: #49516F;
     opacity: 0.5;
+}
+
+
+@media screen and (max-width: 768px) {
+    /* #list .items-list {
+        padding: 0 !important;
+    } */
+    .items-list {
+        padding: 0rem !important;
+    }
+    .items-list .card-img {
+        width: auto !important;
+        height: auto !important;
+    }
+    .items-list .card-img .cat-img {
+        width: 400px !important;
+        height: 450px !important;
+    }
+    .list-options {
+        padding-left: 5vw !important;
+        padding-right: 5vw !important;
+    }
+    #list-line {
+        /* width: 100% !important; */
+        margin-right: 0rem !important;
+        margin-left: 0rem !important;
+    }
+    #list-cat {
+        padding-right: 0 !important;
+        padding-left: 0 !important;
+        padding-bottom: 1rem !important;
+        margin-bottom: 0px !important;
+        width: 100% !important;
+        overflow-x: scroll;
+        white-space: nowrap;
+
+    }
+    #list-cat .categories {
+        padding-right: 20px;
+        /* width: 90% !important; */
+    }
+    .nonborderme {
+        margin-left: 0px !important;
+    }
+    .mylove {
+    }
+    .example {
+        margin-bottom: 1rem !important;
+    }
+    #list-example-input {
+        margin: 0 !important;
+    }
+    .list-hero {
+        position: relative;
+    }
+    .list-hero .list-hero-content-d {
+        display: none;
+    }
+    .list-hero-content-m .text-white {
+        width: 50vw !important;
+        scale: 1.5;
+        padding-bottom: 1rem !important;
+        text-align: center;
+        display: block;
+    }
+    .list-hero .list-hero-content-m {
+        display: block;
+        width: 50vw !important;
+        transform: translateX(-100%);
+    }
+    .tw1 {
+        padding-left: 15px !important;
+    }
+
 }

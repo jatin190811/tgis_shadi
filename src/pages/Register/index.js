@@ -143,7 +143,7 @@ function Login() {
                 position="top-right"
                 autoClose={5000}
             />
-            <div style={{ maxWidth: '100vw' }} className="container main">
+            <div style={{ maxWidth: '100vw' }} className="container main" id='register'>
                 <div className="row mainrow">
                     <div className="col-md-5 hero">
                         <div className="text-center text-white">
