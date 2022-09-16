@@ -53,7 +53,8 @@
         display: none;
     }
     .logo-img {
-        max-height: 250px !important;
+        max-height: 150px !important;
+        transform: scale(2);
     }
     .heropy {
         padding-right: 5% !important;
@@ -103,12 +104,19 @@
     .input-icon {
         /* padding: 0 !important; */
     }
+    #login .pt-5 {
+        padding-top: 1rem !important;
+        margin-top: 10px !important;
+    }
+    #login .pt-5 div {
+        width: auto !important;
+    }
 
 
     /* Register */
     #register label {
         padding-left: 0.75rem !important;
-        padding-top: 2rem !important;
+        padding-top: 1rem !important;
     }
     #register input {
         margin: 10px !important;

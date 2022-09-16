@@ -3,6 +3,8 @@ import './footer.css';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import Send from "../assets/send.svg";
+import TermsAndConditions from '../pages/TermsAndConditions/index.js';
+import PrivacyPolicy from '../pages/PrivacyPolicy/index.js';
 
 function Footer() {
     const [email, setEmail] = useState();

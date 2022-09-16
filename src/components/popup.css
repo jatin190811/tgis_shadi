@@ -36,7 +36,7 @@
   justify-content: center;
 }
 .popup-content h2 {
-  font-size: 2.5rem;
+  font-size: 3vw;
   color: black;
   padding: 0rem 0 1rem 0;
 }
@@ -57,7 +57,16 @@
   padding-top: 2rem;
 }
 .download-btns #ctc {
-  width: 70% !important;
+  /* width: 70% !important; */
+  justify-content: flex-start;
+}
+.download-btns #ctc .col-lg-10 {
+  width: 90% !important;
+  position: relative;
+}
+.download-btns #ctc .col-lg-10 button {
+  /* width: 80% !important; */
+  width: 100% !important;
 }
 .download-btns .icons {
   display: flex;
@@ -72,7 +81,7 @@
   outline: none;
   background: none;
   color: white;
-  padding-left: 3rem;
+  padding-left: 1rem;
 }
 .flex-div {
 
@@ -148,5 +157,8 @@
     position: fixed;
     top: -5rem;
     right: 2rem;
+  }
+  .download-btns #ctc .col-lg-10 {
+    width: 100% !important;
   }
 }

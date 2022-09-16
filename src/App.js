@@ -31,6 +31,9 @@ import VendorPage from './pages/VendorPage';
 import Inhouse from './pages/Inhouse';
 import ChangePassword from './pages/ChangePassword';
 
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import TermsAndConditions from './pages/TermsAndConditions';
+
 
 function App() {
     return (
@@ -56,6 +59,10 @@ function App() {
                 <Route path="/wishlist" element={<Wishlist />} />
                 <Route path="/search" element={<SearchPage />} />
                 <Route path="/vendor" element={<VendorPage />} />
+
+                <Route path="/privacy" element={<PrivacyPolicy />} />
+                <Route path="/terms" element={<TermsAndConditions />} />
+
                 <Route path="*" element={<Home />} />
             </Routes>
             {<Layout hideHeaderPaths={["/login","/onboarding","/register","/vendor","/forget-password","/change-password"]} isFooter="true" />}

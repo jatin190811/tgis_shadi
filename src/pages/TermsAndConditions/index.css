@@ -1,0 +1,23 @@
+.terms-container a {
+    text-decoration: underline;
+}
+.terms-heading {
+    font-weight: 600;
+    color: #555555;
+    padding-top: 10px;
+}
+.terms-description {
+    color: #555555 ;
+    text-align: justify;
+    padding-left: 1rem;
+}
+.terms-list {
+    padding-left: 1.5rem;
+    padding-top: 10px;
+    list-style-type: disc;
+    text-align: justify;
+}
+.terms-list li {
+    /* padding-bottom: 10px; */
+    list-style-type: disc;
+}

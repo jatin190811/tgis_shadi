@@ -160,6 +160,7 @@
     .scroll-div {
         overflow-x: scroll;
         display: flex;
+        scroll-behavior: smooth;
     }
     .scroll-div div {
         /* display: inline-block; */

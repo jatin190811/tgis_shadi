@@ -176,7 +176,9 @@ button.btn.btsk {
     }
     .items-list .card-img .cat-img {
         width: 400px !important;
-        height: 450px !important;
+        height: auto !important;
+        min-height: 350px !important;
+        object-fit: cover;
     }
     .list-options {
         padding-left: 5vw !important;

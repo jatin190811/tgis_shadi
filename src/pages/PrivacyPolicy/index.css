@@ -1,0 +1,11 @@
+.privacy-container a {
+    text-decoration: underline;
+}
+.privacy-description {
+    color: #555555 ;
+    text-align: justify;
+    /* padding-left: 1rem; */
+}
+.privacy-heading {
+    padding-top: 1rem;
+}

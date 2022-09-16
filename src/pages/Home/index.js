@@ -438,7 +438,7 @@ function Home() {
 
                                     <Link to={`list${item.url}`}>
                                         {/* baseUrl + item.image */}
-                                        <img src={ bride } width="270" height="350" style={{ objectFit: 'cover' }} className="card-img-top img-fluid category-img" /></Link>
+                                        <img src={ baseUrl + item.image } width="270" height="350" style={{ objectFit: 'cover' }} className="card-img-top img-fluid category-img" /></Link>
 
                                 </div>
                                 <div style={{ position: 'absolute', bottom: '20%', left: '10px' }} className="">
@@ -511,7 +511,7 @@ function Home() {
                                 the readable content of a page when looking at its layout.
                                 It is a long established fact that a reader will be distracted by
                                 the readable content of a page when looking at its layout. It is a long established fact that a reader will be distracted by
-                                the readable content of a page when looking at its layout.
+                                {/* the readable content of a page when looking at its layout.
                                 It is a long established fact that a reader will be distracted by
                                 the readable content of a page when looking at its layout.
                                 It is a long established fact that a reader will be distracted by
@@ -521,7 +521,8 @@ function Home() {
                                 It is a long established fact that a reader will be distracted by
                                 the readable content of a page when looking at its layout.
                                 It is a long established fact that a reader will be distracted by
-                                the readable content of a page when looking at its layout. </p>
+                                the readable content of a page when looking at its layout.*/} 
+                            </p> 
                         </div>
                     </div>
                     <div className="col-lg-6 col-md-6 col-sm-12  gx-lg-5 py-5">
